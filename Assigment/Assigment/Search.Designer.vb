@@ -32,12 +32,12 @@ Partial Class Search
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvSrch = New System.Windows.Forms.DataGridView()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuTextbox1
@@ -112,10 +112,7 @@ Partial Class Search
         '
         'FlowLayoutPanel1
         '
-        Me.FlowLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlowLayoutPanel1.Controls.Add(Me.DataGridView1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.dgvSrch)
         Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox1)
         Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox2)
         Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox3)
@@ -127,7 +124,7 @@ Partial Class Search
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 271)
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 288)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(139, 149)
@@ -136,7 +133,7 @@ Partial Class Search
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(151, 271)
+        Me.PictureBox2.Location = New System.Drawing.Point(151, 288)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(136, 149)
@@ -145,21 +142,21 @@ Partial Class Search
         '
         'PictureBox3
         '
-        Me.PictureBox3.Location = New System.Drawing.Point(295, 271)
+        Me.PictureBox3.Location = New System.Drawing.Point(295, 288)
         Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(136, 149)
         Me.PictureBox3.TabIndex = 2
         Me.PictureBox3.TabStop = False
         '
-        'DataGridView1
+        'dgvSrch
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(884, 261)
-        Me.DataGridView1.TabIndex = 17
+        Me.dgvSrch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSrch.Location = New System.Drawing.Point(3, 3)
+        Me.dgvSrch.Name = "dgvSrch"
+        Me.dgvSrch.RowTemplate.Height = 24
+        Me.dgvSrch.Size = New System.Drawing.Size(814, 278)
+        Me.dgvSrch.TabIndex = 3
         '
         'Search
         '
@@ -178,7 +175,7 @@ Partial Class Search
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -192,6 +189,6 @@ Partial Class Search
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvSrch As System.Windows.Forms.DataGridView
 
 End Class

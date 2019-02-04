@@ -37,7 +37,4 @@
     End Sub
 
 
-    Private Sub Log1_Load(sender As Object, e As EventArgs) Handles Log1.Load
-
-    End Sub
 End Class

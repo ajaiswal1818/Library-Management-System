@@ -88,10 +88,10 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Library_Management_SystemDataSet1.Designer.vb">
+    <Compile Include="Library_Management_SystemDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Library_Management_SystemDataSet1.xsd</DependentUpon>
+      <DependentUpon>Library_Management_SystemDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="LMS.vb" />
     <Compile Include="Log.Designer.vb">
@@ -152,16 +152,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library_Management_SystemDataSet1.xsc">
-      <DependentUpon>Library_Management_SystemDataSet1.xsd</DependentUpon>
+    <None Include="Library_Management_SystemDataSet.xsc">
+      <DependentUpon>Library_Management_SystemDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Library_Management_SystemDataSet1.xsd">
+    <None Include="Library_Management_SystemDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Library_Management_SystemDataSet1.Designer.vb</LastGenOutput>
+      <LastGenOutput>Library_Management_SystemDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Library_Management_SystemDataSet1.xss">
-      <DependentUpon>Library_Management_SystemDataSet1.xsd</DependentUpon>
+    <None Include="Library_Management_SystemDataSet.xss">
+      <DependentUpon>Library_Management_SystemDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -172,13 +172,11 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Library Management System.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
