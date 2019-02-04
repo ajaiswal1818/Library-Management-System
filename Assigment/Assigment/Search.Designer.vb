@@ -25,7 +25,7 @@ Partial Class Search
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Search))
         Me.BunifuTextbox1 = New ns1.BunifuTextbox()
         Me.BunifuThinButton21 = New ns1.BunifuThinButton2()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbxSrch = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -79,14 +79,14 @@ Partial Class Search
         Me.BunifuThinButton21.TabIndex = 1
         Me.BunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ComboBox1
+        'cbxSrch
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(4, 64)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(160, 24)
-        Me.ComboBox1.TabIndex = 2
+        Me.cbxSrch.FormattingEnabled = True
+        Me.cbxSrch.Location = New System.Drawing.Point(4, 64)
+        Me.cbxSrch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbxSrch.Name = "cbxSrch"
+        Me.cbxSrch.Size = New System.Drawing.Size(160, 24)
+        Me.cbxSrch.TabIndex = 2
         '
         'Label4
         '
@@ -165,7 +165,7 @@ Partial Class Search
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cbxSrch)
         Me.Controls.Add(Me.BunifuThinButton21)
         Me.Controls.Add(Me.BunifuTextbox1)
         Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
@@ -182,7 +182,7 @@ Partial Class Search
     End Sub
     Friend WithEvents BunifuTextbox1 As ns1.BunifuTextbox
     Friend WithEvents BunifuThinButton21 As ns1.BunifuThinButton2
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbxSrch As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
