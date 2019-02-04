@@ -75,9 +75,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.CS243_Lab2_Library_Management_System.My.MySettings
+        Friend ReadOnly Property Settings() As Global.Assigment.My.MySettings
             Get
-                Return Global.CS243_Lab2_Library_Management_System.My.MySettings.Default
+                Return Global.Assigment.My.MySettings.Default
             End Get
         End Property
     End Module

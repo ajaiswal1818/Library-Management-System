@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("CS243_Lab2_Library_Management_System")> 
+<Assembly: AssemblyTitle("Assigment")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("CS243_Lab2_Library_Management_System")> 
-<Assembly: AssemblyCopyright("Copyright ©  2019")> 
+<Assembly: AssemblyCompany("HP Inc.")> 
+<Assembly: AssemblyProduct("Assigment")> 
+<Assembly: AssemblyCopyright("Copyright © HP Inc. 2019")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("b37c10ed-c9e1-4522-afee-2a7fc746e970")> 
+<Assembly: Guid("0fc9a32b-727a-41aa-9a4d-0250d99cc628")> 
 
 ' Version information for an assembly consists of the following four values:
 '
