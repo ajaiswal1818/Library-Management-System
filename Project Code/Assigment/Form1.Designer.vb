@@ -26,7 +26,7 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.MyAccount = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.SidePanel = New System.Windows.Forms.Panel()
@@ -36,14 +36,21 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Login = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Search1 = New Assigment.Search()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.logoutBtn = New System.Windows.Forms.PictureBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.MyprofileSidePanel = New Assigment.Myprofile()
         Me.Log1 = New Assigment.Log()
         Me.EBooks1 = New Assigment.eBooks()
+        Me.Search1 = New Assigment.Search()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.logoutBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -51,7 +58,7 @@ Partial Class Form1
         Me.Panel1.BackColor = System.Drawing.Color.Snow
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.MyAccount)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.SidePanel)
@@ -89,18 +96,18 @@ Partial Class Form1
         Me.Button5.Text = "Login"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Button4
+        'MyAccount
         '
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.Black
-        Me.Button4.Location = New System.Drawing.Point(15, 286)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(111, 38)
-        Me.Button4.TabIndex = 6
-        Me.Button4.Text = "Login"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.MyAccount.FlatAppearance.BorderSize = 0
+        Me.MyAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MyAccount.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MyAccount.ForeColor = System.Drawing.Color.Black
+        Me.MyAccount.Location = New System.Drawing.Point(15, 286)
+        Me.MyAccount.Name = "MyAccount"
+        Me.MyAccount.Size = New System.Drawing.Size(111, 38)
+        Me.MyAccount.TabIndex = 6
+        Me.MyAccount.Text = "My Account"
+        Me.MyAccount.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -186,9 +193,9 @@ Partial Class Form1
         Me.Button1.ForeColor = System.Drawing.Color.Black
         Me.Button1.Location = New System.Drawing.Point(15, 154)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 38)
+        Me.Button1.Size = New System.Drawing.Size(111, 47)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Add a Book"
+        Me.Button1.Text = "Recommend Book"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Panel3
@@ -200,38 +207,66 @@ Partial Class Form1
         Me.Panel3.Size = New System.Drawing.Size(829, 14)
         Me.Panel3.TabIndex = 2
         '
-        'Login
-        '
-        Me.Login.FlatAppearance.BorderSize = 0
-        Me.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Login.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Login.ForeColor = System.Drawing.Color.Black
-        Me.Login.Image = CType(resources.GetObject("Login.Image"), System.Drawing.Image)
-        Me.Login.Location = New System.Drawing.Point(837, 18)
-        Me.Login.Name = "Login"
-        Me.Login.Size = New System.Drawing.Size(29, 29)
-        Me.Login.TabIndex = 9
-        Me.Login.UseVisualStyleBackColor = True
-        '
         'Button8
         '
         Me.Button8.FlatAppearance.BorderSize = 0
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.Color.Black
-        Me.Button8.Location = New System.Drawing.Point(663, 21)
+        Me.Button8.Location = New System.Drawing.Point(609, 20)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(158, 26)
         Me.Button8.TabIndex = 18
         Me.Button8.Text = "Discussion Room"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'Search1
+        'PictureBox2
         '
-        Me.Search1.Location = New System.Drawing.Point(132, 57)
-        Me.Search1.Name = "Search1"
-        Me.Search1.Size = New System.Drawing.Size(824, 366)
-        Me.Search1.TabIndex = 21
+        Me.PictureBox2.Location = New System.Drawing.Point(73, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(37, 23)
+        Me.PictureBox2.TabIndex = 22
+        Me.PictureBox2.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 5)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(73, 17)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "Welcome!"
+        '
+        'logoutBtn
+        '
+        Me.logoutBtn.Image = CType(resources.GetObject("logoutBtn.Image"), System.Drawing.Image)
+        Me.logoutBtn.Location = New System.Drawing.Point(125, 3)
+        Me.logoutBtn.Name = "logoutBtn"
+        Me.logoutBtn.Size = New System.Drawing.Size(25, 25)
+        Me.logoutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.logoutBtn.TabIndex = 24
+        Me.logoutBtn.TabStop = False
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.PictureBox2)
+        Me.Panel4.Controls.Add(Me.logoutBtn)
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Location = New System.Drawing.Point(773, 20)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(163, 31)
+        Me.Panel4.TabIndex = 25
+        Me.Panel4.Visible = False
+        '
+        'MyprofileSidePanel
+        '
+        Me.MyprofileSidePanel.Dock = System.Windows.Forms.DockStyle.Left
+        Me.MyprofileSidePanel.Location = New System.Drawing.Point(129, 14)
+        Me.MyprofileSidePanel.Name = "MyprofileSidePanel"
+        Me.MyprofileSidePanel.Size = New System.Drawing.Size(130, 409)
+        Me.MyprofileSidePanel.TabIndex = 26
+        Me.MyprofileSidePanel.Visible = False
         '
         'Log1
         '
@@ -248,18 +283,26 @@ Partial Class Form1
         Me.EBooks1.Size = New System.Drawing.Size(824, 366)
         Me.EBooks1.TabIndex = 19
         '
+        'Search1
+        '
+        Me.Search1.Location = New System.Drawing.Point(132, 57)
+        Me.Search1.Name = "Search1"
+        Me.Search1.Size = New System.Drawing.Size(824, 366)
+        Me.Search1.TabIndex = 21
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(958, 423)
-        Me.Controls.Add(Me.Search1)
+        Me.Controls.Add(Me.MyprofileSidePanel)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Log1)
         Me.Controls.Add(Me.EBooks1)
         Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.Login)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Search1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -268,6 +311,10 @@ Partial Class Form1
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.logoutBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -281,13 +328,17 @@ Partial Class Form1
     Friend WithEvents SidePanel As System.Windows.Forms.Panel
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents MyAccount As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Login As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents EBooks1 As Assigment.eBooks
     Friend WithEvents Log1 As Assigment.Log
     Friend WithEvents Search1 As Assigment.Search
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents logoutBtn As System.Windows.Forms.PictureBox
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents MyprofileSidePanel As Assigment.Myprofile
 
 End Class
