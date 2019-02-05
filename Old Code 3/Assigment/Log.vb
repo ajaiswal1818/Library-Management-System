@@ -8,16 +8,14 @@
         Form1.Panel4.Visible = True
         Form1.Panel1.Visible = False
         Form1.Log1.Visible = False
+
+
+
         Form1.MyprofileSidePanel.Visible = True
     End Sub
 
-    Private Sub SIgn_Click(sender As Object, e As EventArgs) Handles Sign_up.Click
-        Form1.SignUpPage1.Visible = True
-        Form1.Panel4.Visible = False
-        Form1.Log1.Visible = False
-        Form1.MyprofileSidePanel.Visible = False
+    Private Sub SIgn_Click(sender As Object, e As EventArgs) Handles Sign.Click
+        MessageBox.Show("Enter UserName and Password")
 
     End Sub
-
-   
 End Class

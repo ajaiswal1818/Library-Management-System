@@ -23,7 +23,7 @@
 
 
 
-
+        
 
         'Display first name found
         If Access.RecordCount > 0 Then cbxSrch.SelectedIndex = 0
@@ -37,26 +37,27 @@
 
     End Sub
 
-    Private Sub txtSrch_Click(sender As Object, e As EventArgs) Handles txtSrch.Click
-        txtSrch.ResetText()
-
-    End Sub
-
-
-    Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
+    Private Sub BunifuThinButton21_Click(sender As Object, e As EventArgs) Handles BunifuThinButton21.Click
         If cbxSrch.SelectedItem = "Title" Then
-            Access.ExecQuery("SELECT * from Book WHERE Title = '" & txtSrch.Text & "'")
+            Access.ExecQuery("SELECT * from Book WHERE Title = '" & txtSrch.text & "'")
             If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
             For Each R As DataRow In Access.DBDT.Rows
                 Dim Op1 As String = ""
-                Op1 &= "Book Name"
+                Op1 &= "Book Name" & R.Field()
 
-                lblSrch1.Text = Op1
+                SrchLbl1.Text = Op1
 
             Next
 
             dgvSrch.DataSource = Access.DBDT
         End If
     End Sub
+
+    Private Sub txtSrch_Click(sender As Object, e As EventArgs) Handles txtSrch.Click
+        txtSrch.ResetText()
+
+    End Sub
+
+
 End Class

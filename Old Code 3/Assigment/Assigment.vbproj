@@ -75,7 +75,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LMS.vb" />
     <Compile Include="eBooks.Designer.vb">
       <DependentUpon>eBooks.vb</DependentUpon>
     </Compile>
@@ -94,6 +93,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Library_Management_SystemDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LMS.vb" />
     <Compile Include="Log.Designer.vb">
       <DependentUpon>Log.vb</DependentUpon>
     </Compile>
@@ -127,12 +127,6 @@
     <Compile Include="Search.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SignUpPage.Designer.vb">
-      <DependentUpon>SignUpPage.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SignUpPage.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="eBooks.resx">
@@ -155,9 +149,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SignUpPage.resx">
-      <DependentUpon>SignUpPage.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

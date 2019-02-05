@@ -1,10 +1,10 @@
 ﻿Public Class eBooks
 
-    Private Sub Search_OnTextChange(sender As Object, e As EventArgs) Handles Search.OnTextChange
+    Private Sub Search_OnTextChange(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Search_Button_Click(sender As Object, e As EventArgs) Handles Search_Button.Click
+    Private Sub Search_Button_Click(sender As Object, e As EventArgs)
 
     End Sub
 
