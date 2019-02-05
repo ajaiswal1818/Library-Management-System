@@ -22,7 +22,7 @@ Partial Class Log
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BunifuCustomLabel1 = New ns1.BunifuCustomLabel()
+        'Me.BunifuCustomLabel1 = New ns1.BunifuCustomLabel()
         Me.Forgot = New System.Windows.Forms.Button()
         Me.Password = New System.Windows.Forms.RichTextBox()
         Me.UserName = New System.Windows.Forms.RichTextBox()
@@ -32,13 +32,13 @@ Partial Class Log
         '
         'BunifuCustomLabel1
         '
-        Me.BunifuCustomLabel1.AutoSize = True
-        Me.BunifuCustomLabel1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuCustomLabel1.Location = New System.Drawing.Point(93, 204)
-        Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
-        Me.BunifuCustomLabel1.Size = New System.Drawing.Size(0, 17)
-        Me.BunifuCustomLabel1.TabIndex = 4
-        '
+        'Me.BunifuCustomLabel1.AutoSize = True
+        'Me.BunifuCustomLabel1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        'Me.BunifuCustomLabel1.Location = New System.Drawing.Point(93, 204)
+        'Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
+        'Me.BunifuCustomLabel1.Size = New System.Drawing.Size(0, 17)
+        'Me.BunifuCustomLabel1.TabIndex = 4
+        ''
         'Forgot
         '
         Me.Forgot.BackColor = System.Drawing.SystemColors.Control
@@ -104,14 +104,14 @@ Partial Class Log
         Me.Controls.Add(Me.UserName)
         Me.Controls.Add(Me.Password)
         Me.Controls.Add(Me.Forgot)
-        Me.Controls.Add(Me.BunifuCustomLabel1)
+        'Me.Controls.Add(Me.BunifuCustomLabel1)
         Me.Name = "Log"
         Me.Size = New System.Drawing.Size(822, 364)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents BunifuCustomLabel1 As ns1.BunifuCustomLabel
+    'Friend WithEvents BunifuCustomLabel1 As ns1.BunifuCustomLabel
     Friend WithEvents Forgot As System.Windows.Forms.Button
     Friend WithEvents Password As System.Windows.Forms.RichTextBox
     Friend WithEvents UserName As System.Windows.Forms.RichTextBox
