@@ -23,36 +23,36 @@ Partial Class Search
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Search))
-        Me.BunifuTextbox1 = New ns1.BunifuTextbox()
+        Me.txtSrch = New ns1.BunifuTextbox()
         Me.BunifuThinButton21 = New ns1.BunifuThinButton2()
         Me.cbxSrch = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.dgvSrch = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.dgvSrch = New System.Windows.Forms.DataGridView()
         Me.FlowLayoutPanel1.SuspendLayout()
+        CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BunifuTextbox1
+        'txtSrch
         '
-        Me.BunifuTextbox1.BackColor = System.Drawing.Color.Silver
-        Me.BunifuTextbox1.BackgroundImage = CType(resources.GetObject("BunifuTextbox1.BackgroundImage"), System.Drawing.Image)
-        Me.BunifuTextbox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuTextbox1.ForeColor = System.Drawing.Color.SeaGreen
-        Me.BunifuTextbox1.Icon = CType(resources.GetObject("BunifuTextbox1.Icon"), System.Drawing.Image)
-        Me.BunifuTextbox1.Location = New System.Drawing.Point(191, 64)
-        Me.BunifuTextbox1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
-        Me.BunifuTextbox1.Name = "BunifuTextbox1"
-        Me.BunifuTextbox1.Size = New System.Drawing.Size(653, 43)
-        Me.BunifuTextbox1.TabIndex = 0
-        Me.BunifuTextbox1.text = "Enter Text"
+        Me.txtSrch.BackColor = System.Drawing.Color.Silver
+        Me.txtSrch.BackgroundImage = CType(resources.GetObject("txtSrch.BackgroundImage"), System.Drawing.Image)
+        Me.txtSrch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.txtSrch.ForeColor = System.Drawing.Color.SeaGreen
+        Me.txtSrch.Icon = CType(resources.GetObject("txtSrch.Icon"), System.Drawing.Image)
+        Me.txtSrch.Location = New System.Drawing.Point(191, 64)
+        Me.txtSrch.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtSrch.Name = "txtSrch"
+        Me.txtSrch.Size = New System.Drawing.Size(653, 43)
+        Me.txtSrch.TabIndex = 0
+        Me.txtSrch.text = "Enter Text"
         '
         'BunifuThinButton21
         '
@@ -83,7 +83,7 @@ Partial Class Search
         '
         Me.cbxSrch.FormattingEnabled = True
         Me.cbxSrch.Location = New System.Drawing.Point(4, 64)
-        Me.cbxSrch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbxSrch.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxSrch.Name = "cbxSrch"
         Me.cbxSrch.Size = New System.Drawing.Size(160, 24)
         Me.cbxSrch.TabIndex = 2
@@ -117,37 +117,10 @@ Partial Class Search
         Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox2)
         Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox3)
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(131, 138)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(887, 309)
         Me.FlowLayoutPanel1.TabIndex = 16
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 288)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(139, 149)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Location = New System.Drawing.Point(151, 288)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(136, 149)
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Location = New System.Drawing.Point(295, 288)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(136, 149)
-        Me.PictureBox3.TabIndex = 2
-        Me.PictureBox3.TabStop = False
         '
         'dgvSrch
         '
@@ -158,6 +131,33 @@ Partial Class Search
         Me.dgvSrch.Size = New System.Drawing.Size(814, 278)
         Me.dgvSrch.TabIndex = 3
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 288)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(139, 149)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Location = New System.Drawing.Point(151, 288)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(136, 149)
+        Me.PictureBox2.TabIndex = 1
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Location = New System.Drawing.Point(295, 288)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(136, 149)
+        Me.PictureBox3.TabIndex = 2
+        Me.PictureBox3.TabStop = False
+        '
         'Search
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -167,20 +167,20 @@ Partial Class Search
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cbxSrch)
         Me.Controls.Add(Me.BunifuThinButton21)
-        Me.Controls.Add(Me.BunifuTextbox1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Controls.Add(Me.txtSrch)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Search"
         Me.Size = New System.Drawing.Size(1099, 450)
         Me.FlowLayoutPanel1.ResumeLayout(False)
+        CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents BunifuTextbox1 As ns1.BunifuTextbox
+    Friend WithEvents txtSrch As ns1.BunifuTextbox
     Friend WithEvents BunifuThinButton21 As ns1.BunifuThinButton2
     Friend WithEvents cbxSrch As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
