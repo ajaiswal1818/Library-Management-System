@@ -505,8 +505,8 @@ Partial Public Class LMSDataSet
             Me.columnTitle = MyBase.Columns("Title")
             Me.columnISBN = MyBase.Columns("ISBN")
             Me.columnAuthors = MyBase.Columns("Authors")
-            Me.columnCopies_Available = MyBase.Columns("Copies Available")
-            Me.columnIssued_to = MyBase.Columns("Issued to")
+            Me.columnCopies_Available = MyBase.Columns("Copies_Available")
+            Me.columnIssued_to = MyBase.Columns("Issued_to")
             Me.columnGenre = MyBase.Columns("Genre")
             Me.columnPublisher = MyBase.Columns("Publisher")
         End Sub
@@ -522,9 +522,9 @@ Partial Public Class LMSDataSet
             MyBase.Columns.Add(Me.columnISBN)
             Me.columnAuthors = New Global.System.Data.DataColumn("Authors", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAuthors)
-            Me.columnCopies_Available = New Global.System.Data.DataColumn("Copies Available", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnCopies_Available = New Global.System.Data.DataColumn("Copies_Available", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCopies_Available)
-            Me.columnIssued_to = New Global.System.Data.DataColumn("Issued to", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnIssued_to = New Global.System.Data.DataColumn("Issued_to", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIssued_to)
             Me.columnGenre = New Global.System.Data.DataColumn("Genre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGenre)
@@ -683,13 +683,13 @@ Partial Public Class LMSDataSet
         
         Private columnUsername As Global.System.Data.DataColumn
         
-        Private columnPassword As Global.System.Data.DataColumn
+        Private columnPsswd As Global.System.Data.DataColumn
         
-        Private columnRoll_Number As Global.System.Data.DataColumn
+        Private columnRoll_No As Global.System.Data.DataColumn
         
         Private columnTitle As Global.System.Data.DataColumn
         
-        Private columnAccess_Level As Global.System.Data.DataColumn
+        Private columnAccess As Global.System.Data.DataColumn
         
         Private columnProgram As Global.System.Data.DataColumn
         
@@ -752,17 +752,17 @@ Partial Public Class LMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property PasswordColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property PsswdColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnPassword
+                Return Me.columnPsswd
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Roll_NumberColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Roll_NoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnRoll_Number
+                Return Me.columnRoll_No
             End Get
         End Property
         
@@ -776,9 +776,9 @@ Partial Public Class LMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Access_LevelColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property AccessColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnAccess_Level
+                Return Me.columnAccess
             End Get
         End Property
         
@@ -851,9 +851,9 @@ Partial Public Class LMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddUsersRow(ByVal Username As String, ByVal Password As String, ByVal Roll_Number As Integer, ByVal Title As String, ByVal Access_Level As String, ByVal Program As String, ByVal Department As String, ByVal Book_Limit As Integer, ByVal Books_Issued As String) As UsersRow
+        Public Overloads Function AddUsersRow(ByVal Username As String, ByVal Psswd As String, ByVal Roll_No As Integer, ByVal Title As String, ByVal Access As String, ByVal Program As String, ByVal Department As String, ByVal Book_Limit As Integer, ByVal Books_Issued As String) As UsersRow
             Dim rowUsersRow As UsersRow = CType(Me.NewRow,UsersRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Username, Password, Roll_Number, Title, Access_Level, Program, Department, Book_Limit, Books_Issued}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Username, Psswd, Roll_No, Title, Access, Program, Department, Book_Limit, Books_Issued}
             rowUsersRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowUsersRow)
             Return rowUsersRow
@@ -884,14 +884,14 @@ Partial Public Class LMSDataSet
         Friend Sub InitVars()
             Me.columnID = MyBase.Columns("ID")
             Me.columnUsername = MyBase.Columns("Username")
-            Me.columnPassword = MyBase.Columns("Password")
-            Me.columnRoll_Number = MyBase.Columns("Roll Number")
+            Me.columnPsswd = MyBase.Columns("Psswd")
+            Me.columnRoll_No = MyBase.Columns("Roll_No")
             Me.columnTitle = MyBase.Columns("Title")
-            Me.columnAccess_Level = MyBase.Columns("Access Level")
+            Me.columnAccess = MyBase.Columns("Access")
             Me.columnProgram = MyBase.Columns("Program")
             Me.columnDepartment = MyBase.Columns("Department")
-            Me.columnBook_Limit = MyBase.Columns("Book Limit")
-            Me.columnBooks_Issued = MyBase.Columns("Books Issued")
+            Me.columnBook_Limit = MyBase.Columns("Book_Limit")
+            Me.columnBooks_Issued = MyBase.Columns("Books_Issued")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -901,21 +901,21 @@ Partial Public Class LMSDataSet
             MyBase.Columns.Add(Me.columnID)
             Me.columnUsername = New Global.System.Data.DataColumn("Username", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUsername)
-            Me.columnPassword = New Global.System.Data.DataColumn("Password", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPassword)
-            Me.columnRoll_Number = New Global.System.Data.DataColumn("Roll Number", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnRoll_Number)
+            Me.columnPsswd = New Global.System.Data.DataColumn("Psswd", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPsswd)
+            Me.columnRoll_No = New Global.System.Data.DataColumn("Roll_No", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRoll_No)
             Me.columnTitle = New Global.System.Data.DataColumn("Title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTitle)
-            Me.columnAccess_Level = New Global.System.Data.DataColumn("Access Level", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnAccess_Level)
+            Me.columnAccess = New Global.System.Data.DataColumn("Access", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAccess)
             Me.columnProgram = New Global.System.Data.DataColumn("Program", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnProgram)
             Me.columnDepartment = New Global.System.Data.DataColumn("Department", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDepartment)
-            Me.columnBook_Limit = New Global.System.Data.DataColumn("Book Limit", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnBook_Limit = New Global.System.Data.DataColumn("Book_Limit", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBook_Limit)
-            Me.columnBooks_Issued = New Global.System.Data.DataColumn("Books Issued", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnBooks_Issued = New Global.System.Data.DataColumn("Books_Issued", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBooks_Issued)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AutoIncrement = true
@@ -924,9 +924,9 @@ Partial Public Class LMSDataSet
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
             Me.columnUsername.MaxLength = 255
-            Me.columnPassword.MaxLength = 255
+            Me.columnPsswd.MaxLength = 255
             Me.columnTitle.MaxLength = 255
-            Me.columnAccess_Level.MaxLength = 255
+            Me.columnAccess.MaxLength = 255
             Me.columnProgram.MaxLength = 255
             Me.columnDepartment.MaxLength = 255
             Me.columnBooks_Issued.MaxLength = 536870910
@@ -1137,7 +1137,7 @@ Partial Public Class LMSDataSet
                 Try 
                     Return CType(Me(Me.tableBook.Copies_AvailableColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Copies Available' in table 'Book' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Copies_Available' in table 'Book' is DBNull.", e)
                 End Try
             End Get
             Set
@@ -1152,7 +1152,7 @@ Partial Public Class LMSDataSet
                 Try 
                     Return CType(Me(Me.tableBook.Issued_toColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Issued to' in table 'Book' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Issued_to' in table 'Book' is DBNull.", e)
                 End Try
             End Get
             Set
@@ -1318,31 +1318,31 @@ Partial Public Class LMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Password() As String
+        Public Property Psswd() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUsers.PasswordColumn),String)
+                    Return CType(Me(Me.tableUsers.PsswdColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Password' in table 'Users' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Psswd' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUsers.PasswordColumn) = value
+                Me(Me.tableUsers.PsswdColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Roll_Number() As Integer
+        Public Property Roll_No() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableUsers.Roll_NumberColumn),Integer)
+                    Return CType(Me(Me.tableUsers.Roll_NoColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Roll Number' in table 'Users' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Roll_No' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUsers.Roll_NumberColumn) = value
+                Me(Me.tableUsers.Roll_NoColumn) = value
             End Set
         End Property
         
@@ -1363,16 +1363,16 @@ Partial Public Class LMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Access_Level() As String
+        Public Property Access() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUsers.Access_LevelColumn),String)
+                    Return CType(Me(Me.tableUsers.AccessColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Access Level' in table 'Users' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Access' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUsers.Access_LevelColumn) = value
+                Me(Me.tableUsers.AccessColumn) = value
             End Set
         End Property
         
@@ -1413,7 +1413,7 @@ Partial Public Class LMSDataSet
                 Try 
                     Return CType(Me(Me.tableUsers.Book_LimitColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Book Limit' in table 'Users' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Book_Limit' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
@@ -1428,7 +1428,7 @@ Partial Public Class LMSDataSet
                 Try 
                     Return CType(Me(Me.tableUsers.Books_IssuedColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Books Issued' in table 'Users' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Books_Issued' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
@@ -1450,26 +1450,26 @@ Partial Public Class LMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsPasswordNull() As Boolean
-            Return Me.IsNull(Me.tableUsers.PasswordColumn)
+        Public Function IsPsswdNull() As Boolean
+            Return Me.IsNull(Me.tableUsers.PsswdColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetPasswordNull()
-            Me(Me.tableUsers.PasswordColumn) = Global.System.Convert.DBNull
+        Public Sub SetPsswdNull()
+            Me(Me.tableUsers.PsswdColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsRoll_NumberNull() As Boolean
-            Return Me.IsNull(Me.tableUsers.Roll_NumberColumn)
+        Public Function IsRoll_NoNull() As Boolean
+            Return Me.IsNull(Me.tableUsers.Roll_NoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetRoll_NumberNull()
-            Me(Me.tableUsers.Roll_NumberColumn) = Global.System.Convert.DBNull
+        Public Sub SetRoll_NoNull()
+            Me(Me.tableUsers.Roll_NoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1486,14 +1486,14 @@ Partial Public Class LMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsAccess_LevelNull() As Boolean
-            Return Me.IsNull(Me.tableUsers.Access_LevelColumn)
+        Public Function IsAccessNull() As Boolean
+            Return Me.IsNull(Me.tableUsers.AccessColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetAccess_LevelNull()
-            Me(Me.tableUsers.Access_LevelColumn) = Global.System.Convert.DBNull
+        Public Sub SetAccessNull()
+            Me(Me.tableUsers.AccessColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1751,8 +1751,8 @@ Namespace LMSDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Title", "Title")
             tableMapping.ColumnMappings.Add("ISBN", "ISBN")
             tableMapping.ColumnMappings.Add("Authors", "Authors")
-            tableMapping.ColumnMappings.Add("Copies Available", "Copies Available")
-            tableMapping.ColumnMappings.Add("Issued to", "Issued to")
+            tableMapping.ColumnMappings.Add("Copies_Available", "Copies_Available")
+            tableMapping.ColumnMappings.Add("Issued_to", "Issued_to")
             tableMapping.ColumnMappings.Add("Genre", "Genre")
             tableMapping.ColumnMappings.Add("Publisher", "Publisher")
             Me._adapter.TableMappings.Add(tableMapping)
@@ -1760,8 +1760,8 @@ Namespace LMSDataSetTableAdapters
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Book` WHERE ((`ID` = ?) AND ((? = 1 AND `Title` IS NULL) OR (`Title`"& _ 
                 " = ?)) AND ((? = 1 AND `ISBN` IS NULL) OR (`ISBN` = ?)) AND ((? = 1 AND `Authors"& _ 
-                "` IS NULL) OR (`Authors` = ?)) AND ((? = 1 AND `Copies Available` IS NULL) OR (`"& _ 
-                "Copies Available` = ?)) AND ((? = 1 AND `Genre` IS NULL) OR (`Genre` = ?)) AND ("& _ 
+                "` IS NULL) OR (`Authors` = ?)) AND ((? = 1 AND `Copies_Available` IS NULL) OR (`"& _ 
+                "Copies_Available` = ?)) AND ((? = 1 AND `Genre` IS NULL) OR (`Genre` = ?)) AND ("& _ 
                 "(? = 1 AND `Publisher` IS NULL) OR (`Publisher` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -1771,39 +1771,39 @@ Namespace LMSDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Authors", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Authors", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies_Available", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies_Available", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Genre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Publisher", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Publisher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Book` (`Title`, `ISBN`, `Authors`, `Copies Available`, `Issued to`, "& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Book` (`Title`, `ISBN`, `Authors`, `Copies_Available`, `Issued_to`, "& _ 
                 "`Genre`, `Publisher`) VALUES (?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Authors", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued_to", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies_Available", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued_to", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued_to", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Publisher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `Book` SET `Title` = ?, `ISBN` = ?, `Authors` = ?, `Copies Available` = ?,"& _ 
-                " `Issued to` = ?, `Genre` = ?, `Publisher` = ? WHERE ((`ID` = ?) AND ((? = 1 AND"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Book` SET `Title` = ?, `ISBN` = ?, `Authors` = ?, `Copies_Available` = ?,"& _ 
+                " `Issued_to` = ?, `Genre` = ?, `Publisher` = ? WHERE ((`ID` = ?) AND ((? = 1 AND"& _ 
                 " `Title` IS NULL) OR (`Title` = ?)) AND ((? = 1 AND `ISBN` IS NULL) OR (`ISBN` ="& _ 
                 " ?)) AND ((? = 1 AND `Authors` IS NULL) OR (`Authors` = ?)) AND ((? = 1 AND `Cop"& _ 
-                "ies Available` IS NULL) OR (`Copies Available` = ?)) AND ((? = 1 AND `Genre` IS "& _ 
+                "ies_Available` IS NULL) OR (`Copies_Available` = ?)) AND ((? = 1 AND `Genre` IS "& _ 
                 "NULL) OR (`Genre` = ?)) AND ((? = 1 AND `Publisher` IS NULL) OR (`Publisher` = ?"& _ 
                 ")))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Authors", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued_to", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies_Available", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued_to", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued_to", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Publisher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -1813,8 +1813,8 @@ Namespace LMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Authors", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Authors", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies_Available", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies_Available", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Genre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Publisher", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -1834,8 +1834,8 @@ Namespace LMSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, Title, ISBN, Authors, [Copies Available], [Issued to], Genre, Publishe"& _ 
-                "r FROM Book"
+            Me._commandCollection(0).CommandText = "SELECT ID, Title, ISBN, Authors, Copies_Available, Issued_to, Genre, Publisher FR"& _ 
+                "OM Book"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2237,95 +2237,94 @@ Namespace LMSDataSetTableAdapters
             tableMapping.DataSetTable = "Users"
             tableMapping.ColumnMappings.Add("ID", "ID")
             tableMapping.ColumnMappings.Add("Username", "Username")
-            tableMapping.ColumnMappings.Add("Password", "Password")
-            tableMapping.ColumnMappings.Add("Roll Number", "Roll Number")
+            tableMapping.ColumnMappings.Add("Psswd", "Psswd")
+            tableMapping.ColumnMappings.Add("Roll_No", "Roll_No")
             tableMapping.ColumnMappings.Add("Title", "Title")
-            tableMapping.ColumnMappings.Add("Access Level", "Access Level")
+            tableMapping.ColumnMappings.Add("Access", "Access")
             tableMapping.ColumnMappings.Add("Program", "Program")
             tableMapping.ColumnMappings.Add("Department", "Department")
-            tableMapping.ColumnMappings.Add("Book Limit", "Book Limit")
-            tableMapping.ColumnMappings.Add("Books Issued", "Books Issued")
+            tableMapping.ColumnMappings.Add("Book_Limit", "Book_Limit")
+            tableMapping.ColumnMappings.Add("Books_Issued", "Books_Issued")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Users` WHERE ((`ID` = ?) AND ((? = 1 AND `Username` IS NULL) OR (`Us"& _ 
-                "ername` = ?)) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = ?)) AND ((? ="& _ 
-                " 1 AND `Roll Number` IS NULL) OR (`Roll Number` = ?)) AND ((? = 1 AND `Title` IS"& _ 
-                " NULL) OR (`Title` = ?)) AND ((? = 1 AND `Access Level` IS NULL) OR (`Access Lev"& _ 
-                "el` = ?)) AND ((? = 1 AND `Program` IS NULL) OR (`Program` = ?)) AND ((? = 1 AND"& _ 
-                " `Department` IS NULL) OR (`Department` = ?)) AND ((? = 1 AND `Book Limit` IS NU"& _ 
-                "LL) OR (`Book Limit` = ?)))"
+                "ername` = ?)) AND ((? = 1 AND `Psswd` IS NULL) OR (`Psswd` = ?)) AND ((? = 1 AND"& _ 
+                " `Roll_No` IS NULL) OR (`Roll_No` = ?)) AND ((? = 1 AND `Title` IS NULL) OR (`Ti"& _ 
+                "tle` = ?)) AND ((? = 1 AND `Access` IS NULL) OR (`Access` = ?)) AND ((? = 1 AND "& _ 
+                "`Program` IS NULL) OR (`Program` = ?)) AND ((? = 1 AND `Department` IS NULL) OR "& _ 
+                "(`Department` = ?)) AND ((? = 1 AND `Book_Limit` IS NULL) OR (`Book_Limit` = ?))"& _ 
+                ")"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Password", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Roll_Number", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll Number", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Roll_Number", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll Number", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Psswd", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Psswd", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Psswd", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Psswd", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Roll_No", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll_No", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Roll_No", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll_No", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Title", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Access_Level", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access Level", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Access_Level", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access Level", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Access", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Access", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Program", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Program", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Program", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Program", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Department", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book_Limit", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book_Limit", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Users` (`Username`, `Password`, `Roll Number`, `Title`, `Access Leve"& _ 
-                "l`, `Program`, `Department`, `Book Limit`, `Books Issued`) VALUES (?, ?, ?, ?, ?"& _ 
-                ", ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Users` (`Username`, `Psswd`, `Roll_No`, `Title`, `Access`, `Program`"& _ 
+                ", `Department`, `Book_Limit`, `Books_Issued`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"& _ 
+                ""
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Roll_Number", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll Number", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Psswd", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Psswd", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Roll_No", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll_No", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Access_Level", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access Level", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Access", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Program", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Program", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Books_Issued", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Books Issued", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book_Limit", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Books_Issued", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Books_Issued", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `Users` SET `Username` = ?, `Password` = ?, `Roll Number` = ?, `Title` = ?"& _ 
-                ", `Access Level` = ?, `Program` = ?, `Department` = ?, `Book Limit` = ?, `Books "& _ 
-                "Issued` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Username` IS NULL) OR (`Username`"& _ 
-                " = ?)) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = ?)) AND ((? = 1 AND "& _ 
-                "`Roll Number` IS NULL) OR (`Roll Number` = ?)) AND ((? = 1 AND `Title` IS NULL) "& _ 
-                "OR (`Title` = ?)) AND ((? = 1 AND `Access Level` IS NULL) OR (`Access Level` = ?"& _ 
-                ")) AND ((? = 1 AND `Program` IS NULL) OR (`Program` = ?)) AND ((? = 1 AND `Depar"& _ 
-                "tment` IS NULL) OR (`Department` = ?)) AND ((? = 1 AND `Book Limit` IS NULL) OR "& _ 
-                "(`Book Limit` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Users` SET `Username` = ?, `Psswd` = ?, `Roll_No` = ?, `Title` = ?, `Acce"& _ 
+                "ss` = ?, `Program` = ?, `Department` = ?, `Book_Limit` = ?, `Books_Issued` = ? W"& _ 
+                "HERE ((`ID` = ?) AND ((? = 1 AND `Username` IS NULL) OR (`Username` = ?)) AND (("& _ 
+                "? = 1 AND `Psswd` IS NULL) OR (`Psswd` = ?)) AND ((? = 1 AND `Roll_No` IS NULL) "& _ 
+                "OR (`Roll_No` = ?)) AND ((? = 1 AND `Title` IS NULL) OR (`Title` = ?)) AND ((? ="& _ 
+                " 1 AND `Access` IS NULL) OR (`Access` = ?)) AND ((? = 1 AND `Program` IS NULL) O"& _ 
+                "R (`Program` = ?)) AND ((? = 1 AND `Department` IS NULL) OR (`Department` = ?)) "& _ 
+                "AND ((? = 1 AND `Book_Limit` IS NULL) OR (`Book_Limit` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Roll_Number", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll Number", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Psswd", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Psswd", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Roll_No", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll_No", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Access_Level", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access Level", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Access", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Program", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Program", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Books_Issued", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Books Issued", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book_Limit", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Books_Issued", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Books_Issued", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Password", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Roll_Number", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll Number", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Roll_Number", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll Number", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Psswd", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Psswd", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Psswd", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Psswd", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Roll_No", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll_No", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Roll_No", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Roll_No", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Title", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Access_Level", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access Level", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Access_Level", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access Level", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Access", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Access", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Program", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Program", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Program", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Program", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Department", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book_Limit", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book_Limit", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2341,8 +2340,8 @@ Namespace LMSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, Username, [Password], [Roll Number], Title, [Access Level], Program, D"& _ 
-                "epartment, [Book Limit], [Books Issued] FROM Users"
+            Me._commandCollection(0).CommandText = "SELECT ID, Username, Psswd, Roll_No, Title, Access, Program, Department, Book_Lim"& _ 
+                "it, Books_Issued FROM Users"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2402,7 +2401,7 @@ Namespace LMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Username As String, ByVal Original_Password As String, ByVal Original_Roll_Number As Global.System.Nullable(Of Integer), ByVal Original_Title As String, ByVal Original_Access_Level As String, ByVal Original_Program As String, ByVal Original_Department As String, ByVal Original_Book_Limit As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Username As String, ByVal Original_Psswd As String, ByVal Original_Roll_No As Global.System.Nullable(Of Integer), ByVal Original_Title As String, ByVal Original_Access As String, ByVal Original_Program As String, ByVal Original_Department As String, ByVal Original_Book_Limit As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
             If (Original_Username Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -2411,16 +2410,16 @@ Namespace LMSDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Username,String)
             End If
-            If (Original_Password Is Nothing) Then
+            If (Original_Psswd Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Password,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Psswd,String)
             End If
-            If (Original_Roll_Number.HasValue = true) Then
+            If (Original_Roll_No.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Roll_Number.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Roll_No.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -2432,12 +2431,12 @@ Namespace LMSDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Title,String)
             End If
-            If (Original_Access_Level Is Nothing) Then
+            If (Original_Access Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Access_Level,String)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Access,String)
             End If
             If (Original_Program Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
@@ -2479,19 +2478,19 @@ Namespace LMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Username As String, ByVal Password As String, ByVal Roll_Number As Global.System.Nullable(Of Integer), ByVal Title As String, ByVal Access_Level As String, ByVal Program As String, ByVal Department As String, ByVal Book_Limit As Global.System.Nullable(Of Integer), ByVal Books_Issued As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Username As String, ByVal Psswd As String, ByVal Roll_No As Global.System.Nullable(Of Integer), ByVal Title As String, ByVal Access As String, ByVal Program As String, ByVal Department As String, ByVal Book_Limit As Global.System.Nullable(Of Integer), ByVal Books_Issued As String) As Integer
             If (Username Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Username,String)
             End If
-            If (Password Is Nothing) Then
+            If (Psswd Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Password,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Psswd,String)
             End If
-            If (Roll_Number.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Roll_Number.Value,Integer)
+            If (Roll_No.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Roll_No.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
@@ -2500,10 +2499,10 @@ Namespace LMSDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(Title,String)
             End If
-            If (Access_Level Is Nothing) Then
+            If (Access Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Access_Level,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Access,String)
             End If
             If (Program Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -2546,20 +2545,20 @@ Namespace LMSDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
                     ByVal Username As String,  _
-                    ByVal Password As String,  _
-                    ByVal Roll_Number As Global.System.Nullable(Of Integer),  _
+                    ByVal Psswd As String,  _
+                    ByVal Roll_No As Global.System.Nullable(Of Integer),  _
                     ByVal Title As String,  _
-                    ByVal Access_Level As String,  _
+                    ByVal Access As String,  _
                     ByVal Program As String,  _
                     ByVal Department As String,  _
                     ByVal Book_Limit As Global.System.Nullable(Of Integer),  _
                     ByVal Books_Issued As String,  _
                     ByVal Original_ID As Integer,  _
                     ByVal Original_Username As String,  _
-                    ByVal Original_Password As String,  _
-                    ByVal Original_Roll_Number As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_Psswd As String,  _
+                    ByVal Original_Roll_No As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Title As String,  _
-                    ByVal Original_Access_Level As String,  _
+                    ByVal Original_Access As String,  _
                     ByVal Original_Program As String,  _
                     ByVal Original_Department As String,  _
                     ByVal Original_Book_Limit As Global.System.Nullable(Of Integer)) As Integer
@@ -2568,13 +2567,13 @@ Namespace LMSDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Username,String)
             End If
-            If (Password Is Nothing) Then
+            If (Psswd Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Password,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Psswd,String)
             End If
-            If (Roll_Number.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Roll_Number.Value,Integer)
+            If (Roll_No.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Roll_No.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
@@ -2583,10 +2582,10 @@ Namespace LMSDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Title,String)
             End If
-            If (Access_Level Is Nothing) Then
+            If (Access Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Access_Level,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Access,String)
             End If
             If (Program Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -2616,16 +2615,16 @@ Namespace LMSDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Username,String)
             End If
-            If (Original_Password Is Nothing) Then
+            If (Original_Psswd Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Password,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Psswd,String)
             End If
-            If (Original_Roll_Number.HasValue = true) Then
+            If (Original_Roll_No.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Roll_Number.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Roll_No.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
@@ -2637,12 +2636,12 @@ Namespace LMSDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Title,String)
             End If
-            If (Original_Access_Level Is Nothing) Then
+            If (Original_Access Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Access_Level,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Access,String)
             End If
             If (Original_Program Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)

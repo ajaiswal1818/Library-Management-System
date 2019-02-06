@@ -1,5 +1,7 @@
 ﻿Public Class NewLogin
 
+    Dim BookLimit As Integer
+
     Private Access As New LMS
 
     Private Sub NewLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -56,6 +58,8 @@
         If cmbStf.SelectedItem = "Faculty" Then
             cmbDisc.Items.Clear()
             cmbDisc.Items.Add("Staff")
+            BookLimit = 7
+
         ElseIf cmbStf.SelectedItem = "Student" Then
             cmbDisc.Items.Clear()
             cmbDisc.Items.Add("B.Tech")
@@ -65,6 +69,7 @@
             cmbDisc.Items.Add("MA")
             cmbDisc.Items.Add("PhD")
             cmbDisc.Items.Add("PostDoc")
+            BookLimit = 5
         End If
     End Sub
 
@@ -91,7 +96,9 @@
     End Sub
 
     Private Sub AddUser()
-        Dim insert As String = "Insert into Users (Username, Title) values ('" & txtMail.Text & "','" & txtName.Text & "')"
+
+
+        Dim insert As String = "Insert into Users (Username, Psswd, Roll_No, Title, Access, Program, Department, Book_Limit) values ('" & txtMail.Text & "','" & txtPass.Text & "','" & txtRoll.Text & "','" & txtName.Text & "','" & cmbStf.SelectedItem & "','" & cmbDisc.SelectedItem & "','" & cmbDept.SelectedItem & "','" & BookLimit & "')"
         Access.ExecQuery(insert)
         'Access.AddParam("@title", txtName.Text)
         'Access.AddParam("@roll", txtRoll.Text)
