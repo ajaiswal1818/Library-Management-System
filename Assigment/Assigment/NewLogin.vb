@@ -91,11 +91,15 @@
     End Sub
 
     Private Sub AddUser()
-        Dim insert As String = "Insert into User values('" & txtName.Text & "','" & txtPass.Text & "');"
+        Dim insert As String = "Insert into Users (Username, Title) values ('" & txtMail.Text & "','" & txtName.Text & "')"
         Access.ExecQuery(insert)
-        'Access.AddParam("@user", txtName.Text)
+        'Access.AddParam("@title", txtName.Text)
         'Access.AddParam("@roll", txtRoll.Text)
-        'Access.AddParam("@", txtRoll.Text)
+        'Access.AddParam("@user", txtMail.Text)
 
+        'Access.ExecQuery("INSERT into Users (Username, Roll Number, Title)" & _
+        '                 "VALUES (@user, @roll, @title)")
+        'Console.WriteLine("INSERT into Users (Username, Roll Number, Title)" & _
+        '                 "VALUES (@user, @roll, @title)")
     End Sub
 End Class
