@@ -1,5 +1,8 @@
 ﻿Public Class NewLogin
 
+    Public CurUser As String = ""
+
+
     Dim BookLimit As Integer
 
     Private Access As New LMS
@@ -81,15 +84,19 @@
         If txtName.Text = "" Or txtRoll.Text = "" Or txtPass.Text = "" Or txtConf.Text = "" Or txtMail.Text = "" Or cmbDept.SelectedItem = "" Or cmbDisc.SelectedItem = "" Or cmbStf.SelectedItem = "" Then
             MessageBox.Show("Please enter all fields!", "Error")
             Console.Write("Error: Field left empty")
+            Exit Sub
         ElseIf Access.DBDT.Rows.Count <> 0 Then
             MessageBox.Show("Webmail already exists!", "Error")
             Console.Write("Error: Webmail already exists")
+            Exit Sub
         ElseIf txtPass.Text <> txtConf.Text Then
             MessageBox.Show("Passwords do not match", "Error")
             Console.Write("Error: Passwords do not match")
+            Exit Sub
         ElseIf IsNumeric(txtRoll) <> False Then
             MessageBox.Show("Roll number not numeric", "Error")
             Console.Write("Error: Roll number not numeric")
+            Exit Sub
         End If
 
         AddUser()
@@ -97,8 +104,8 @@
 
     Private Sub AddUser()
 
-
-        Dim insert As String = "Insert into Users (Username, Psswd, Roll_No, Title, Access, Program, Department, Book_Limit) values ('" & txtMail.Text & "','" & txtPass.Text & "','" & txtRoll.Text & "','" & txtName.Text & "','" & cmbStf.SelectedItem & "','" & cmbDisc.SelectedItem & "','" & cmbDept.SelectedItem & "','" & BookLimit & "')"
+        Dim tmp As String = "|"
+        Dim insert As String = "Insert into Users (Username, Psswd, Roll_No, Title, Access, Program, Department, Book_Limit, Books_Issued) values ('" & txtMail.Text & "','" & txtPass.Text & "'," & txtRoll.Text & ",'" & txtName.Text & "','" & cmbStf.SelectedItem & "','" & cmbDisc.SelectedItem & "','" & cmbDept.SelectedItem & "'," & BookLimit & ",'" & tmp & "')"
         Access.ExecQuery(insert)
         'Access.AddParam("@title", txtName.Text)
         'Access.AddParam("@roll", txtRoll.Text)

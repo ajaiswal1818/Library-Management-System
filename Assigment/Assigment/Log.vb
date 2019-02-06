@@ -1,14 +1,15 @@
 ﻿Public Class Log
 
-    Public CurUser As String = ""
-    Public CurPass As String = ""
-    Public CurRoll As Integer = 0
-    Public CurName As String = ""
-    Public CurAccess As String = ""
-    Public CurProg As String = ""
-    Public CurDept As String = ""
-    Public CurBkLimit As Integer = 0
-    Public CurBooks As String = ""
+    Public Shared CurID As Integer = 0
+    Public Shared CurUser As String = ""
+    Public Shared CurPass As String = ""
+    Public Shared CurRoll As Integer = 0
+    Public Shared CurName As String = ""
+    Public Shared CurAccess As String = ""
+    Public Shared CurProg As String = ""
+    Public Shared CurDept As String = ""
+    Public Shared CurBkLimit As Integer = 0
+    Public Shared CurBooks As String = ""
 
     Private Access As New LMS
 
@@ -35,6 +36,7 @@
             Exit Sub
         End If
 
+        CurID = Access.DBDT.Rows(0).Item(0)
         CurUser = Access.DBDT.Rows(0).Item(1)
         CurPass = Access.DBDT.Rows(0).Item(2)
         CurRoll = Access.DBDT.Rows(0).Item(3)

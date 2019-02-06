@@ -4,6 +4,9 @@
     Private Access As New LMS
     Private Sub Search_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblSrch1.Hide()
+        btnSrch1.Hide()
+        AddHandler btnSrch1.Click, AddressOf Me.Button_Click
+
         cbxSrch.AllowDrop() = True
         cbxSrch.Items.Add("Title")
         cbxSrch.Items.Add("ISBN")
@@ -61,9 +64,11 @@
         If Access.DBDT.Rows.Count = 0 Then
             Dim Op1 As String = "Sorry: No results match your search"
             lblSrch1.Text = Op1
+            btnSrch1.Hide()
             Exit Sub
         End If
 
+        btnSrch1.Show()
         For Each R As DataRow In Access.DBDT.Rows
             cnt += 1
             Dim Op1 As String = ""
@@ -76,16 +81,18 @@
 
             If cnt = 1 Then
                 lblSrch1.Font = New Font("Century Gothic", 7)
+                btnSrch1.Font = New Font("Century Gothic", 7)
+                btnSrch1.DialogResult = R.Item(0)
                 lblSrch1.Text = Op1
             Else
-                DynamicLabel(cnt, Op1)
+                DynamicLabel(cnt, Op1, R)
             End If
         Next
 
         dgvSrch.DataSource = Access.DBDT
     End Sub
 
-    Private Sub DynamicLabel(i As Integer, txt As String)
+    Private Sub DynamicLabel(i As Integer, txt As String, R As DataRow)
         'MessageBox.Show("Hello")
         Dim lblName As String
         lblName = "lblSrch" & CStr(i)
@@ -103,12 +110,75 @@
         Me.Controls.Add(lbl1)
         lbl1.Location = New Point(lblSrch1.Location.X, yt)
 
+        Dim btnName As String
+        btnName = "btnSrch" & CStr(i)
+        Dim yb As Integer = btnSrch1.Location.Y + 120 * (i - 1)
+        Dim btn1 As New Button
+        btn1.Font = New Font("Century Gothic", 7)
+        btn1.Name = btnName
+        btn1.Text = "Issue Now!"
+        btn1.Height = btnSrch1.Height
+        btn1.Width = btnSrch1.Width
+        'btn1.Margin = New Padding(10, 10, 10, 10)
+        Me.Controls.Add(btn1)
+        btn1.Location = New Point(btnSrch1.Location.X, yb)
+        btn1.DialogResult = R.Item(0)
+        AddHandler btn1.Click, AddressOf Me.Button_Click
+
+    End Sub
+
+    Private Sub Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim selectedBtn As Button = sender
+        'MessageBox.Show("you have clicked button " & selectedBtn.DialogResult)
+        If Log.CurUser = "" Then
+            MessageBox.Show("You are currently not logged in! Please log in to issue books!")
+            Console.WriteLine("Error in Issuing: Not logged in")
+            Exit Sub
+        End If
+        If Log.CurBkLimit <= 0 Then
+            MessageBox.Show("You cannot issue any more books!")
+            Console.WriteLine("User book limit reached")
+            Exit Sub
+        End If
+        'MessageBox.Show(selectedBtn.DialogResult)
+        Dim IDFind As Integer = CInt(selectedBtn.DialogResult)
+        Access.ExecQuery("SELECT * FROM Book where [ID] = " & IDFind)
+        If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
+        If Access.DBDT.Rows.Count = 0 Or Access.DBDT.Rows.Count > 1 Then
+            MessageBox.Show("Book to be issued not found")
+            Console.WriteLine("Book to be issued not found")
+            Exit Sub
+        End If
+        If Access.DBDT.Rows(0).Item(4) <= 0 Then
+            MessageBox.Show("All book copies issued")
+            Console.WriteLine("All book copies issued")
+            Exit Sub
+        End If
+        Dim BkID As Integer = Access.DBDT.Rows(0).Item(0)
+        Dim BkCnt As Integer = Access.DBDT.Rows(0).Item(4) - 1
+        Dim BkIss As String = Access.DBDT.Rows(0).Item(5)
+        BkIss &= CStr(Log.CurID) & " "
+
+
+        Access.ExecQuery("Update Book set Copies_Available=" & BkCnt & ", Issued_to='" & BkIss & "'")
+        If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
+
+
+        Log.CurBkLimit -= 1
+        Log.CurBooks &= CStr(BkID) & " "
+        Try
+            Access.ExecQuery("Update Users set Book_Limit=" & Log.CurBkLimit & ", Books_Issued='" & Log.CurBooks & "'")
+        Catch ex As Exception
+            MessageBox.Show("LOL!")
+        End Try
+
     End Sub
 
     Private Sub Clr()
         lblSrch1.Text = ""
         For i As Integer = 2 To cnt
             Me.Controls.Remove(Me.Controls.Find("lblSrch" & CStr(i), True)(0))
+            Me.Controls.Remove(Me.Controls.Find("btnSrch" & CStr(i), True)(0))
         Next
         cnt = 0
     End Sub
