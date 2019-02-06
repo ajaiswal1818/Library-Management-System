@@ -160,14 +160,14 @@
         BkIss &= CStr(Log.CurID) & " "
 
 
-        Access.ExecQuery("Update Book set Copies_Available=" & BkCnt & ", Issued_to='" & BkIss & "'")
+        Access.ExecQuery("Update Book set Copies_Available=" & BkCnt & ", Issued_to='" & BkIss & "' where [ID]=" & BkID)
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
 
         Log.CurBkLimit -= 1
         Log.CurBooks &= CStr(BkID) & " "
         Try
-            Access.ExecQuery("Update Users set Book_Limit=" & Log.CurBkLimit & ", Books_Issued='" & Log.CurBooks & "'")
+            Access.ExecQuery("Update Users set Book_Limit=" & Log.CurBkLimit & ", Books_Issued='" & Log.CurBooks & "' where [ID]=" & Log.CurID)
         Catch ex As Exception
             MessageBox.Show("LOL!")
         End Try
