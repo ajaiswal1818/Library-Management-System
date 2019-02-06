@@ -79,7 +79,7 @@
         ElseIf Access.DBDT.Rows.Count <> 0 Then
             MessageBox.Show("Webmail already exists!", "Error")
             Console.Write("Error: Webmail already exists")
-        ElseIf txtPass.Text = txtConf.Text Then
+        ElseIf txtPass.Text <> txtConf.Text Then
             MessageBox.Show("Passwords do not match", "Error")
             Console.Write("Error: Passwords do not match")
         ElseIf IsNumeric(txtRoll) = False Then
@@ -91,6 +91,8 @@
     End Sub
 
     Private Sub AddUser()
+        Dim insert As String = "Insert into User values('" & txtName.Text & "','" & txtPass.Text & "');"
+        Access.ExecQuery(insert)
         'Access.AddParam("@user", txtName.Text)
         'Access.AddParam("@roll", txtRoll.Text)
         'Access.AddParam("@", txtRoll.Text)
