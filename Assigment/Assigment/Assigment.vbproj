@@ -75,6 +75,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BooksIssued.Designer.vb">
+      <DependentUpon>BooksIssued.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BooksIssued.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChngPass.Designer.vb">
+      <DependentUpon>ChngPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChngPass.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="CurProfile.Designer.vb">
       <DependentUpon>CurProfile.vb</DependentUpon>
     </Compile>
@@ -141,6 +153,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BooksIssued.resx">
+      <DependentUpon>BooksIssued.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChngPass.resx">
+      <DependentUpon>ChngPass.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CurProfile.resx">
       <DependentUpon>CurProfile.vb</DependentUpon>
     </EmbeddedResource>
