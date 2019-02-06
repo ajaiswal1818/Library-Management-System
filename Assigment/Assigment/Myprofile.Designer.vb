@@ -24,154 +24,92 @@ Partial Class Myprofile
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Myprofile))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.SidePanel = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Arrow = New System.Windows.Forms.PictureBox()
+        Me.btnPasschange = New System.Windows.Forms.Button()
+        Me.btnItems = New System.Windows.Forms.Button()
+        Me.btnmyprofile = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Arrow, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Snow
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.SidePanel)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Controls.Add(Me.Arrow)
+        Me.Panel1.Controls.Add(Me.btnPasschange)
+        Me.Panel1.Controls.Add(Me.btnItems)
+        Me.Panel1.Controls.Add(Me.btnmyprofile)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(172, 768)
+        Me.Panel1.Size = New System.Drawing.Size(129, 340)
         Me.Panel1.TabIndex = 1
         '
-        'Button3
+        'Arrow
         '
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(13, 353)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(148, 55)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Change Password"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Arrow.Image = CType(resources.GetObject("Arrow.Image"), System.Drawing.Image)
+        Me.Arrow.Location = New System.Drawing.Point(12, 15)
+        Me.Arrow.Name = "Arrow"
+        Me.Arrow.Size = New System.Drawing.Size(25, 18)
+        Me.Arrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Arrow.TabIndex = 6
+        Me.Arrow.TabStop = False
+        Me.Arrow.Visible = False
         '
-        'Button2
+        'btnPasschange
         '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(13, 272)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(148, 57)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Items Checked out"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnPasschange.FlatAppearance.BorderSize = 0
+        Me.btnPasschange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPasschange.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPasschange.ForeColor = System.Drawing.Color.Black
+        Me.btnPasschange.Location = New System.Drawing.Point(39, 109)
+        Me.btnPasschange.Name = "btnPasschange"
+        Me.btnPasschange.Size = New System.Drawing.Size(87, 47)
+        Me.btnPasschange.TabIndex = 5
+        Me.btnPasschange.Text = "Change Password"
+        Me.btnPasschange.UseVisualStyleBackColor = True
         '
-        'SidePanel
+        'btnItems
         '
-        Me.SidePanel.BackColor = System.Drawing.Color.MidnightBlue
-        Me.SidePanel.Location = New System.Drawing.Point(4, 190)
-        Me.SidePanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.SidePanel.Name = "SidePanel"
-        Me.SidePanel.Size = New System.Drawing.Size(13, 47)
-        Me.SidePanel.TabIndex = 3
+        Me.btnItems.FlatAppearance.BorderSize = 0
+        Me.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnItems.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnItems.ForeColor = System.Drawing.Color.Black
+        Me.btnItems.Location = New System.Drawing.Point(40, 56)
+        Me.btnItems.Name = "btnItems"
+        Me.btnItems.Size = New System.Drawing.Size(87, 47)
+        Me.btnItems.TabIndex = 4
+        Me.btnItems.Text = "Items Checked out"
+        Me.btnItems.UseVisualStyleBackColor = True
         '
-        'Panel2
+        'btnmyprofile
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Snow
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.PictureBox1)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(4, 4)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(164, 161)
-        Me.Panel2.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(40, 22)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 22)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Library"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 53)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(156, 108)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(4, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(131, 23)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "IIT Guwahati"
-        '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(20, 190)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(148, 58)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "My Profile"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnmyprofile.FlatAppearance.BorderSize = 0
+        Me.btnmyprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmyprofile.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnmyprofile.ForeColor = System.Drawing.Color.Black
+        Me.btnmyprofile.Location = New System.Drawing.Point(40, 3)
+        Me.btnmyprofile.Name = "btnmyprofile"
+        Me.btnmyprofile.Size = New System.Drawing.Size(87, 47)
+        Me.btnmyprofile.TabIndex = 0
+        Me.btnmyprofile.Text = "My Profile"
+        Me.btnmyprofile.UseVisualStyleBackColor = True
         '
         'Myprofile
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Myprofile"
-        Me.Size = New System.Drawing.Size(173, 768)
+        Me.Size = New System.Drawing.Size(130, 624)
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Arrow, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents SidePanel As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnPasschange As System.Windows.Forms.Button
+    Friend WithEvents btnItems As System.Windows.Forms.Button
+    Friend WithEvents btnmyprofile As System.Windows.Forms.Button
+    Friend WithEvents Arrow As System.Windows.Forms.PictureBox
 
 End Class

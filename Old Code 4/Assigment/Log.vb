@@ -27,7 +27,7 @@
             Exit Sub
         End If
 
-        Access.ExecQuery("SELECT * FROM Users WHERE Username = '" & txtUser.Text & "' AND Psswd = '" & txtPass.Text & "'")
+        Access.ExecQuery("SELECT * FROM Users WHERE Username = '" & txtUser.Text & "' AND Password = '" & txtPass.Text & "'")
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
         If Access.DBDT.Rows.Count = 0 Then
@@ -46,17 +46,16 @@
         CurBooks = Access.DBDT.Rows(0).Item(9)
 
         Form1.Panel4.Visible = True
+        Form1.Panel1.Visible = False
         Form1.Log1.Visible = False
-        Form1.Myprofile.Visible = True
-        Form1.Search1.Visible = True
-
+        Form1.MyprofileSidePanel.Visible = True
     End Sub
 
     Private Sub Sign_Click(sender As Object, e As EventArgs) Handles Sign_up.Click
         Form1.NewLogin.Visible = True
         Form1.Panel4.Visible = False
         Form1.Log1.Visible = False
-        Form1.Myprofile.Visible = False
+        Form1.MyprofileSidePanel.Visible = False
 
     End Sub
 

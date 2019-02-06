@@ -26,8 +26,6 @@
         EBooks1.Visible = False
         Search1.Visible = True
         Log1.Visible = False
-
-
     End Sub
 
 
@@ -43,9 +41,8 @@
     Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
         Panel4.Visible = False
         Panel1.Visible = True
-        Myprofile.Visible = False
-        Search1.Visible = True
-        Myprofile.Arrow.Visible = False
+        MyprofileSidePanel.Visible = False
+
 
 
     End Sub
@@ -61,4 +58,5 @@
     Private Sub Log1_Load_1(sender As Object, e As EventArgs) Handles Log1.Load
 
     End Sub
+
 End Class
