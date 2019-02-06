@@ -82,7 +82,7 @@
         ElseIf txtPass.Text <> txtConf.Text Then
             MessageBox.Show("Passwords do not match", "Error")
             Console.Write("Error: Passwords do not match")
-        ElseIf IsNumeric(txtRoll) = False Then
+        ElseIf IsNumeric(txtRoll) <> False Then
             MessageBox.Show("Roll number not numeric", "Error")
             Console.Write("Error: Roll number not numeric")
         End If
