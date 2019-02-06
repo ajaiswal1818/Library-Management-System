@@ -47,8 +47,9 @@ Partial Class Myprofile
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(129, 432)
+        Me.Panel1.Size = New System.Drawing.Size(172, 768)
         Me.Panel1.TabIndex = 1
         '
         'Button3
@@ -57,9 +58,10 @@ Partial Class Myprofile
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(10, 287)
+        Me.Button3.Location = New System.Drawing.Point(13, 353)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(111, 45)
+        Me.Button3.Size = New System.Drawing.Size(148, 55)
         Me.Button3.TabIndex = 5
         Me.Button3.Text = "Change Password"
         Me.Button3.UseVisualStyleBackColor = True
@@ -70,9 +72,10 @@ Partial Class Myprofile
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(10, 221)
+        Me.Button2.Location = New System.Drawing.Point(13, 272)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(111, 46)
+        Me.Button2.Size = New System.Drawing.Size(148, 57)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Items Checked out"
         Me.Button2.UseVisualStyleBackColor = True
@@ -80,9 +83,10 @@ Partial Class Myprofile
         'SidePanel
         '
         Me.SidePanel.BackColor = System.Drawing.Color.MidnightBlue
-        Me.SidePanel.Location = New System.Drawing.Point(3, 154)
+        Me.SidePanel.Location = New System.Drawing.Point(4, 190)
+        Me.SidePanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SidePanel.Name = "SidePanel"
-        Me.SidePanel.Size = New System.Drawing.Size(10, 38)
+        Me.SidePanel.Size = New System.Drawing.Size(13, 47)
         Me.SidePanel.TabIndex = 3
         '
         'Panel2
@@ -91,27 +95,30 @@ Partial Class Myprofile
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.PictureBox1)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(3, 3)
+        Me.Panel2.Location = New System.Drawing.Point(4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(123, 131)
+        Me.Panel2.Size = New System.Drawing.Size(164, 161)
         Me.Panel2.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(30, 18)
+        Me.Label2.Location = New System.Drawing.Point(40, 22)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 20)
+        Me.Label2.Size = New System.Drawing.Size(71, 22)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Library"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 43)
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 53)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(117, 88)
+        Me.PictureBox1.Size = New System.Drawing.Size(156, 108)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -121,9 +128,10 @@ Partial Class Myprofile
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Location = New System.Drawing.Point(4, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(112, 21)
+        Me.Label1.Size = New System.Drawing.Size(131, 23)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "IIT Guwahati"
         '
@@ -133,20 +141,22 @@ Partial Class Myprofile
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(15, 154)
+        Me.Button1.Location = New System.Drawing.Point(20, 190)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 47)
+        Me.Button1.Size = New System.Drawing.Size(148, 58)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "My Profile"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Myprofile
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Myprofile"
-        Me.Size = New System.Drawing.Size(130, 432)
+        Me.Size = New System.Drawing.Size(173, 768)
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

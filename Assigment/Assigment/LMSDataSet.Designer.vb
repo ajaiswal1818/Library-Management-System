@@ -20,16 +20,14 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("Library_Management_SystemDataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("LMSDataSet"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class Library_Management_SystemDataSet
+Partial Public Class LMSDataSet
     Inherits Global.System.Data.DataSet
     
     Private tableBook As BookDataTable
     
-    Private tableUser As UserDataTable
-    
-    Private relationUserBook As Global.System.Data.DataRelation
+    Private tableUsers As UsersDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -63,8 +61,8 @@ Partial Public Class Library_Management_SystemDataSet
             If (Not (ds.Tables("Book")) Is Nothing) Then
                 MyBase.Tables.Add(New BookDataTable(ds.Tables("Book")))
             End If
-            If (Not (ds.Tables("User")) Is Nothing) Then
-                MyBase.Tables.Add(New UserDataTable(ds.Tables("User")))
+            If (Not (ds.Tables("Users")) Is Nothing) Then
+                MyBase.Tables.Add(New UsersDataTable(ds.Tables("Users")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -97,9 +95,9 @@ Partial Public Class Library_Management_SystemDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property User() As UserDataTable
+    Public ReadOnly Property Users() As UsersDataTable
         Get
-            Return Me.tableUser
+            Return Me.tableUsers
         End Get
     End Property
     
@@ -145,7 +143,7 @@ Partial Public Class Library_Management_SystemDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As Library_Management_SystemDataSet = CType(MyBase.Clone,Library_Management_SystemDataSet)
+        Dim cln As LMSDataSet = CType(MyBase.Clone,LMSDataSet)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -173,8 +171,8 @@ Partial Public Class Library_Management_SystemDataSet
             If (Not (ds.Tables("Book")) Is Nothing) Then
                 MyBase.Tables.Add(New BookDataTable(ds.Tables("Book")))
             End If
-            If (Not (ds.Tables("User")) Is Nothing) Then
-                MyBase.Tables.Add(New UserDataTable(ds.Tables("User")))
+            If (Not (ds.Tables("Users")) Is Nothing) Then
+                MyBase.Tables.Add(New UsersDataTable(ds.Tables("Users")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -214,29 +212,26 @@ Partial Public Class Library_Management_SystemDataSet
                 Me.tableBook.InitVars
             End If
         End If
-        Me.tableUser = CType(MyBase.Tables("User"),UserDataTable)
+        Me.tableUsers = CType(MyBase.Tables("Users"),UsersDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableUser) Is Nothing) Then
-                Me.tableUser.InitVars
+            If (Not (Me.tableUsers) Is Nothing) Then
+                Me.tableUsers.InitVars
             End If
         End If
-        Me.relationUserBook = Me.Relations("UserBook")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "Library_Management_SystemDataSet"
+        Me.DataSetName = "LMSDataSet"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/Library_Management_SystemDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/LMSDataSet.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableBook = New BookDataTable()
         MyBase.Tables.Add(Me.tableBook)
-        Me.tableUser = New UserDataTable()
-        MyBase.Tables.Add(Me.tableUser)
-        Me.relationUserBook = New Global.System.Data.DataRelation("UserBook", New Global.System.Data.DataColumn() {Me.tableUser.IDColumn}, New Global.System.Data.DataColumn() {Me.tableBook.Issued_toColumn}, false)
-        Me.Relations.Add(Me.relationUserBook)
+        Me.tableUsers = New UsersDataTable()
+        MyBase.Tables.Add(Me.tableUsers)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -247,7 +242,7 @@ Partial Public Class Library_Management_SystemDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeUser() As Boolean
+    Private Function ShouldSerializeUsers() As Boolean
         Return false
     End Function
     
@@ -262,7 +257,7 @@ Partial Public Class Library_Management_SystemDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As Library_Management_SystemDataSet = New Library_Management_SystemDataSet()
+        Dim ds As LMSDataSet = New LMSDataSet()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -313,7 +308,7 @@ Partial Public Class Library_Management_SystemDataSet
     Public Delegate Sub BookRowChangeEventHandler(ByVal sender As Object, ByVal e As BookRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub UserRowChangeEventHandler(ByVal sender As Object, ByVal e As UserRowChangeEvent)
+    Public Delegate Sub UsersRowChangeEventHandler(ByVal sender As Object, ByVal e As UsersRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -331,7 +326,7 @@ Partial Public Class Library_Management_SystemDataSet
         
         Private columnAuthors As Global.System.Data.DataColumn
         
-        Private columnIssued As Global.System.Data.DataColumn
+        Private columnCopies_Available As Global.System.Data.DataColumn
         
         Private columnIssued_to As Global.System.Data.DataColumn
         
@@ -408,9 +403,9 @@ Partial Public Class Library_Management_SystemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IssuedColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Copies_AvailableColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIssued
+                Return Me.columnCopies_Available
             End Get
         End Property
         
@@ -475,12 +470,9 @@ Partial Public Class Library_Management_SystemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddBookRow(ByVal Title As String, ByVal ISBN As Integer, ByVal Authors As String, ByVal Issued As Boolean, ByVal parentUserRowByUserBook As UserRow, ByVal Genre As String, ByVal Publisher As String) As BookRow
+        Public Overloads Function AddBookRow(ByVal Title As String, ByVal ISBN As String, ByVal Authors As String, ByVal Copies_Available As Integer, ByVal Issued_to As String, ByVal Genre As String, ByVal Publisher As String) As BookRow
             Dim rowBookRow As BookRow = CType(Me.NewRow,BookRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Title, ISBN, Authors, Issued, Nothing, Genre, Publisher}
-            If (Not (parentUserRowByUserBook) Is Nothing) Then
-                columnValuesArray(5) = parentUserRowByUserBook(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {Nothing, Title, ISBN, Authors, Copies_Available, Issued_to, Genre, Publisher}
             rowBookRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowBookRow)
             Return rowBookRow
@@ -513,7 +505,7 @@ Partial Public Class Library_Management_SystemDataSet
             Me.columnTitle = MyBase.Columns("Title")
             Me.columnISBN = MyBase.Columns("ISBN")
             Me.columnAuthors = MyBase.Columns("Authors")
-            Me.columnIssued = MyBase.Columns("Issued")
+            Me.columnCopies_Available = MyBase.Columns("Copies Available")
             Me.columnIssued_to = MyBase.Columns("Issued to")
             Me.columnGenre = MyBase.Columns("Genre")
             Me.columnPublisher = MyBase.Columns("Publisher")
@@ -526,13 +518,13 @@ Partial Public Class Library_Management_SystemDataSet
             MyBase.Columns.Add(Me.columnID)
             Me.columnTitle = New Global.System.Data.DataColumn("Title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTitle)
-            Me.columnISBN = New Global.System.Data.DataColumn("ISBN", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnISBN = New Global.System.Data.DataColumn("ISBN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnISBN)
             Me.columnAuthors = New Global.System.Data.DataColumn("Authors", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAuthors)
-            Me.columnIssued = New Global.System.Data.DataColumn("Issued", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIssued)
-            Me.columnIssued_to = New Global.System.Data.DataColumn("Issued to", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnCopies_Available = New Global.System.Data.DataColumn("Copies Available", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCopies_Available)
+            Me.columnIssued_to = New Global.System.Data.DataColumn("Issued to", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIssued_to)
             Me.columnGenre = New Global.System.Data.DataColumn("Genre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGenre)
@@ -545,7 +537,9 @@ Partial Public Class Library_Management_SystemDataSet
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
             Me.columnTitle.MaxLength = 255
+            Me.columnISBN.MaxLength = 255
             Me.columnAuthors.MaxLength = 255
+            Me.columnIssued_to.MaxLength = 536870910
             Me.columnGenre.MaxLength = 255
             Me.columnPublisher.MaxLength = 255
         End Sub
@@ -615,7 +609,7 @@ Partial Public Class Library_Management_SystemDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Library_Management_SystemDataSet = New Library_Management_SystemDataSet()
+            Dim ds As LMSDataSet = New LMSDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -682,8 +676,8 @@ Partial Public Class Library_Management_SystemDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class UserDataTable
-        Inherits Global.System.Data.TypedTableBase(Of UserRow)
+    Partial Public Class UsersDataTable
+        Inherits Global.System.Data.TypedTableBase(Of UsersRow)
         
         Private columnID As Global.System.Data.DataColumn
         
@@ -709,7 +703,7 @@ Partial Public Class Library_Management_SystemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "User"
+            Me.TableName = "Users"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -831,50 +825,50 @@ Partial Public Class Library_Management_SystemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As UserRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As UsersRow
             Get
-                Return CType(Me.Rows(index),UserRow)
+                Return CType(Me.Rows(index),UsersRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event UserRowChanging As UserRowChangeEventHandler
+        Public Event UsersRowChanging As UsersRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event UserRowChanged As UserRowChangeEventHandler
+        Public Event UsersRowChanged As UsersRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event UserRowDeleting As UserRowChangeEventHandler
+        Public Event UsersRowDeleting As UsersRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event UserRowDeleted As UserRowChangeEventHandler
+        Public Event UsersRowDeleted As UsersRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddUserRow(ByVal row As UserRow)
+        Public Overloads Sub AddUsersRow(ByVal row As UsersRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddUserRow(ByVal Username As String, ByVal Password As String, ByVal Roll_Number As Integer, ByVal Title As String, ByVal Access_Level As String, ByVal Program As String, ByVal Department As String, ByVal Book_Limit As String, ByVal Books_Issued As String) As UserRow
-            Dim rowUserRow As UserRow = CType(Me.NewRow,UserRow)
+        Public Overloads Function AddUsersRow(ByVal Username As String, ByVal Password As String, ByVal Roll_Number As Integer, ByVal Title As String, ByVal Access_Level As String, ByVal Program As String, ByVal Department As String, ByVal Book_Limit As Integer, ByVal Books_Issued As String) As UsersRow
+            Dim rowUsersRow As UsersRow = CType(Me.NewRow,UsersRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Username, Password, Roll_Number, Title, Access_Level, Program, Department, Book_Limit, Books_Issued}
-            rowUserRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowUserRow)
-            Return rowUserRow
+            rowUsersRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowUsersRow)
+            Return rowUsersRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByID(ByVal ID As Integer) As UserRow
-            Return CType(Me.Rows.Find(New Object() {ID}),UserRow)
+        Public Function FindByID(ByVal ID As Integer) As UsersRow
+            Return CType(Me.Rows.Find(New Object() {ID}),UsersRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As UserDataTable = CType(MyBase.Clone,UserDataTable)
+            Dim cln As UsersDataTable = CType(MyBase.Clone,UsersDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -882,7 +876,7 @@ Partial Public Class Library_Management_SystemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New UserDataTable()
+            Return New UsersDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -919,7 +913,7 @@ Partial Public Class Library_Management_SystemDataSet
             MyBase.Columns.Add(Me.columnProgram)
             Me.columnDepartment = New Global.System.Data.DataColumn("Department", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDepartment)
-            Me.columnBook_Limit = New Global.System.Data.DataColumn("Book Limit", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnBook_Limit = New Global.System.Data.DataColumn("Book Limit", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBook_Limit)
             Me.columnBooks_Issued = New Global.System.Data.DataColumn("Books Issued", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBooks_Issued)
@@ -935,34 +929,33 @@ Partial Public Class Library_Management_SystemDataSet
             Me.columnAccess_Level.MaxLength = 255
             Me.columnProgram.MaxLength = 255
             Me.columnDepartment.MaxLength = 255
-            Me.columnBook_Limit.MaxLength = 255
             Me.columnBooks_Issued.MaxLength = 536870910
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewUserRow() As UserRow
-            Return CType(Me.NewRow,UserRow)
+        Public Function NewUsersRow() As UsersRow
+            Return CType(Me.NewRow,UsersRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New UserRow(builder)
+            Return New UsersRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(UserRow)
+            Return GetType(UsersRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.UserRowChangedEvent) Is Nothing) Then
-                RaiseEvent UserRowChanged(Me, New UserRowChangeEvent(CType(e.Row,UserRow), e.Action))
+            If (Not (Me.UsersRowChangedEvent) Is Nothing) Then
+                RaiseEvent UsersRowChanged(Me, New UsersRowChangeEvent(CType(e.Row,UsersRow), e.Action))
             End If
         End Sub
         
@@ -970,8 +963,8 @@ Partial Public Class Library_Management_SystemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.UserRowChangingEvent) Is Nothing) Then
-                RaiseEvent UserRowChanging(Me, New UserRowChangeEvent(CType(e.Row,UserRow), e.Action))
+            If (Not (Me.UsersRowChangingEvent) Is Nothing) Then
+                RaiseEvent UsersRowChanging(Me, New UsersRowChangeEvent(CType(e.Row,UsersRow), e.Action))
             End If
         End Sub
         
@@ -979,8 +972,8 @@ Partial Public Class Library_Management_SystemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.UserRowDeletedEvent) Is Nothing) Then
-                RaiseEvent UserRowDeleted(Me, New UserRowChangeEvent(CType(e.Row,UserRow), e.Action))
+            If (Not (Me.UsersRowDeletedEvent) Is Nothing) Then
+                RaiseEvent UsersRowDeleted(Me, New UsersRowChangeEvent(CType(e.Row,UsersRow), e.Action))
             End If
         End Sub
         
@@ -988,14 +981,14 @@ Partial Public Class Library_Management_SystemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.UserRowDeletingEvent) Is Nothing) Then
-                RaiseEvent UserRowDeleting(Me, New UserRowChangeEvent(CType(e.Row,UserRow), e.Action))
+            If (Not (Me.UsersRowDeletingEvent) Is Nothing) Then
+                RaiseEvent UsersRowDeleting(Me, New UsersRowChangeEvent(CType(e.Row,UsersRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveUserRow(ByVal row As UserRow)
+        Public Sub RemoveUsersRow(ByVal row As UsersRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1004,7 +997,7 @@ Partial Public Class Library_Management_SystemDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Library_Management_SystemDataSet = New Library_Management_SystemDataSet()
+            Dim ds As LMSDataSet = New LMSDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1022,7 +1015,7 @@ Partial Public Class Library_Management_SystemDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "UserDataTable"
+            attribute2.FixedValue = "UsersDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1109,10 +1102,10 @@ Partial Public Class Library_Management_SystemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ISBN() As Integer
+        Public Property ISBN() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableBook.ISBNColumn),Integer)
+                    Return CType(Me(Me.tableBook.ISBNColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'ISBN' in table 'Book' is DBNull.", e)
                 End Try
@@ -1139,25 +1132,25 @@ Partial Public Class Library_Management_SystemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Issued() As Boolean
+        Public Property Copies_Available() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableBook.IssuedColumn),Boolean)
+                    Return CType(Me(Me.tableBook.Copies_AvailableColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Issued' in table 'Book' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Copies Available' in table 'Book' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableBook.IssuedColumn) = value
+                Me(Me.tableBook.Copies_AvailableColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Issued_to() As Integer
+        Public Property Issued_to() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableBook.Issued_toColumn),Integer)
+                    Return CType(Me(Me.tableBook.Issued_toColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Issued to' in table 'Book' is DBNull.", e)
                 End Try
@@ -1199,17 +1192,6 @@ Partial Public Class Library_Management_SystemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property UserRow() As UserRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("UserBook")),UserRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("UserBook"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsTitleNull() As Boolean
             Return Me.IsNull(Me.tableBook.TitleColumn)
         End Function
@@ -1246,14 +1228,14 @@ Partial Public Class Library_Management_SystemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsIssuedNull() As Boolean
-            Return Me.IsNull(Me.tableBook.IssuedColumn)
+        Public Function IsCopies_AvailableNull() As Boolean
+            Return Me.IsNull(Me.tableBook.Copies_AvailableColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetIssuedNull()
-            Me(Me.tableBook.IssuedColumn) = Global.System.Convert.DBNull
+        Public Sub SetCopies_AvailableNull()
+            Me(Me.tableBook.Copies_AvailableColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1296,26 +1278,26 @@ Partial Public Class Library_Management_SystemDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class UserRow
+    Partial Public Class UsersRow
         Inherits Global.System.Data.DataRow
         
-        Private tableUser As UserDataTable
+        Private tableUsers As UsersDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableUser = CType(Me.Table,UserDataTable)
+            Me.tableUsers = CType(Me.Table,UsersDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ID() As Integer
             Get
-                Return CType(Me(Me.tableUser.IDColumn),Integer)
+                Return CType(Me(Me.tableUsers.IDColumn),Integer)
             End Get
             Set
-                Me(Me.tableUser.IDColumn) = value
+                Me(Me.tableUsers.IDColumn) = value
             End Set
         End Property
         
@@ -1324,13 +1306,13 @@ Partial Public Class Library_Management_SystemDataSet
         Public Property Username() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUser.UsernameColumn),String)
+                    Return CType(Me(Me.tableUsers.UsernameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Username' in table 'User' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Username' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser.UsernameColumn) = value
+                Me(Me.tableUsers.UsernameColumn) = value
             End Set
         End Property
         
@@ -1339,13 +1321,13 @@ Partial Public Class Library_Management_SystemDataSet
         Public Property Password() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUser.PasswordColumn),String)
+                    Return CType(Me(Me.tableUsers.PasswordColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Password' in table 'User' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Password' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser.PasswordColumn) = value
+                Me(Me.tableUsers.PasswordColumn) = value
             End Set
         End Property
         
@@ -1354,13 +1336,13 @@ Partial Public Class Library_Management_SystemDataSet
         Public Property Roll_Number() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableUser.Roll_NumberColumn),Integer)
+                    Return CType(Me(Me.tableUsers.Roll_NumberColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Roll Number' in table 'User' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Roll Number' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser.Roll_NumberColumn) = value
+                Me(Me.tableUsers.Roll_NumberColumn) = value
             End Set
         End Property
         
@@ -1369,13 +1351,13 @@ Partial Public Class Library_Management_SystemDataSet
         Public Property Title() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUser.TitleColumn),String)
+                    Return CType(Me(Me.tableUsers.TitleColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Title' in table 'User' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Title' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser.TitleColumn) = value
+                Me(Me.tableUsers.TitleColumn) = value
             End Set
         End Property
         
@@ -1384,13 +1366,13 @@ Partial Public Class Library_Management_SystemDataSet
         Public Property Access_Level() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUser.Access_LevelColumn),String)
+                    Return CType(Me(Me.tableUsers.Access_LevelColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Access Level' in table 'User' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Access Level' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser.Access_LevelColumn) = value
+                Me(Me.tableUsers.Access_LevelColumn) = value
             End Set
         End Property
         
@@ -1399,13 +1381,13 @@ Partial Public Class Library_Management_SystemDataSet
         Public Property Program() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUser.ProgramColumn),String)
+                    Return CType(Me(Me.tableUsers.ProgramColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Program' in table 'User' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Program' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser.ProgramColumn) = value
+                Me(Me.tableUsers.ProgramColumn) = value
             End Set
         End Property
         
@@ -1414,28 +1396,28 @@ Partial Public Class Library_Management_SystemDataSet
         Public Property Department() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUser.DepartmentColumn),String)
+                    Return CType(Me(Me.tableUsers.DepartmentColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Department' in table 'User' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Department' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser.DepartmentColumn) = value
+                Me(Me.tableUsers.DepartmentColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Book_Limit() As String
+        Public Property Book_Limit() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableUser.Book_LimitColumn),String)
+                    Return CType(Me(Me.tableUsers.Book_LimitColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Book Limit' in table 'User' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Book Limit' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser.Book_LimitColumn) = value
+                Me(Me.tableUsers.Book_LimitColumn) = value
             End Set
         End Property
         
@@ -1444,133 +1426,123 @@ Partial Public Class Library_Management_SystemDataSet
         Public Property Books_Issued() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUser.Books_IssuedColumn),String)
+                    Return CType(Me(Me.tableUsers.Books_IssuedColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Books Issued' in table 'User' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Books Issued' in table 'Users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser.Books_IssuedColumn) = value
+                Me(Me.tableUsers.Books_IssuedColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsUsernameNull() As Boolean
-            Return Me.IsNull(Me.tableUser.UsernameColumn)
+            Return Me.IsNull(Me.tableUsers.UsernameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetUsernameNull()
-            Me(Me.tableUser.UsernameColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUsers.UsernameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsPasswordNull() As Boolean
-            Return Me.IsNull(Me.tableUser.PasswordColumn)
+            Return Me.IsNull(Me.tableUsers.PasswordColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetPasswordNull()
-            Me(Me.tableUser.PasswordColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUsers.PasswordColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsRoll_NumberNull() As Boolean
-            Return Me.IsNull(Me.tableUser.Roll_NumberColumn)
+            Return Me.IsNull(Me.tableUsers.Roll_NumberColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetRoll_NumberNull()
-            Me(Me.tableUser.Roll_NumberColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUsers.Roll_NumberColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsTitleNull() As Boolean
-            Return Me.IsNull(Me.tableUser.TitleColumn)
+            Return Me.IsNull(Me.tableUsers.TitleColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetTitleNull()
-            Me(Me.tableUser.TitleColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUsers.TitleColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsAccess_LevelNull() As Boolean
-            Return Me.IsNull(Me.tableUser.Access_LevelColumn)
+            Return Me.IsNull(Me.tableUsers.Access_LevelColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetAccess_LevelNull()
-            Me(Me.tableUser.Access_LevelColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUsers.Access_LevelColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsProgramNull() As Boolean
-            Return Me.IsNull(Me.tableUser.ProgramColumn)
+            Return Me.IsNull(Me.tableUsers.ProgramColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetProgramNull()
-            Me(Me.tableUser.ProgramColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUsers.ProgramColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsDepartmentNull() As Boolean
-            Return Me.IsNull(Me.tableUser.DepartmentColumn)
+            Return Me.IsNull(Me.tableUsers.DepartmentColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetDepartmentNull()
-            Me(Me.tableUser.DepartmentColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUsers.DepartmentColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsBook_LimitNull() As Boolean
-            Return Me.IsNull(Me.tableUser.Book_LimitColumn)
+            Return Me.IsNull(Me.tableUsers.Book_LimitColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetBook_LimitNull()
-            Me(Me.tableUser.Book_LimitColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUsers.Book_LimitColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsBooks_IssuedNull() As Boolean
-            Return Me.IsNull(Me.tableUser.Books_IssuedColumn)
+            Return Me.IsNull(Me.tableUsers.Books_IssuedColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetBooks_IssuedNull()
-            Me(Me.tableUser.Books_IssuedColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUsers.Books_IssuedColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetBookRows() As BookRow()
-            If (Me.Table.ChildRelations("UserBook") Is Nothing) Then
-                Return New BookRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("UserBook")),BookRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -1613,16 +1585,16 @@ Partial Public Class Library_Management_SystemDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class UserRowChangeEvent
+    Public Class UsersRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As UserRow
+        Private eventRow As UsersRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As UserRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As UsersRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1630,7 +1602,7 @@ Partial Public Class Library_Management_SystemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As UserRow
+        Public ReadOnly Property Row() As UsersRow
             Get
                 Return Me.eventRow
             End Get
@@ -1646,7 +1618,7 @@ Partial Public Class Library_Management_SystemDataSet
     End Class
 End Class
 
-Namespace Library_Management_SystemDataSetTableAdapters
+Namespace LMSDataSetTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -1779,7 +1751,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Title", "Title")
             tableMapping.ColumnMappings.Add("ISBN", "ISBN")
             tableMapping.ColumnMappings.Add("Authors", "Authors")
-            tableMapping.ColumnMappings.Add("Issued", "Issued")
+            tableMapping.ColumnMappings.Add("Copies Available", "Copies Available")
             tableMapping.ColumnMappings.Add("Issued to", "Issued to")
             tableMapping.ColumnMappings.Add("Genre", "Genre")
             tableMapping.ColumnMappings.Add("Publisher", "Publisher")
@@ -1788,66 +1760,61 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Book` WHERE ((`ID` = ?) AND ((? = 1 AND `Title` IS NULL) OR (`Title`"& _ 
                 " = ?)) AND ((? = 1 AND `ISBN` IS NULL) OR (`ISBN` = ?)) AND ((? = 1 AND `Authors"& _ 
-                "` IS NULL) OR (`Authors` = ?)) AND ((? = 1 AND `Issued` IS NULL) OR (`Issued` = "& _ 
-                "?)) AND ((? = 1 AND `Issued to` IS NULL) OR (`Issued to` = ?)) AND ((? = 1 AND `"& _ 
-                "Genre` IS NULL) OR (`Genre` = ?)) AND ((? = 1 AND `Publisher` IS NULL) OR (`Publ"& _ 
-                "isher` = ?)))"
+                "` IS NULL) OR (`Authors` = ?)) AND ((? = 1 AND `Copies Available` IS NULL) OR (`"& _ 
+                "Copies Available` = ?)) AND ((? = 1 AND `Genre` IS NULL) OR (`Genre` = ?)) AND ("& _ 
+                "(? = 1 AND `Publisher` IS NULL) OR (`Publisher` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Title", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ISBN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ISBN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Authors", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Authors", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Issued", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Issued", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Issued_to", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Issued_to", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Genre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Publisher", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Publisher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Book` (`Title`, `ISBN`, `Authors`, `Issued`, `Issued to`, `Genre`, `"& _ 
-                "Publisher`) VALUES (?, ?, ?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Book` (`Title`, `ISBN`, `Authors`, `Copies Available`, `Issued to`, "& _ 
+                "`Genre`, `Publisher`) VALUES (?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ISBN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Authors", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued_to", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued_to", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Publisher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `Book` SET `Title` = ?, `ISBN` = ?, `Authors` = ?, `Issued` = ?, `Issued t"& _ 
-                "o` = ?, `Genre` = ?, `Publisher` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Title` I"& _ 
-                "S NULL) OR (`Title` = ?)) AND ((? = 1 AND `ISBN` IS NULL) OR (`ISBN` = ?)) AND ("& _ 
-                "(? = 1 AND `Authors` IS NULL) OR (`Authors` = ?)) AND ((? = 1 AND `Issued` IS NU"& _ 
-                "LL) OR (`Issued` = ?)) AND ((? = 1 AND `Issued to` IS NULL) OR (`Issued to` = ?)"& _ 
-                ") AND ((? = 1 AND `Genre` IS NULL) OR (`Genre` = ?)) AND ((? = 1 AND `Publisher`"& _ 
-                " IS NULL) OR (`Publisher` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Book` SET `Title` = ?, `ISBN` = ?, `Authors` = ?, `Copies Available` = ?,"& _ 
+                " `Issued to` = ?, `Genre` = ?, `Publisher` = ? WHERE ((`ID` = ?) AND ((? = 1 AND"& _ 
+                " `Title` IS NULL) OR (`Title` = ?)) AND ((? = 1 AND `ISBN` IS NULL) OR (`ISBN` ="& _ 
+                " ?)) AND ((? = 1 AND `Authors` IS NULL) OR (`Authors` = ?)) AND ((? = 1 AND `Cop"& _ 
+                "ies Available` IS NULL) OR (`Copies Available` = ?)) AND ((? = 1 AND `Genre` IS "& _ 
+                "NULL) OR (`Genre` = ?)) AND ((? = 1 AND `Publisher` IS NULL) OR (`Publisher` = ?"& _ 
+                ")))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ISBN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Authors", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued_to", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Issued_to", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Publisher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Title", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ISBN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ISBN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Authors", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Authors", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Authors", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Issued", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Issued", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Issued_to", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Issued_to", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Issued to", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Copies_Available", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Copies Available", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Genre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Publisher", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Publisher", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -1858,7 +1825,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Assigment.My.MySettings.Default.Library_Management_SystemConnectionString
+            Me._connection.ConnectionString = Global.Assigment.My.MySettings.Default.LMSConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1867,7 +1834,8 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, Title, ISBN, Authors, Issued, [Issued to], Genre, Publisher FROM Book"
+            Me._commandCollection(0).CommandText = "SELECT ID, Title, ISBN, Authors, [Copies Available], [Issued to], Genre, Publishe"& _ 
+                "r FROM Book"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1875,7 +1843,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Library_Management_SystemDataSet.BookDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As LMSDataSet.BookDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1888,9 +1856,9 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Library_Management_SystemDataSet.BookDataTable
+        Public Overloads Overridable Function GetData() As LMSDataSet.BookDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Library_Management_SystemDataSet.BookDataTable = New Library_Management_SystemDataSet.BookDataTable()
+            Dim dataTable As LMSDataSet.BookDataTable = New LMSDataSet.BookDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1898,14 +1866,14 @@ Namespace Library_Management_SystemDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Library_Management_SystemDataSet.BookDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As LMSDataSet.BookDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Library_Management_SystemDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As LMSDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "Book")
         End Function
         
@@ -1927,7 +1895,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Title As String, ByVal Original_ISBN As Integer, ByVal Original_Authors As String, ByVal Original_Issued As Boolean, ByVal Original_Issued_to As Global.System.Nullable(Of Integer), ByVal Original_Genre As String, ByVal Original_Publisher As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Title As String, ByVal Original_ISBN As String, ByVal Original_Authors As String, ByVal Original_Copies_Available As Global.System.Nullable(Of Integer), ByVal Original_Genre As String, ByVal Original_Publisher As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
             If (Original_Title Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -1936,8 +1904,13 @@ Namespace Library_Management_SystemDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Title,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_ISBN,Integer)
+            If (Original_ISBN Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_ISBN,String)
+            End If
             If (Original_Authors Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -1945,28 +1918,26 @@ Namespace Library_Management_SystemDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Authors,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Issued,Boolean)
-            If (Original_Issued_to.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Issued_to.Value,Integer)
+            If (Original_Copies_Available.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Copies_Available.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             If (Original_Genre Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Genre,String)
+            End If
+            If (Original_Publisher Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Genre,String)
-            End If
-            If (Original_Publisher Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Publisher,String)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Publisher,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1987,23 +1958,31 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Title As String, ByVal ISBN As Integer, ByVal Authors As String, ByVal Issued As Boolean, ByVal Issued_to As Global.System.Nullable(Of Integer), ByVal Genre As String, ByVal Publisher As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Title As String, ByVal ISBN As String, ByVal Authors As String, ByVal Copies_Available As Global.System.Nullable(Of Integer), ByVal Issued_to As String, ByVal Genre As String, ByVal Publisher As String) As Integer
             If (Title Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Title,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(ISBN,Integer)
+            If (ISBN Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(ISBN,String)
+            End If
             If (Authors Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(Authors,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(Issued,Boolean)
-            If (Issued_to.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Issued_to.Value,Integer)
+            If (Copies_Available.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Copies_Available.Value,Integer)
             Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (Issued_to Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Issued_to,String)
             End If
             If (Genre Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -2034,23 +2013,31 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Title As String, ByVal ISBN As Integer, ByVal Authors As String, ByVal Issued As Boolean, ByVal Issued_to As Global.System.Nullable(Of Integer), ByVal Genre As String, ByVal Publisher As String, ByVal Original_ID As Integer, ByVal Original_Title As String, ByVal Original_ISBN As Integer, ByVal Original_Authors As String, ByVal Original_Issued As Boolean, ByVal Original_Issued_to As Global.System.Nullable(Of Integer), ByVal Original_Genre As String, ByVal Original_Publisher As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Title As String, ByVal ISBN As String, ByVal Authors As String, ByVal Copies_Available As Global.System.Nullable(Of Integer), ByVal Issued_to As String, ByVal Genre As String, ByVal Publisher As String, ByVal Original_ID As Integer, ByVal Original_Title As String, ByVal Original_ISBN As String, ByVal Original_Authors As String, ByVal Original_Copies_Available As Global.System.Nullable(Of Integer), ByVal Original_Genre As String, ByVal Original_Publisher As String) As Integer
             If (Title Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Title,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ISBN,Integer)
+            If (ISBN Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ISBN,String)
+            End If
             If (Authors Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Authors,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Issued,Boolean)
-            If (Issued_to.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Issued_to.Value,Integer)
+            If (Copies_Available.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Copies_Available.Value,Integer)
             Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (Issued_to Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Issued_to,String)
             End If
             If (Genre Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -2070,8 +2057,13 @@ Namespace Library_Management_SystemDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Title,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ISBN,Integer)
+            If (Original_ISBN Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ISBN,String)
+            End If
             If (Original_Authors Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
@@ -2079,28 +2071,26 @@ Namespace Library_Management_SystemDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Authors,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Issued,Boolean)
-            If (Original_Issued_to.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Issued_to.Value,Integer)
+            If (Original_Copies_Available.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Copies_Available.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
             If (Original_Genre Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Genre,String)
+            End If
+            If (Original_Publisher Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Genre,String)
-            End If
-            If (Original_Publisher Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Publisher,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Publisher,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2127,7 +2117,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class UserTableAdapter
+    Partial Public Class UsersTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
@@ -2244,7 +2234,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "User"
+            tableMapping.DataSetTable = "Users"
             tableMapping.ColumnMappings.Add("ID", "ID")
             tableMapping.ColumnMappings.Add("Username", "Username")
             tableMapping.ColumnMappings.Add("Password", "Password")
@@ -2258,13 +2248,13 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `User` WHERE ((`ID` = ?) AND ((? = 1 AND `Username` IS NULL) OR (`Use"& _ 
-                "rname` = ?)) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = ?)) AND ((? = "& _ 
-                "1 AND `Roll Number` IS NULL) OR (`Roll Number` = ?)) AND ((? = 1 AND `Title` IS "& _ 
-                "NULL) OR (`Title` = ?)) AND ((? = 1 AND `Access Level` IS NULL) OR (`Access Leve"& _ 
-                "l` = ?)) AND ((? = 1 AND `Program` IS NULL) OR (`Program` = ?)) AND ((? = 1 AND "& _ 
-                "`Department` IS NULL) OR (`Department` = ?)) AND ((? = 1 AND `Book Limit` IS NUL"& _ 
-                "L) OR (`Book Limit` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Users` WHERE ((`ID` = ?) AND ((? = 1 AND `Username` IS NULL) OR (`Us"& _ 
+                "ername` = ?)) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = ?)) AND ((? ="& _ 
+                " 1 AND `Roll Number` IS NULL) OR (`Roll Number` = ?)) AND ((? = 1 AND `Title` IS"& _ 
+                " NULL) OR (`Title` = ?)) AND ((? = 1 AND `Access Level` IS NULL) OR (`Access Lev"& _ 
+                "el` = ?)) AND ((? = 1 AND `Program` IS NULL) OR (`Program` = ?)) AND ((? = 1 AND"& _ 
+                " `Department` IS NULL) OR (`Department` = ?)) AND ((? = 1 AND `Book Limit` IS NU"& _ 
+                "LL) OR (`Book Limit` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -2282,12 +2272,12 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Department", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Book_Limit", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `User` (`Username`, `Password`, `Roll Number`, `Title`, `Access Level"& _ 
-                "`, `Program`, `Department`, `Book Limit`, `Books Issued`) VALUES (?, ?, ?, ?, ?,"& _ 
-                " ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Users` (`Username`, `Password`, `Roll Number`, `Title`, `Access Leve"& _ 
+                "l`, `Program`, `Department`, `Book Limit`, `Books Issued`) VALUES (?, ?, ?, ?, ?"& _ 
+                ", ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2296,19 +2286,19 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Access_Level", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access Level", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Program", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Program", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Book_Limit", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Books_Issued", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Books Issued", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `User` SET `Username` = ?, `Password` = ?, `Roll Number` = ?, `Title` = ?,"& _ 
-                " `Access Level` = ?, `Program` = ?, `Department` = ?, `Book Limit` = ?, `Books I"& _ 
-                "ssued` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Username` IS NULL) OR (`Username` "& _ 
-                "= ?)) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = ?)) AND ((? = 1 AND `"& _ 
-                "Roll Number` IS NULL) OR (`Roll Number` = ?)) AND ((? = 1 AND `Title` IS NULL) O"& _ 
-                "R (`Title` = ?)) AND ((? = 1 AND `Access Level` IS NULL) OR (`Access Level` = ?)"& _ 
-                ") AND ((? = 1 AND `Program` IS NULL) OR (`Program` = ?)) AND ((? = 1 AND `Depart"& _ 
-                "ment` IS NULL) OR (`Department` = ?)) AND ((? = 1 AND `Book Limit` IS NULL) OR ("& _ 
-                "`Book Limit` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Users` SET `Username` = ?, `Password` = ?, `Roll Number` = ?, `Title` = ?"& _ 
+                ", `Access Level` = ?, `Program` = ?, `Department` = ?, `Book Limit` = ?, `Books "& _ 
+                "Issued` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Username` IS NULL) OR (`Username`"& _ 
+                " = ?)) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = ?)) AND ((? = 1 AND "& _ 
+                "`Roll Number` IS NULL) OR (`Roll Number` = ?)) AND ((? = 1 AND `Title` IS NULL) "& _ 
+                "OR (`Title` = ?)) AND ((? = 1 AND `Access Level` IS NULL) OR (`Access Level` = ?"& _ 
+                ")) AND ((? = 1 AND `Program` IS NULL) OR (`Program` = ?)) AND ((? = 1 AND `Depar"& _ 
+                "tment` IS NULL) OR (`Department` = ?)) AND ((? = 1 AND `Book Limit` IS NULL) OR "& _ 
+                "(`Book Limit` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2317,7 +2307,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Access_Level", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Access Level", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Program", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Program", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Book_Limit", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Books_Issued", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Books Issued", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -2335,14 +2325,14 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Department", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Book_Limit", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Book_Limit", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Book Limit", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Assigment.My.MySettings.Default.Library_Management_SystemConnectionString
+            Me._connection.ConnectionString = Global.Assigment.My.MySettings.Default.LMSConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2352,7 +2342,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT ID, Username, [Password], [Roll Number], Title, [Access Level], Program, D"& _ 
-                "epartment, [Book Limit], [Books Issued] FROM [User]"
+                "epartment, [Book Limit], [Books Issued] FROM Users"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2360,7 +2350,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Library_Management_SystemDataSet.UserDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As LMSDataSet.UsersDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -2373,9 +2363,9 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Library_Management_SystemDataSet.UserDataTable
+        Public Overloads Overridable Function GetData() As LMSDataSet.UsersDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Library_Management_SystemDataSet.UserDataTable = New Library_Management_SystemDataSet.UserDataTable()
+            Dim dataTable As LMSDataSet.UsersDataTable = New LMSDataSet.UsersDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2383,15 +2373,15 @@ Namespace Library_Management_SystemDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Library_Management_SystemDataSet.UserDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As LMSDataSet.UsersDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Library_Management_SystemDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "User")
+        Public Overloads Overridable Function Update(ByVal dataSet As LMSDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "Users")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2412,7 +2402,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Username As String, ByVal Original_Password As String, ByVal Original_Roll_Number As Global.System.Nullable(Of Integer), ByVal Original_Title As String, ByVal Original_Access_Level As String, ByVal Original_Program As String, ByVal Original_Department As String, ByVal Original_Book_Limit As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Username As String, ByVal Original_Password As String, ByVal Original_Roll_Number As Global.System.Nullable(Of Integer), ByVal Original_Title As String, ByVal Original_Access_Level As String, ByVal Original_Program As String, ByVal Original_Department As String, ByVal Original_Book_Limit As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
             If (Original_Username Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -2463,12 +2453,12 @@ Namespace Library_Management_SystemDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Department,String)
             End If
-            If (Original_Book_Limit Is Nothing) Then
+            If (Original_Book_Limit.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_Book_Limit.Value,Integer)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_Book_Limit,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2489,7 +2479,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Username As String, ByVal Password As String, ByVal Roll_Number As Global.System.Nullable(Of Integer), ByVal Title As String, ByVal Access_Level As String, ByVal Program As String, ByVal Department As String, ByVal Book_Limit As String, ByVal Books_Issued As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Username As String, ByVal Password As String, ByVal Roll_Number As Global.System.Nullable(Of Integer), ByVal Title As String, ByVal Access_Level As String, ByVal Program As String, ByVal Department As String, ByVal Book_Limit As Global.System.Nullable(Of Integer), ByVal Books_Issued As String) As Integer
             If (Username Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -2525,10 +2515,10 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = CType(Department,String)
             End If
-            If (Book_Limit Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            If (Book_Limit.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Book_Limit.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Book_Limit,String)
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
             If (Books_Issued Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
@@ -2562,7 +2552,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
                     ByVal Access_Level As String,  _
                     ByVal Program As String,  _
                     ByVal Department As String,  _
-                    ByVal Book_Limit As String,  _
+                    ByVal Book_Limit As Global.System.Nullable(Of Integer),  _
                     ByVal Books_Issued As String,  _
                     ByVal Original_ID As Integer,  _
                     ByVal Original_Username As String,  _
@@ -2572,7 +2562,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
                     ByVal Original_Access_Level As String,  _
                     ByVal Original_Program As String,  _
                     ByVal Original_Department As String,  _
-                    ByVal Original_Book_Limit As String) As Integer
+                    ByVal Original_Book_Limit As Global.System.Nullable(Of Integer)) As Integer
             If (Username Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -2608,10 +2598,10 @@ Namespace Library_Management_SystemDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Department,String)
             End If
-            If (Book_Limit Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            If (Book_Limit.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Book_Limit.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Book_Limit,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
             If (Books_Issued Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
@@ -2668,12 +2658,12 @@ Namespace Library_Management_SystemDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Department,String)
             End If
-            If (Original_Book_Limit Is Nothing) Then
+            If (Original_Book_Limit.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Book_Limit.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Book_Limit,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2706,7 +2696,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
         
         Private _bookTableAdapter As BookTableAdapter
         
-        Private _userTableAdapter As UserTableAdapter
+        Private _usersTableAdapter As UsersTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -2742,12 +2732,12 @@ Namespace Library_Management_SystemDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property UserTableAdapter() As UserTableAdapter
+        Public Property UsersTableAdapter() As UsersTableAdapter
             Get
-                Return Me._userTableAdapter
+                Return Me._usersTableAdapter
             End Get
             Set
-                Me._userTableAdapter = value
+                Me._usersTableAdapter = value
             End Set
         End Property
         
@@ -2774,9 +2764,9 @@ Namespace Library_Management_SystemDataSetTableAdapters
                             AndAlso (Not (Me._bookTableAdapter.Connection) Is Nothing)) Then
                     Return Me._bookTableAdapter.Connection
                 End If
-                If ((Not (Me._userTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._userTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._userTableAdapter.Connection
+                If ((Not (Me._usersTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._usersTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._usersTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -2794,7 +2784,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
                 If (Not (Me._bookTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._userTableAdapter) Is Nothing) Then
+                If (Not (Me._usersTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -2806,23 +2796,23 @@ Namespace Library_Management_SystemDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As Library_Management_SystemDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As LMSDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._userTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.User.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._userTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._bookTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Book.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._bookTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._usersTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._usersTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -2834,21 +2824,21 @@ Namespace Library_Management_SystemDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As Library_Management_SystemDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As LMSDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._userTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.User.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._userTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._bookTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Book.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._bookTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._usersTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._usersTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -2860,21 +2850,21 @@ Namespace Library_Management_SystemDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As Library_Management_SystemDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As LMSDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._usersTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._usersTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._bookTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.Book.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._bookTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._userTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.User.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._userTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -2912,7 +2902,7 @@ Namespace Library_Management_SystemDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As Library_Management_SystemDataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As LMSDataSet) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
@@ -2924,8 +2914,8 @@ Namespace Library_Management_SystemDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._userTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._userTableAdapter.Connection) = false)) Then
+            If ((Not (Me._usersTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._usersTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -2970,13 +2960,13 @@ Namespace Library_Management_SystemDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._bookTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._userTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._userTableAdapter, Me._userTableAdapter.Connection)
-                    Me._userTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
-                    Me._userTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
-                    If Me._userTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._userTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._userTableAdapter.Adapter)
+                If (Not (Me._usersTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._usersTableAdapter, Me._usersTableAdapter.Connection)
+                    Me._usersTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._usersTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._usersTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._usersTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._usersTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -3043,9 +3033,9 @@ Namespace Library_Management_SystemDataSetTableAdapters
                     Me._bookTableAdapter.Connection = CType(revertConnections(Me._bookTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._bookTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._userTableAdapter) Is Nothing) Then
-                    Me._userTableAdapter.Connection = CType(revertConnections(Me._userTableAdapter),Global.System.Data.OleDb.OleDbConnection)
-                    Me._userTableAdapter.Transaction = Nothing
+                If (Not (Me._usersTableAdapter) Is Nothing) Then
+                    Me._usersTableAdapter.Connection = CType(revertConnections(Me._usersTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._usersTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

@@ -29,16 +29,18 @@ Partial Class eBooks
         '
         'Panel1
         '
-        Me.Panel1.Location = New System.Drawing.Point(63, 114)
+        Me.Panel1.Location = New System.Drawing.Point(84, 140)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(658, 229)
+        Me.Panel1.Size = New System.Drawing.Size(711, 282)
         Me.Panel1.TabIndex = 2
         '
         'Search
         '
-        Me.Search.Location = New System.Drawing.Point(239, 20)
+        Me.Search.Location = New System.Drawing.Point(231, 23)
+        Me.Search.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Search.Name = "Search"
-        Me.Search.Size = New System.Drawing.Size(317, 37)
+        Me.Search.Size = New System.Drawing.Size(421, 45)
         Me.Search.TabIndex = 3
         Me.Search.Text = ""
         '
@@ -46,22 +48,24 @@ Partial Class eBooks
         '
         Me.Search_Button.FlatAppearance.BorderSize = 0
         Me.Search_Button.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Search_Button.Location = New System.Drawing.Point(310, 85)
+        Me.Search_Button.Location = New System.Drawing.Point(325, 103)
+        Me.Search_Button.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Search_Button.Name = "Search_Button"
-        Me.Search_Button.Size = New System.Drawing.Size(156, 23)
+        Me.Search_Button.Size = New System.Drawing.Size(208, 28)
         Me.Search_Button.TabIndex = 4
         Me.Search_Button.Text = "Search"
         Me.Search_Button.UseVisualStyleBackColor = True
         '
         'eBooks
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Search_Button)
         Me.Controls.Add(Me.Search)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "eBooks"
-        Me.Size = New System.Drawing.Size(824, 366)
+        Me.Size = New System.Drawing.Size(852, 700)
         Me.ResumeLayout(False)
 
     End Sub

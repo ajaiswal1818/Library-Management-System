@@ -3,7 +3,7 @@
 Public Class LMS
     'Create a connection
     Private DBCon As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;" & _
-                                         "Data Source=Library Management System.accdb;")
+                                         "Data Source=LMS.accdb;")
 
     'Prepare DB Command
     Private DBCmd As OleDbCommand

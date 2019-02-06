@@ -75,6 +75,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurProfile.Designer.vb">
+      <DependentUpon>CurProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CurProfile.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="LMS.vb" />
     <Compile Include="eBooks.Designer.vb">
       <DependentUpon>eBooks.vb</DependentUpon>
@@ -89,10 +95,10 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Library_Management_SystemDataSet.Designer.vb">
+    <Compile Include="LMSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Library_Management_SystemDataSet.xsd</DependentUpon>
+      <DependentUpon>LMSDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Log.Designer.vb">
       <DependentUpon>Log.vb</DependentUpon>
@@ -121,20 +127,23 @@
     <Compile Include="Myprofile.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="NewLogin.Designer.vb">
+      <DependentUpon>NewLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewLogin.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Search.Designer.vb">
       <DependentUpon>Search.vb</DependentUpon>
     </Compile>
     <Compile Include="Search.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SignUpPage.Designer.vb">
-      <DependentUpon>SignUpPage.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SignUpPage.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CurProfile.resx">
+      <DependentUpon>CurProfile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="eBooks.resx">
       <DependentUpon>eBooks.vb</DependentUpon>
     </EmbeddedResource>
@@ -153,24 +162,24 @@
     <EmbeddedResource Include="Myprofile.resx">
       <DependentUpon>Myprofile.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewLogin.resx">
+      <DependentUpon>NewLogin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUpPage.resx">
-      <DependentUpon>SignUpPage.vb</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library_Management_SystemDataSet.xsc">
-      <DependentUpon>Library_Management_SystemDataSet.xsd</DependentUpon>
+    <None Include="LMSDataSet.xsc">
+      <DependentUpon>LMSDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Library_Management_SystemDataSet.xsd">
+    <None Include="LMSDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Library_Management_SystemDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>LMSDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Library_Management_SystemDataSet.xss">
-      <DependentUpon>Library_Management_SystemDataSet.xsd</DependentUpon>
+    <None Include="LMSDataSet.xss">
+      <DependentUpon>LMSDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -181,11 +190,13 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Library Management System.accdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="LMS.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

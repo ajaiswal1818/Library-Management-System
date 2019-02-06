@@ -18,7 +18,7 @@
 
     End Sub
 
-   
+
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
         SidePanel.Height = SearchBtn.Height
@@ -58,4 +58,5 @@
     Private Sub Log1_Load_1(sender As Object, e As EventArgs) Handles Log1.Load
 
     End Sub
+
 End Class
