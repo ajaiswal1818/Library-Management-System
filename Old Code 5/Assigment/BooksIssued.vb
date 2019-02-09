@@ -9,6 +9,7 @@
         lblBklt.Text = "You can issue " & Log.CurBkLimit & " more books!"
         AddHandler btnRet1.Click, AddressOf Me.Button_Click
 
+        Clr()
         lblRet1.Show()
         btnRet1.Show()
 
@@ -19,7 +20,7 @@
         For Each R As DataRow In Access.DBDT.Rows
             checkString &= R.Item(9)
         Next
-        Dim array As String() = Split(checkString, "-")
+        Dim array As String() = Split(checkString, " ")
         Dim bkno As Integer = 0
         For Each temp As String In array
             If IsNumeric(temp) = False Then
@@ -63,7 +64,6 @@
     End Sub
 
     Private Sub BooksIssued_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Clr()
         RefreshPage()
     End Sub
 
@@ -136,37 +136,31 @@
         Dim BkTit As String = Access.DBDT.Rows(0).Item(1)
         Dim BkCnt As Integer = Access.DBDT.Rows(0).Item(4) + 1
         Dim BkIss As String = Access.DBDT.Rows(0).Item(5)
-        Dim BkIssNew As String = "0"
-        Dim array As String() = Split(BkIss, "-")
+        Dim BkIssNew As String = ""
+        Dim array As String() = Split(BkIss, " ")
         Dim done As Boolean = 0
         For Each temp As String In array
-            If temp.Trim() = "0" Then
-                Continue For
-            End If
-            If (temp.Trim() = CStr(Log.CurID) And done = 0) Then
+            If temp.Trim() = CStr(Log.CurID) And done = 0 Then
                 done = 1
                 Continue For
             End If
-            BkIssNew &= "-" & temp
+            BkIssNew &= temp & " "
         Next
+        'BkIss &= CStr(Log.CurID) & " "
 
         Access.ExecQuery("Update Book set Copies_Available=" & BkCnt & ", Issued_to='" & BkIssNew & "' where [ID]=" & BkID)
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
         Log.CurBkLimit += 1
-        Dim array2 As String() = Split(Log.CurBooks, "-")
+        Dim array2 As String() = Split(Log.CurBooks, " ")
         Dim done2 As Boolean = 0
-        Dim CurBooksNew As String = "0"
+        Dim CurBooksNew As String = ""
         For Each temp As String In array2
-            'MessageBox.Show(temp)
-            If temp.Trim() = "0" Then
-                Continue For
-            End If
-            If CInt(temp) = BkID And done2 = 0 Then
+            If temp.Trim() = CStr(BkID) And done2 = 0 Then
                 done2 = 1
                 Continue For
             End If
-            CurBooksNew &= "-" & temp
+            CurBooksNew &= temp & " "
         Next
         Log.CurBooks = CurBooksNew
         Try
@@ -177,11 +171,8 @@
         MessageBox.Show("Book " & BkTit & " successfully returned!")
 
         Clr()
-        RefreshPage()
+        'RefreshPage()
     End Sub
 
 
-    Private Sub btnRet1_Click(sender As Object, e As EventArgs) Handles btnRet1.Click
-
-    End Sub
 End Class

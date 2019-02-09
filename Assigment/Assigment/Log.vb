@@ -13,7 +13,7 @@
 
     Private Access As New LMS
 
-    Private Sub Log_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Log_Load(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
         Access.ExecQuery("SELECT * FROM Users")
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
@@ -23,6 +23,7 @@
     End Sub
 
     Private Sub LogIn_Click(sender As Object, e As EventArgs) Handles LogIn.Click
+        
         If txtPass.Text = "" Or txtUser.Text = "" Then
             MessageBox.Show("Please enter username and password", "Error")
             Exit Sub
@@ -34,7 +35,12 @@
         If Access.DBDT.Rows.Count = 0 Then
             MessageBox.Show("Incorrect Username or Password", "Error")
             Exit Sub
+        ElseIf txtUser.Text = "root" Then
+            Form1.adminPanel.Visible = True
+            Form1.Panel1.Visible = False
+            Form1.remove_detail.visible = True
         End If
+
 
         CurID = Access.DBDT.Rows(0).Item(0)
         CurUser = Access.DBDT.Rows(0).Item(1)
@@ -49,8 +55,10 @@
 
         Form1.Panel4.Visible = True
         Form1.Log1.Visible = False
-        Form1.Myprofile.Visible = True
+        Form1.Myprofile.Visible = False
         Form1.Search1.Visible = True
+        Form1.SidePanel.Height = Form1.SearchBtn.Height
+        Form1.SidePanel.Top = Form1.SearchBtn.Top
 
     End Sub
 

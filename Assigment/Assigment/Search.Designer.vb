@@ -37,7 +37,7 @@ Partial Class Search
         '
         Me.cbxSrch.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxSrch.FormattingEnabled = True
-        Me.cbxSrch.Location = New System.Drawing.Point(30, 72)
+        Me.cbxSrch.Location = New System.Drawing.Point(29, 71)
         Me.cbxSrch.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxSrch.Name = "cbxSrch"
         Me.cbxSrch.Size = New System.Drawing.Size(116, 28)
@@ -68,10 +68,10 @@ Partial Class Search
         'txtSrch
         '
         Me.txtSrch.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSrch.Location = New System.Drawing.Point(188, 72)
+        Me.txtSrch.Location = New System.Drawing.Point(188, 71)
         Me.txtSrch.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSrch.Name = "txtSrch"
-        Me.txtSrch.Size = New System.Drawing.Size(421, 28)
+        Me.txtSrch.Size = New System.Drawing.Size(421, 29)
         Me.txtSrch.TabIndex = 16
         Me.txtSrch.Text = ""
         '
@@ -79,10 +79,10 @@ Partial Class Search
         '
         Me.SearchBtn.FlatAppearance.BorderSize = 0
         Me.SearchBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchBtn.Location = New System.Drawing.Point(656, 72)
+        Me.SearchBtn.Location = New System.Drawing.Point(656, 71)
         Me.SearchBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchBtn.Name = "SearchBtn"
-        Me.SearchBtn.Size = New System.Drawing.Size(107, 29)
+        Me.SearchBtn.Size = New System.Drawing.Size(107, 30)
         Me.SearchBtn.TabIndex = 17
         Me.SearchBtn.Text = "Search"
         Me.SearchBtn.UseVisualStyleBackColor = True
@@ -91,6 +91,7 @@ Partial Class Search
         '
         Me.dgvSrch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSrch.Location = New System.Drawing.Point(113, 138)
+        Me.dgvSrch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgvSrch.Name = "dgvSrch"
         Me.dgvSrch.RowTemplate.Height = 24
         Me.dgvSrch.Size = New System.Drawing.Size(623, 150)
@@ -111,9 +112,10 @@ Partial Class Search
         'btnSrch1
         '
         Me.btnSrch1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSrch1.Location = New System.Drawing.Point(30, 351)
+        Me.btnSrch1.Location = New System.Drawing.Point(29, 351)
+        Me.btnSrch1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSrch1.Name = "btnSrch1"
-        Me.btnSrch1.Size = New System.Drawing.Size(68, 61)
+        Me.btnSrch1.Size = New System.Drawing.Size(68, 62)
         Me.btnSrch1.TabIndex = 21
         Me.btnSrch1.Text = "Issue Now!"
         Me.btnSrch1.UseVisualStyleBackColor = True

@@ -7,7 +7,7 @@
 
     Private Access As New LMS
 
-    Private Sub NewLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub NewLogin_Load(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
         cmbStf.AllowDrop() = True
         cmbStf.Items.Add("Faculty")
         cmbStf.Items.Add("Student")
@@ -104,7 +104,7 @@
 
     Private Sub AddUser()
 
-        Dim tmp As String = "| "
+        Dim tmp As String = "0"
         Dim insert As String = "Insert into Users (Username, Psswd, Roll_No, Title, Access, Program, Department, Book_Limit, Books_Issued) values ('" & txtMail.Text & "','" & txtPass.Text & "'," & txtRoll.Text & ",'" & txtName.Text & "','" & cmbStf.SelectedItem & "','" & cmbDisc.SelectedItem & "','" & cmbDept.SelectedItem & "'," & BookLimit & ",'" & tmp & "')"
         Access.ExecQuery(insert)
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
@@ -114,8 +114,16 @@
         If Access.DBDT.Rows.Count = 1 Then
             MessageBox.Show("User " & txtMail.Text & " successfully created")
             Console.WriteLine("User " & txtMail.Text & " successfully created")
+            Form1.Myprofile.Visible = True
+            Form1.NewLogin.Visible = False
+            Form1.SidePanel.Height = Form1.MyAccount.Height
+            Form1.SidePanel.Top = Form1.MyAccount.Top
+            Form1.CurProfile.Visible = True
+            Form1.Myprofile.Arrow.Height = Form1.Myprofile.btnmyprofile.Height
+            Form1.Myprofile.Arrow.Top = Form1.Myprofile.btnmyprofile.Top + 12
         Else
             Console.WriteLine("User " & txtMail.Text & " creation failed")
         End If
+
     End Sub
 End Class

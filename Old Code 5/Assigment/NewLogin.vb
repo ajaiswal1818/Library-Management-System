@@ -1,5 +1,8 @@
 ﻿Public Class NewLogin
 
+    Public CurUser As String = ""
+
+
     Dim BookLimit As Integer
 
     Private Access As New LMS
@@ -17,7 +20,7 @@
         cmbDisc.Items.Add("MA")
         cmbDisc.Items.Add("PhD")
         cmbDisc.Items.Add("PostDoc")
-        cmbDisc.Items.Add("Staff")
+        cmbDisc.Items.Add("Other")
 
         cmbDept.AllowDrop() = True
         cmbDept.Items.Add("CSE")
@@ -57,7 +60,7 @@
     Private Sub cmbStf_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStf.SelectedIndexChanged
         If cmbStf.SelectedItem = "Faculty" Then
             cmbDisc.Items.Clear()
-            cmbDisc.Items.Add("Staff")
+            cmbDisc.Items.Add("Other")
             BookLimit = 7
 
         ElseIf cmbStf.SelectedItem = "Student" Then
@@ -81,15 +84,19 @@
         If txtName.Text = "" Or txtRoll.Text = "" Or txtPass.Text = "" Or txtConf.Text = "" Or txtMail.Text = "" Or cmbDept.SelectedItem = "" Or cmbDisc.SelectedItem = "" Or cmbStf.SelectedItem = "" Then
             MessageBox.Show("Please enter all fields!", "Error")
             Console.Write("Error: Field left empty")
+            Exit Sub
         ElseIf Access.DBDT.Rows.Count <> 0 Then
             MessageBox.Show("Webmail already exists!", "Error")
             Console.Write("Error: Webmail already exists")
+            Exit Sub
         ElseIf txtPass.Text <> txtConf.Text Then
             MessageBox.Show("Passwords do not match", "Error")
             Console.Write("Error: Passwords do not match")
+            Exit Sub
         ElseIf IsNumeric(txtRoll) <> False Then
             MessageBox.Show("Roll number not numeric", "Error")
             Console.Write("Error: Roll number not numeric")
+            Exit Sub
         End If
 
         AddUser()
@@ -97,16 +104,18 @@
 
     Private Sub AddUser()
 
-
-        Dim insert As String = "Insert into Users (Username, Psswd, Roll_No, Title, Access, Program, Department, Book_Limit) values ('" & txtMail.Text & "','" & txtPass.Text & "','" & txtRoll.Text & "','" & txtName.Text & "','" & cmbStf.SelectedItem & "','" & cmbDisc.SelectedItem & "','" & cmbDept.SelectedItem & "','" & BookLimit & "')"
+        Dim tmp As String = "| "
+        Dim insert As String = "Insert into Users (Username, Psswd, Roll_No, Title, Access, Program, Department, Book_Limit, Books_Issued) values ('" & txtMail.Text & "','" & txtPass.Text & "'," & txtRoll.Text & ",'" & txtName.Text & "','" & cmbStf.SelectedItem & "','" & cmbDisc.SelectedItem & "','" & cmbDept.SelectedItem & "'," & BookLimit & ",'" & tmp & "')"
         Access.ExecQuery(insert)
-        'Access.AddParam("@title", txtName.Text)
-        'Access.AddParam("@roll", txtRoll.Text)
-        'Access.AddParam("@user", txtMail.Text)
+        If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
-        'Access.ExecQuery("INSERT into Users (Username, Roll Number, Title)" & _
-        '                 "VALUES (@user, @roll, @title)")
-        'Console.WriteLine("INSERT into Users (Username, Roll Number, Title)" & _
-        '                 "VALUES (@user, @roll, @title)")
+        Access.ExecQuery("Select * from Users where Username = '" & txtMail.Text & "'")
+        If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
+        If Access.DBDT.Rows.Count = 1 Then
+            MessageBox.Show("User " & txtMail.Text & " successfully created")
+            Console.WriteLine("User " & txtMail.Text & " successfully created")
+        Else
+            Console.WriteLine("User " & txtMail.Text & " creation failed")
+        End If
     End Sub
 End Class

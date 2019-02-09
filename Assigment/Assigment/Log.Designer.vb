@@ -39,10 +39,9 @@ Partial Class Log
         Me.Forgot.FlatAppearance.BorderSize = 0
         Me.Forgot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.Forgot.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Forgot.Location = New System.Drawing.Point(344, 227)
-        Me.Forgot.Margin = New System.Windows.Forms.Padding(4)
+        Me.Forgot.Location = New System.Drawing.Point(258, 184)
         Me.Forgot.Name = "Forgot"
-        Me.Forgot.Size = New System.Drawing.Size(145, 37)
+        Me.Forgot.Size = New System.Drawing.Size(109, 30)
         Me.Forgot.TabIndex = 5
         Me.Forgot.Text = "Forgot Password"
         Me.Forgot.UseVisualStyleBackColor = False
@@ -51,10 +50,9 @@ Partial Class Log
         '
         Me.Sign_up.FlatAppearance.BorderSize = 0
         Me.Sign_up.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Sign_up.Location = New System.Drawing.Point(314, 366)
-        Me.Sign_up.Margin = New System.Windows.Forms.Padding(4)
+        Me.Sign_up.Location = New System.Drawing.Point(236, 297)
         Me.Sign_up.Name = "Sign_up"
-        Me.Sign_up.Size = New System.Drawing.Size(208, 42)
+        Me.Sign_up.Size = New System.Drawing.Size(156, 34)
         Me.Sign_up.TabIndex = 8
         Me.Sign_up.Text = "Sign up"
         Me.Sign_up.UseVisualStyleBackColor = True
@@ -63,10 +61,9 @@ Partial Class Log
         '
         Me.LogIn.FlatAppearance.BorderSize = 0
         Me.LogIn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LogIn.Location = New System.Drawing.Point(314, 304)
-        Me.LogIn.Margin = New System.Windows.Forms.Padding(4)
+        Me.LogIn.Location = New System.Drawing.Point(236, 247)
         Me.LogIn.Name = "LogIn"
-        Me.LogIn.Size = New System.Drawing.Size(208, 42)
+        Me.LogIn.Size = New System.Drawing.Size(156, 34)
         Me.LogIn.TabIndex = 9
         Me.LogIn.Text = "Login"
         Me.LogIn.UseVisualStyleBackColor = True
@@ -74,34 +71,37 @@ Partial Class Log
         'txtPass
         '
         Me.txtPass.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPass.Location = New System.Drawing.Point(266, 147)
+        Me.txtPass.Location = New System.Drawing.Point(200, 119)
+        Me.txtPass.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtPass.Multiline = True
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPass.Size = New System.Drawing.Size(304, 44)
+        Me.txtPass.Size = New System.Drawing.Size(229, 36)
         Me.txtPass.TabIndex = 10
         '
         'txtUser
         '
         Me.txtUser.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUser.Location = New System.Drawing.Point(266, 83)
+        Me.txtUser.Location = New System.Drawing.Point(200, 67)
+        Me.txtUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtUser.Multiline = True
         Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(304, 44)
+        Me.txtUser.Size = New System.Drawing.Size(229, 36)
         Me.txtUser.TabIndex = 11
         '
         'dgvUser
         '
         Me.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUser.Location = New System.Drawing.Point(125, 460)
+        Me.dgvUser.Location = New System.Drawing.Point(94, 374)
+        Me.dgvUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgvUser.Name = "dgvUser"
         Me.dgvUser.RowTemplate.Height = 24
-        Me.dgvUser.Size = New System.Drawing.Size(590, 150)
+        Me.dgvUser.Size = New System.Drawing.Size(442, 122)
         Me.dgvUser.TabIndex = 12
         '
         'Log
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -111,9 +111,8 @@ Partial Class Log
         Me.Controls.Add(Me.LogIn)
         Me.Controls.Add(Me.Sign_up)
         Me.Controls.Add(Me.Forgot)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Log"
-        Me.Size = New System.Drawing.Size(852, 700)
+        Me.Size = New System.Drawing.Size(639, 569)
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

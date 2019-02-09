@@ -2,7 +2,8 @@
     Dim cnt As Integer = 0
 
     Private Access As New LMS
-    Private Sub Search_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub Refr()
         lblSrch1.Hide()
         btnSrch1.Hide()
         AddHandler btnSrch1.Click, AddressOf Me.Button_Click
@@ -25,19 +26,20 @@
         If Access.RecordCount > 0 Then cbxSrch.SelectedIndex = 0
     End Sub
 
+    Private Sub Search_Visible(sender As Object, e As EventArgs) Handles MyBase.Load
+        Clr()
+        Refr()
+    End Sub
+
     Private Sub cbxSrch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxSrch.SelectedIndexChanged
         Dim srchPattern As String
-
         srchPattern = cbxSrch.SelectedItem
-
-
     End Sub
 
 
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
         Clr()
         lblSrch1.Show()
-
 
         If cbxSrch.SelectedItem = "Title" Then
             Access.ExecQuery("SELECT * from Book WHERE Title LIKE '%" & txtSrch.Text & "%'")
@@ -131,12 +133,12 @@
         Dim selectedBtn As Button = sender
         'MessageBox.Show("you have clicked button " & selectedBtn.DialogResult)
         If Log.CurUser = "" Then
-            MessageBox.Show("You are currently not logged in! Please log in to issue books!")
+            MessageBox.Show("You are currently not logged in! Please log in to issue books!", "Error")
             Console.WriteLine("Error in Issuing: Not logged in")
             Exit Sub
         End If
         If Log.CurBkLimit <= 0 Then
-            MessageBox.Show("You cannot issue any more books!")
+            MessageBox.Show("You cannot issue any more books!", "Error")
             Console.WriteLine("User book limit reached")
             Exit Sub
         End If
@@ -145,19 +147,20 @@
         Access.ExecQuery("SELECT * FROM Book where [ID] = " & IDFind)
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
         If Access.DBDT.Rows.Count = 0 Or Access.DBDT.Rows.Count > 1 Then
-            MessageBox.Show("Book to be issued not found")
+            MessageBox.Show("Book to be issued not found", "Error")
             Console.WriteLine("Book to be issued not found")
             Exit Sub
         End If
         If Access.DBDT.Rows(0).Item(4) <= 0 Then
-            MessageBox.Show("All book copies issued")
+            MessageBox.Show("All book copies issued", "Error")
             Console.WriteLine("All book copies issued")
             Exit Sub
         End If
+        Dim BkName As String = Access.DBDT.Rows(0).Item(1)
         Dim BkID As Integer = Access.DBDT.Rows(0).Item(0)
         Dim BkCnt As Integer = Access.DBDT.Rows(0).Item(4) - 1
         Dim BkIss As String = Access.DBDT.Rows(0).Item(5)
-        BkIss &= CStr(Log.CurID) & " "
+        BkIss &= "-" & CStr(Log.CurID)
 
 
         Access.ExecQuery("Update Book set Copies_Available=" & BkCnt & ", Issued_to='" & BkIss & "' where [ID]=" & BkID)
@@ -165,13 +168,16 @@
 
 
         Log.CurBkLimit -= 1
-        Log.CurBooks &= CStr(BkID) & " "
+        Log.CurBooks &= "-" & CStr(BkID)
         Try
             Access.ExecQuery("Update Users set Book_Limit=" & Log.CurBkLimit & ", Books_Issued='" & Log.CurBooks & "' where [ID]=" & Log.CurID)
         Catch ex As Exception
-            MessageBox.Show("LOL!")
+            MessageBox.Show("Error", "Error")
         End Try
 
+        MessageBox.Show("Book " & BkName & " issued")
+        Console.Write("Book " & BkName & " issued")
+        'Clr()
     End Sub
 
     Private Sub Clr()

@@ -1,14 +1,15 @@
 ﻿Public Class Log
 
-    Public CurUser As String = ""
-    Public CurPass As String = ""
-    Public CurRoll As Integer = 0
-    Public CurName As String = ""
-    Public CurAccess As String = ""
-    Public CurProg As String = ""
-    Public CurDept As String = ""
-    Public CurBkLimit As Integer = 0
-    Public CurBooks As String = ""
+    Public Shared CurID As Integer = 0
+    Public Shared CurUser As String = ""
+    Public Shared CurPass As String = ""
+    Public Shared CurRoll As Integer = 0
+    Public Shared CurName As String = ""
+    Public Shared CurAccess As String = ""
+    Public Shared CurProg As String = ""
+    Public Shared CurDept As String = ""
+    Public Shared CurBkLimit As Integer = 0
+    Public Shared CurBooks As String = ""
 
     Private Access As New LMS
 
@@ -27,7 +28,7 @@
             Exit Sub
         End If
 
-        Access.ExecQuery("SELECT * FROM Users WHERE Username = '" & txtUser.Text & "' AND Password = '" & txtPass.Text & "'")
+        Access.ExecQuery("SELECT * FROM Users WHERE Username = '" & txtUser.Text & "' AND Psswd = '" & txtPass.Text & "'")
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
         If Access.DBDT.Rows.Count = 0 Then
@@ -35,6 +36,7 @@
             Exit Sub
         End If
 
+        CurID = Access.DBDT.Rows(0).Item(0)
         CurUser = Access.DBDT.Rows(0).Item(1)
         CurPass = Access.DBDT.Rows(0).Item(2)
         CurRoll = Access.DBDT.Rows(0).Item(3)
@@ -46,16 +48,17 @@
         CurBooks = Access.DBDT.Rows(0).Item(9)
 
         Form1.Panel4.Visible = True
-        Form1.Panel1.Visible = False
         Form1.Log1.Visible = False
-        Form1.MyprofileSidePanel.Visible = True
+        Form1.Myprofile.Visible = True
+        Form1.Search1.Visible = True
+
     End Sub
 
     Private Sub Sign_Click(sender As Object, e As EventArgs) Handles Sign_up.Click
         Form1.NewLogin.Visible = True
         Form1.Panel4.Visible = False
         Form1.Log1.Visible = False
-        Form1.MyprofileSidePanel.Visible = False
+        Form1.Myprofile.Visible = False
 
     End Sub
 

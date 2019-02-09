@@ -75,6 +75,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addBook.Designer.vb">
+      <DependentUpon>addBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addBook.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Admin_page.Designer.vb">
       <DependentUpon>Admin_page.vb</DependentUpon>
     </Compile>
@@ -97,6 +103,12 @@
       <DependentUpon>CurProfile.vb</DependentUpon>
     </Compile>
     <Compile Include="CurProfile.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DiscRoom.Designer.vb">
+      <DependentUpon>DiscRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DiscRoom.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="LMS.vb" />
@@ -151,10 +163,22 @@
     <Compile Include="NewLogin.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="reco.Designer.vb">
+      <DependentUpon>reco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reco.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Rec_book.Designer.vb">
       <DependentUpon>Rec_book.vb</DependentUpon>
     </Compile>
     <Compile Include="Rec_book.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="remove_detail.Designer.vb">
+      <DependentUpon>remove_detail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="remove_detail.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Search.Designer.vb">
@@ -163,8 +187,20 @@
     <Compile Include="Search.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="userDetail.Designer.vb">
+      <DependentUpon>userDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="userDetail.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addBook.resx">
+      <DependentUpon>addBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_page.resx">
+      <DependentUpon>Admin_page.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BooksIssued.resx">
       <DependentUpon>BooksIssued.vb</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CurProfile.resx">
       <DependentUpon>CurProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiscRoom.resx">
+      <DependentUpon>DiscRoom.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="eBooks.resx">
       <DependentUpon>eBooks.vb</DependentUpon>
@@ -195,8 +234,20 @@
     <EmbeddedResource Include="NewLogin.resx">
       <DependentUpon>NewLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reco.resx">
+      <DependentUpon>reco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rec_book.resx">
+      <DependentUpon>Rec_book.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="remove_detail.resx">
+      <DependentUpon>remove_detail.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userDetail.resx">
+      <DependentUpon>userDetail.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -226,7 +277,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LMS.accdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

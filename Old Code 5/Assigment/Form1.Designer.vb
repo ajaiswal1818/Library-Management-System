@@ -25,8 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Myprofile = New Assigment.Myprofile()
         Me.MyAccount = New System.Windows.Forms.Button()
         Me.SearchBtn = New System.Windows.Forms.Button()
         Me.eBookBtn = New System.Windows.Forms.Button()
@@ -43,12 +42,14 @@ Partial Class Form1
         Me.logoutBtn = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BooksIssued = New Assigment.BooksIssued()
+        Me.Search1 = New Assigment.Search()
         Me.NewLogin = New Assigment.NewLogin()
         Me.NewLogin1 = New Assigment.NewLogin()
-        Me.Search1 = New Assigment.Search()
         Me.MyprofileSidePanel = New Assigment.Myprofile()
         Me.Log1 = New Assigment.Log()
         Me.EBooks1 = New Assigment.eBooks()
+        Me.ChngPass = New Assigment.ChngPass()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,8 +61,7 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Snow
-        Me.Panel1.Controls.Add(Me.Button6)
-        Me.Panel1.Controls.Add(Me.Button5)
+        Me.Panel1.Controls.Add(Me.Myprofile)
         Me.Panel1.Controls.Add(Me.MyAccount)
         Me.Panel1.Controls.Add(Me.SearchBtn)
         Me.Panel1.Controls.Add(Me.eBookBtn)
@@ -75,33 +75,14 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(172, 768)
         Me.Panel1.TabIndex = 0
         '
-        'Button6
+        'Myprofile
         '
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.Black
-        Me.Button6.Location = New System.Drawing.Point(20, 459)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(148, 47)
-        Me.Button6.TabIndex = 8
-        Me.Button6.Text = "Login"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.Black
-        Me.Button5.Location = New System.Drawing.Point(20, 406)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(148, 47)
-        Me.Button5.TabIndex = 7
-        Me.Button5.Text = "Login"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.Myprofile.Location = New System.Drawing.Point(0, 406)
+        Me.Myprofile.Margin = New System.Windows.Forms.Padding(5)
+        Me.Myprofile.Name = "Myprofile"
+        Me.Myprofile.Size = New System.Drawing.Size(171, 308)
+        Me.Myprofile.TabIndex = 29
+        Me.Myprofile.Visible = False
         '
         'MyAccount
         '
@@ -221,7 +202,7 @@ Partial Class Form1
         Me.Panel3.Location = New System.Drawing.Point(172, 0)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(856, 17)
+        Me.Panel3.Size = New System.Drawing.Size(857, 17)
         Me.Panel3.TabIndex = 2
         '
         'Button8
@@ -230,7 +211,7 @@ Partial Class Form1
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.Color.Black
-        Me.Button8.Location = New System.Drawing.Point(514, 23)
+        Me.Button8.Location = New System.Drawing.Point(515, 23)
         Me.Button8.Margin = New System.Windows.Forms.Padding(4)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(211, 32)
@@ -283,20 +264,13 @@ Partial Class Form1
         Me.Panel4.TabIndex = 25
         Me.Panel4.Visible = False
         '
-        'NewLogin
+        'BooksIssued
         '
-        Me.NewLogin.Location = New System.Drawing.Point(176, 68)
-        Me.NewLogin.Name = "NewLogin"
-        Me.NewLogin.Size = New System.Drawing.Size(852, 700)
-        Me.NewLogin.TabIndex = 28
-        Me.NewLogin.Visible = False
-        '
-        'NewLogin1
-        '
-        Me.NewLogin1.Location = New System.Drawing.Point(187, 77)
-        Me.NewLogin1.Name = "NewLogin1"
-        Me.NewLogin1.Size = New System.Drawing.Size(114, 267)
-        Me.NewLogin1.TabIndex = 27
+        Me.BooksIssued.Location = New System.Drawing.Point(171, 68)
+        Me.BooksIssued.Name = "BooksIssued"
+        Me.BooksIssued.Size = New System.Drawing.Size(852, 700)
+        Me.BooksIssued.TabIndex = 29
+        Me.BooksIssued.Visible = False
         '
         'Search1
         '
@@ -304,8 +278,25 @@ Partial Class Form1
         Me.Search1.Location = New System.Drawing.Point(173, 70)
         Me.Search1.Margin = New System.Windows.Forms.Padding(5)
         Me.Search1.Name = "Search1"
-        Me.Search1.Size = New System.Drawing.Size(830, 652)
+        Me.Search1.Size = New System.Drawing.Size(855, 652)
         Me.Search1.TabIndex = 21
+        '
+        'NewLogin
+        '
+        Me.NewLogin.Location = New System.Drawing.Point(176, 68)
+        Me.NewLogin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NewLogin.Name = "NewLogin"
+        Me.NewLogin.Size = New System.Drawing.Size(852, 700)
+        Me.NewLogin.TabIndex = 28
+        Me.NewLogin.Visible = False
+        '
+        'NewLogin1
+        '
+        Me.NewLogin1.Location = New System.Drawing.Point(187, 78)
+        Me.NewLogin1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NewLogin1.Name = "NewLogin1"
+        Me.NewLogin1.Size = New System.Drawing.Size(115, 267)
+        Me.NewLogin1.TabIndex = 27
         '
         'MyprofileSidePanel
         '
@@ -324,7 +315,7 @@ Partial Class Form1
         Me.Log1.Location = New System.Drawing.Point(176, 70)
         Me.Log1.Margin = New System.Windows.Forms.Padding(5)
         Me.Log1.Name = "Log1"
-        Me.Log1.Size = New System.Drawing.Size(852, 652)
+        Me.Log1.Size = New System.Drawing.Size(853, 652)
         Me.Log1.TabIndex = 20
         Me.Log1.Visible = False
         '
@@ -337,16 +328,26 @@ Partial Class Form1
         Me.EBooks1.TabIndex = 19
         Me.EBooks1.Visible = False
         '
+        'ChngPass
+        '
+        Me.ChngPass.Location = New System.Drawing.Point(175, 70)
+        Me.ChngPass.Name = "ChngPass"
+        Me.ChngPass.Size = New System.Drawing.Size(852, 659)
+        Me.ChngPass.TabIndex = 30
+        Me.ChngPass.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1048, 763)
+        Me.ClientSize = New System.Drawing.Size(1048, 750)
+        Me.Controls.Add(Me.ChngPass)
+        Me.Controls.Add(Me.BooksIssued)
+        Me.Controls.Add(Me.Search1)
         Me.Controls.Add(Me.NewLogin)
         Me.Controls.Add(Me.NewLogin1)
-        Me.Controls.Add(Me.Search1)
         Me.Controls.Add(Me.MyprofileSidePanel)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Log1)
@@ -377,8 +378,6 @@ Partial Class Form1
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents SidePanel As System.Windows.Forms.Panel
-    Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents MyAccount As System.Windows.Forms.Button
     Friend WithEvents SearchBtn As System.Windows.Forms.Button
     Friend WithEvents eBookBtn As System.Windows.Forms.Button
@@ -394,5 +393,8 @@ Partial Class Form1
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents NewLogin1 As Assigment.NewLogin
     Friend WithEvents NewLogin As Assigment.NewLogin
+    Friend WithEvents Myprofile As Assigment.Myprofile
+    Friend WithEvents BooksIssued As Assigment.BooksIssued
+    Friend WithEvents ChngPass As Assigment.ChngPass
 
 End Class

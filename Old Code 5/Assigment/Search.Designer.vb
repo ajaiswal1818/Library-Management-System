@@ -29,6 +29,7 @@ Partial Class Search
         Me.SearchBtn = New System.Windows.Forms.Button()
         Me.dgvSrch = New System.Windows.Forms.DataGridView()
         Me.lblSrch1 = New System.Windows.Forms.Label()
+        Me.btnSrch1 = New System.Windows.Forms.Button()
         CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -107,11 +108,22 @@ Partial Class Search
         Me.lblSrch1.TabIndex = 20
         Me.lblSrch1.Text = "Label1"
         '
+        'btnSrch1
+        '
+        Me.btnSrch1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSrch1.Location = New System.Drawing.Point(30, 351)
+        Me.btnSrch1.Name = "btnSrch1"
+        Me.btnSrch1.Size = New System.Drawing.Size(68, 61)
+        Me.btnSrch1.TabIndex = 21
+        Me.btnSrch1.Text = "Issue Now!"
+        Me.btnSrch1.UseVisualStyleBackColor = True
+        '
         'Search
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
+        Me.Controls.Add(Me.btnSrch1)
         Me.Controls.Add(Me.lblSrch1)
         Me.Controls.Add(Me.dgvSrch)
         Me.Controls.Add(Me.SearchBtn)
@@ -134,5 +146,6 @@ Partial Class Search
     Friend WithEvents SearchBtn As System.Windows.Forms.Button
     Friend WithEvents dgvSrch As System.Windows.Forms.DataGridView
     Friend WithEvents lblSrch1 As System.Windows.Forms.Label
+    Friend WithEvents btnSrch1 As System.Windows.Forms.Button
 
 End Class
