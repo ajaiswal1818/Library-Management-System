@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Myprofile = New Assigment.Myprofile()
         Me.MyAccount = New System.Windows.Forms.Button()
         Me.SearchBtn = New System.Windows.Forms.Button()
         Me.eBookBtn = New System.Windows.Forms.Button()
@@ -48,7 +49,7 @@ Partial Class Form1
         Me.MyprofileSidePanel = New Assigment.Myprofile()
         Me.Log1 = New Assigment.Log()
         Me.EBooks1 = New Assigment.eBooks()
-        Me.Myprofile = New Assigment.Myprofile()
+        Me.ChngPass = New Assigment.ChngPass()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,10 +70,19 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(172, 768)
         Me.Panel1.TabIndex = 0
+        '
+        'Myprofile
+        '
+        Me.Myprofile.Location = New System.Drawing.Point(0, 406)
+        Me.Myprofile.Margin = New System.Windows.Forms.Padding(5)
+        Me.Myprofile.Name = "Myprofile"
+        Me.Myprofile.Size = New System.Drawing.Size(171, 308)
+        Me.Myprofile.TabIndex = 29
+        Me.Myprofile.Visible = False
         '
         'MyAccount
         '
@@ -81,7 +91,7 @@ Partial Class Form1
         Me.MyAccount.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MyAccount.ForeColor = System.Drawing.Color.Black
         Me.MyAccount.Location = New System.Drawing.Point(20, 352)
-        Me.MyAccount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MyAccount.Margin = New System.Windows.Forms.Padding(4)
         Me.MyAccount.Name = "MyAccount"
         Me.MyAccount.Size = New System.Drawing.Size(148, 47)
         Me.MyAccount.TabIndex = 6
@@ -95,7 +105,7 @@ Partial Class Form1
         Me.SearchBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchBtn.ForeColor = System.Drawing.Color.Black
         Me.SearchBtn.Location = New System.Drawing.Point(20, 298)
-        Me.SearchBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SearchBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchBtn.Name = "SearchBtn"
         Me.SearchBtn.Size = New System.Drawing.Size(148, 47)
         Me.SearchBtn.TabIndex = 5
@@ -109,7 +119,7 @@ Partial Class Form1
         Me.eBookBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.eBookBtn.ForeColor = System.Drawing.Color.Black
         Me.eBookBtn.Location = New System.Drawing.Point(20, 244)
-        Me.eBookBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.eBookBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.eBookBtn.Name = "eBookBtn"
         Me.eBookBtn.Size = New System.Drawing.Size(148, 47)
         Me.eBookBtn.TabIndex = 4
@@ -120,7 +130,7 @@ Partial Class Form1
         '
         Me.SidePanel.BackColor = System.Drawing.Color.MidnightBlue
         Me.SidePanel.Location = New System.Drawing.Point(4, 190)
-        Me.SidePanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SidePanel.Margin = New System.Windows.Forms.Padding(4)
         Me.SidePanel.Name = "SidePanel"
         Me.SidePanel.Size = New System.Drawing.Size(13, 47)
         Me.SidePanel.TabIndex = 3
@@ -132,7 +142,7 @@ Partial Class Form1
         Me.Panel2.Controls.Add(Me.PictureBox1)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Location = New System.Drawing.Point(4, 4)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(164, 161)
         Me.Panel2.TabIndex = 1
@@ -152,7 +162,7 @@ Partial Class Form1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(4, 53)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(156, 108)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -178,7 +188,7 @@ Partial Class Form1
         Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
         Me.Button1.Location = New System.Drawing.Point(20, 190)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(148, 58)
         Me.Button1.TabIndex = 0
@@ -190,7 +200,7 @@ Partial Class Form1
         Me.Panel3.BackColor = System.Drawing.Color.Navy
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(172, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(857, 17)
         Me.Panel3.TabIndex = 2
@@ -202,7 +212,7 @@ Partial Class Form1
         Me.Button8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.Color.Black
         Me.Button8.Location = New System.Drawing.Point(515, 23)
-        Me.Button8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button8.Margin = New System.Windows.Forms.Padding(4)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(211, 32)
         Me.Button8.TabIndex = 18
@@ -212,7 +222,7 @@ Partial Class Form1
         'PictureBox2
         '
         Me.PictureBox2.Location = New System.Drawing.Point(97, 4)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(49, 28)
         Me.PictureBox2.TabIndex = 22
@@ -234,7 +244,7 @@ Partial Class Form1
         Me.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.logoutBtn.Image = CType(resources.GetObject("logoutBtn.Image"), System.Drawing.Image)
         Me.logoutBtn.Location = New System.Drawing.Point(167, 4)
-        Me.logoutBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.logoutBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.logoutBtn.Name = "logoutBtn"
         Me.logoutBtn.Size = New System.Drawing.Size(33, 31)
         Me.logoutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -248,7 +258,7 @@ Partial Class Form1
         Me.Panel4.Controls.Add(Me.logoutBtn)
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Location = New System.Drawing.Point(776, 23)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(217, 38)
         Me.Panel4.TabIndex = 25
@@ -318,14 +328,13 @@ Partial Class Form1
         Me.EBooks1.TabIndex = 19
         Me.EBooks1.Visible = False
         '
-        'Myprofile
+        'ChngPass
         '
-        Me.Myprofile.Location = New System.Drawing.Point(0, 406)
-        Me.Myprofile.Margin = New System.Windows.Forms.Padding(5)
-        Me.Myprofile.Name = "Myprofile"
-        Me.Myprofile.Size = New System.Drawing.Size(171, 308)
-        Me.Myprofile.TabIndex = 29
-        Me.Myprofile.Visible = False
+        Me.ChngPass.Location = New System.Drawing.Point(175, 70)
+        Me.ChngPass.Name = "ChngPass"
+        Me.ChngPass.Size = New System.Drawing.Size(852, 659)
+        Me.ChngPass.TabIndex = 30
+        Me.ChngPass.Visible = False
         '
         'Form1
         '
@@ -334,6 +343,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1048, 750)
+        Me.Controls.Add(Me.ChngPass)
         Me.Controls.Add(Me.BooksIssued)
         Me.Controls.Add(Me.Search1)
         Me.Controls.Add(Me.NewLogin)
@@ -346,7 +356,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "LIB"
         Me.Panel1.ResumeLayout(False)
@@ -385,5 +395,6 @@ Partial Class Form1
     Friend WithEvents NewLogin As Assigment.NewLogin
     Friend WithEvents Myprofile As Assigment.Myprofile
     Friend WithEvents BooksIssued As Assigment.BooksIssued
+    Friend WithEvents ChngPass As Assigment.ChngPass
 
 End Class

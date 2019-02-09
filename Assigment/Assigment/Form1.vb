@@ -47,6 +47,7 @@
         Search1.Visible = True
         Myprofile.Arrow.Visible = False
         BooksIssued.Visible = False
+        ChngPass.Visible = False
 
 
     End Sub

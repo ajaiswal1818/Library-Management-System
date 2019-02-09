@@ -14,5 +14,6 @@
     Private Sub btnPasschange_Click(sender As Object, e As EventArgs) Handles btnPasschange.Click
         Arrow.Visible = True
         Arrow.Top = btnPasschange.Top + 12
+        Form1.ChngPass.Visible = True
     End Sub
 End Class
