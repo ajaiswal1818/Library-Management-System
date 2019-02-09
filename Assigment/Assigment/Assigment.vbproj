@@ -75,6 +75,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_page.Designer.vb">
+      <DependentUpon>Admin_page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_page.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="BooksIssued.Designer.vb">
       <DependentUpon>BooksIssued.vb</DependentUpon>
     </Compile>
@@ -143,6 +149,12 @@
       <DependentUpon>NewLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="NewLogin.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rec_book.Designer.vb">
+      <DependentUpon>Rec_book.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rec_book.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Search.Designer.vb">

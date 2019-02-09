@@ -16,7 +16,7 @@
         'Dim update As String =
         'Dim update As String = "Select * from Users where Username='" & Log.CurUser & "'"
         Dim pass As String = CStr(newpass.Text)
-        Access.ExecQuery("Update Users set Title='" & pass & "' where [ID]=" & Log.CurID)
+        Access.ExecQuery("Update Users set psswd='" & pass & "' where [ID]=" & Log.CurID)
 
         'Access.ExecQuery("Update Users Set Psswd='" & newpass.Text & "' where [ID]= " & Log.CurID)
         'Access.ExecQuery("Select * From Users where [ID]=" & Log.CurID)
