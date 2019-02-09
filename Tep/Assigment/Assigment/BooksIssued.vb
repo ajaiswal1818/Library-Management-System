@@ -8,11 +8,10 @@
     Private Sub BooksIssued_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim cnt As Integer = 0
 
-
         Clr()
         lblissue1.Show()
 
-        Access.ExecQuery("SELECT * from Users WHERE [ID] =" & Log.CurID)
+        Access.ExecQuery("SELECT * from User WHERE ID LIKE '%" & Log.CurId & "%'")
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
 
@@ -39,7 +38,7 @@
         Dim checkString As String = ""
         For Each R As DataRow In Access.DBDT.Rows
             'cnt += 1
-            checkString &= R.Item(9)    '  checkString contain id of all the issued books
+            checkString &= R.Item(10)    '  checkString contain id of all the issued books
             'checkString &= "Authors: " & R.Item(3) & Environment.NewLine
             'checkString &= "Genre: " & R.Item(6) & Environment.NewLine
             'checkString &= "Publisher: " & R.Item(7) & Environment.NewLine
@@ -58,16 +57,13 @@
 
         'Dim temp As String
         For Each temp As String In array
-            If IsNumeric(temp) = False Then
-                Continue For
-            End If
-            Access.ExecQuery("SELECT * from Book WHERE [ID]=" & CInt(temp))
+            Access.ExecQuery("SELECT * from Book WHERE ID LIKE '%" & temp & "%'")
             If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
             For Each R As DataRow In Access.DBDT.Rows
                 cnt += 1
                 Dim checktemp As String = ""
-                checktemp &= R.Item(0)
+                checktemp &= R.Item(10)
                 checktemp &= "Authors: " & R.Item(3) & Environment.NewLine
                 checktemp &= "Genre: " & R.Item(6) & Environment.NewLine
                 checktemp &= "Publisher: " & R.Item(7) & Environment.NewLine
@@ -78,7 +74,7 @@
                     lblissue1.Font = New Font("Century Gothic", 7)
                     lblissue1.Text = checktemp
                 Else
-                    DynamicBooks(cnt, checktemp)
+                    DynamicLabel(cnt, checktemp)
                 End If
             Next
         Next
@@ -88,7 +84,7 @@
 
 
 
-    Private Sub DynamicBooks(i As Integer, txt As String)
+    Private Sub DynamicLabel(i As Integer, txt As String)
         'MessageBox.Show("Hello")
         Dim lblName As String
         lblName = "lblSrch" & CStr(i)

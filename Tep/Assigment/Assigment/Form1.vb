@@ -46,7 +46,6 @@
         Myprofile.Visible = False
         Search1.Visible = True
         Myprofile.Arrow.Visible = False
-        BooksIssued.Visible = False
 
 
     End Sub
@@ -60,6 +59,14 @@
     End Sub
 
     Private Sub Log1_Load_1(sender As Object, e As EventArgs) Handles Log1.Load
+
+    End Sub
+
+    Private Sub Myprofile_Load(sender As Object, e As EventArgs) Handles Myprofile.Load
+
+    End Sub
+
+    Private Sub Search1_Load(sender As Object, e As EventArgs) Handles Search1.Load
 
     End Sub
 End Class
