@@ -36,8 +36,7 @@
         srchPattern = cbxSrch.SelectedItem
     End Sub
 
-
-    Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
+    Private Sub SrchClk()
         Clr()
         lblSrch1.Show()
 
@@ -92,6 +91,10 @@
         Next
 
         dgvSrch.DataSource = Access.DBDT
+    End Sub
+
+    Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
+        SrchClk()
     End Sub
 
     Private Sub DynamicLabel(i As Integer, txt As String, R As DataRow)
@@ -177,7 +180,8 @@
 
         MessageBox.Show("Book " & BkName & " issued")
         Console.Write("Book " & BkName & " issued")
-        'Clr()
+
+        SrchClk()
     End Sub
 
     Private Sub Clr()
