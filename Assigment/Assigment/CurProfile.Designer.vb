@@ -45,6 +45,7 @@ Partial Class CurProfile
         'Dept
         '
         Me.Dept.AutoSize = True
+        Me.Dept.BackColor = System.Drawing.Color.Transparent
         Me.Dept.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Dept.Location = New System.Drawing.Point(507, 138)
         Me.Dept.Name = "Dept"
@@ -55,6 +56,7 @@ Partial Class CurProfile
         'webmail
         '
         Me.webmail.AutoSize = True
+        Me.webmail.BackColor = System.Drawing.Color.Transparent
         Me.webmail.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.webmail.Location = New System.Drawing.Point(248, 176)
         Me.webmail.Name = "webmail"
@@ -65,6 +67,7 @@ Partial Class CurProfile
         'discipline
         '
         Me.discipline.AutoSize = True
+        Me.discipline.BackColor = System.Drawing.Color.Transparent
         Me.discipline.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.discipline.Location = New System.Drawing.Point(248, 138)
         Me.discipline.Name = "discipline"
@@ -75,6 +78,7 @@ Partial Class CurProfile
         'rollNo
         '
         Me.rollNo.AutoSize = True
+        Me.rollNo.BackColor = System.Drawing.Color.Transparent
         Me.rollNo.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rollNo.Location = New System.Drawing.Point(248, 98)
         Me.rollNo.Name = "rollNo"
@@ -85,6 +89,7 @@ Partial Class CurProfile
         'nameLabel
         '
         Me.nameLabel.AutoSize = True
+        Me.nameLabel.BackColor = System.Drawing.Color.Transparent
         Me.nameLabel.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nameLabel.Location = New System.Drawing.Point(248, 63)
         Me.nameLabel.Name = "nameLabel"
@@ -94,6 +99,7 @@ Partial Class CurProfile
         '
         'PicProfile
         '
+        Me.PicProfile.BackColor = System.Drawing.Color.Transparent
         Me.PicProfile.Image = CType(resources.GetObject("PicProfile.Image"), System.Drawing.Image)
         Me.PicProfile.Location = New System.Drawing.Point(58, 53)
         Me.PicProfile.Name = "PicProfile"
@@ -106,6 +112,8 @@ Partial Class CurProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Dept)
         Me.Controls.Add(Me.webmail)

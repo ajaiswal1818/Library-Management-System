@@ -6,7 +6,6 @@
     Private Sub Refr()
         lblSrch1.Hide()
         btnSrch1.Hide()
-        AddHandler btnSrch1.Click, AddressOf Me.Button_Click
 
         cbxSrch.AllowDrop() = True
         cbxSrch.Items.Add("Title")
@@ -83,8 +82,11 @@
             If cnt = 1 Then
                 lblSrch1.Font = New Font("Century Gothic", 7)
                 btnSrch1.Font = New Font("Century Gothic", 7)
-                btnSrch1.DialogResult = R.Item(0)
+                'btnSrch1.DialogResult = R.Item(0)
+                tempSrch1.Text = R.Item(0)
                 lblSrch1.Text = Op1
+                AddHandler btnSrch1.Click, AddressOf Me.Button_Click
+
             Else
                 DynamicLabel(cnt, Op1, R)
             End If
@@ -127,8 +129,17 @@
         'btn1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(btn1)
         btn1.Location = New Point(btnSrch1.Location.X, yb)
-        btn1.DialogResult = R.Item(0)
+        'btn1.DialogResult = R.Item(0)
         AddHandler btn1.Click, AddressOf Me.Button_Click
+
+        Dim tempName As String
+        Dim temp1 As New Label
+        tempName = "tempSrch" & CStr(i)
+        temp1.Name = tempName
+        temp1.Text = R.Item(0)
+        'MessageBox.Show(temp1.Text)
+        Me.Controls.Add(temp1)
+        temp1.Hide()
 
     End Sub
 
@@ -137,26 +148,28 @@
         'MessageBox.Show("you have clicked button " & selectedBtn.DialogResult)
         If Log.CurUser = "" Then
             MessageBox.Show("You are currently not logged in! Please log in to issue books!", "Error")
-            Console.WriteLine("Error in Issuing: Not logged in")
+            Console.WriteLine("Error in Issuing: Not logged in" & Environment.NewLine)
             Exit Sub
         End If
         If Log.CurBkLimit <= 0 Then
             MessageBox.Show("You cannot issue any more books!", "Error")
-            Console.WriteLine("User book limit reached")
+            Console.WriteLine("User book limit reached" & Environment.NewLine)
             Exit Sub
         End If
         'MessageBox.Show(selectedBtn.DialogResult)
-        Dim IDFind As Integer = CInt(selectedBtn.DialogResult)
+        Dim tmp As Label = Me.Controls.Find("tempSrch" & selectedBtn.Name.Substring(7), True)(0)
+        'MessageBox.Show(tmp.Text)
+        Dim IDFind As Integer = CInt(tmp.Text)
         Access.ExecQuery("SELECT * FROM Book where [ID] = " & IDFind)
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
         If Access.DBDT.Rows.Count = 0 Or Access.DBDT.Rows.Count > 1 Then
             MessageBox.Show("Book to be issued not found", "Error")
-            Console.WriteLine("Book to be issued not found")
+            Console.WriteLine("Book to be issued not found" & Environment.NewLine)
             Exit Sub
         End If
         If Access.DBDT.Rows(0).Item(4) <= 0 Then
             MessageBox.Show("All book copies issued", "Error")
-            Console.WriteLine("All book copies issued")
+            Console.WriteLine("All book copies issued" & Environment.NewLine)
             Exit Sub
         End If
         Dim BkName As String = Access.DBDT.Rows(0).Item(1)
@@ -175,22 +188,29 @@
         Try
             Access.ExecQuery("Update Users set Book_Limit=" & Log.CurBkLimit & ", Books_Issued='" & Log.CurBooks & "' where [ID]=" & Log.CurID)
         Catch ex As Exception
-            MessageBox.Show("Error", "Error")
+            MessageBox.Show("Query Error", "Error")
         End Try
 
-        MessageBox.Show("Book " & BkName & " issued")
-        Console.Write("Book " & BkName & " issued")
+        MessageBox.Show("Book " & BkName & " issued", "Succes")
+        Console.Write("Book " & BkName & " issued" & Environment.NewLine)
 
         SrchClk()
     End Sub
 
     Private Sub Clr()
         lblSrch1.Text = ""
+        tempSrch1.Text = ""
+        RemoveHandler btnSrch1.Click, AddressOf Me.Button_Click
         For i As Integer = 2 To cnt
+            RemoveHandler Me.Controls.Find("btnSrch" & CStr(i), True)(0).Click, AddressOf Me.Button_Click
             Me.Controls.Remove(Me.Controls.Find("lblSrch" & CStr(i), True)(0))
             Me.Controls.Remove(Me.Controls.Find("btnSrch" & CStr(i), True)(0))
+            Me.Controls.Remove(Me.Controls.Find("tempSrch" & CStr(i), True)(0))
         Next
         cnt = 0
     End Sub
 
+    Private Sub btnSrch1_Click(sender As Object, e As EventArgs) Handles btnSrch1.Click
+
+    End Sub
 End Class

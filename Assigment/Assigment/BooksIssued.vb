@@ -5,9 +5,8 @@
     Private Access As New LMS
 
     Public Sub RefreshPage()
-        Dim cnt As Integer = 0
+        'Dim cnt As Integer = 0
         lblBklt.Text = "You can issue " & Log.CurBkLimit & " more books!"
-        AddHandler btnRet1.Click, AddressOf Me.Button_Click
 
         lblRet1.Show()
         btnRet1.Show()
@@ -45,8 +44,10 @@
                 If cnt = 1 Then
                     lblRet1.Font = New Font("Century Gothic", 7)
                     btnRet1.Font = New Font("Century Gothic", 7)
-                    btnRet1.DialogResult = R.Item(0)
+                    'btnRet1.DialogResult = R.Item(0)
                     lblRet1.Text = checktemp
+                    AddHandler btnRet1.Click, AddressOf Me.Button_Click
+                    tempRet1.Text = R.Item(0)
                 Else
                     DynamicBooks(cnt, checktemp, R)
                 End If
@@ -93,17 +94,33 @@
         'btn1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(btn1)
         btn1.Location = New Point(btnRet1.Location.X, yb)
-        btn1.DialogResult = R.Item(0)
+        'btn1.DialogResult = R.Item(0)
+
         AddHandler btn1.Click, AddressOf Me.Button_Click
+
+        Dim tempName As String
+        Dim temp1 As New Label
+        tempName = "tempRet" & CStr(i)
+        temp1.Name = tempName
+        temp1.Text = R.Item(0)
+        'MessageBox.Show(temp1.Text)
+        Me.Controls.Add(temp1)
+        temp1.Hide()
 
     End Sub
 
     Public Sub Clr()
         lblRet1.Text = ""
+        tempRet1.Text = ""
+        'MessageBox.Show(cnt)
         For i As Integer = 2 To cnt
+            'MessageBox.Show("Removing Button " & "lblRet" & CStr(i))
+            RemoveHandler Me.Controls.Find("btnRet" & CStr(i), True)(0).Click, AddressOf Me.Button_Click
             Me.Controls.Remove(Me.Controls.Find("lblRet" & CStr(i), True)(0))
             Me.Controls.Remove(Me.Controls.Find("btnRet" & CStr(i), True)(0))
+            Me.Controls.Remove(Me.Controls.Find("tempRet" & CStr(i), True)(0))
         Next
+        RemoveHandler btnRet1.Click, AddressOf Me.Button_Click
         cnt = 0
         lblRet1.Hide()
         btnRet1.Hide()
@@ -113,18 +130,21 @@
         Dim selectedBtn As Button = sender
         'MessageBox.Show("you have clicked button " & selectedBtn.DialogResult)
         If Log.CurUser = "" Then
-            MessageBox.Show("You are currently not logged in! Please log in to issue books!")
-            Console.WriteLine("Error in Issuing: Not logged in")
+            MessageBox.Show("You are currently not logged in! Please log in to return books!", "Error")
+            Console.WriteLine("Error in Returning: Not logged in" & Environment.NewLine)
             Exit Sub
         End If
 
-        'MessageBox.Show(selectedBtn.DialogResult)
-        Dim IDFind As Integer = CInt(selectedBtn.DialogResult)
+        'Dim IDFind As Integer = CInt(selectedBtn.DialogResult)
+        Dim tmp As Label = Me.Controls.Find("tempRet" & selectedBtn.Name.Substring(6), True)(0)
+        'MessageBox.Show(tmp.Text)
+        Dim IDFind As Integer = CInt(tmp.Text)
+
         Access.ExecQuery("SELECT * FROM Book where [ID] = " & IDFind)
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
         If Access.DBDT.Rows.Count = 0 Or Access.DBDT.Rows.Count > 1 Then
-            MessageBox.Show("Book to be returned not found")
-            Console.WriteLine("Book to be returned not found")
+            MessageBox.Show("Book to be returned not found", "Error")
+            Console.WriteLine("Book to be returned not found" & Environment.NewLine)
             Exit Sub
         End If
 
@@ -168,14 +188,16 @@
         Try
             Access.ExecQuery("Update Users set Book_Limit=" & Log.CurBkLimit & ", Books_Issued='" & Log.CurBooks & "' where [ID]=" & Log.CurID)
         Catch ex As Exception
-            MessageBox.Show("LOL!")
+            MessageBox.Show("Unknown Error")
         End Try
-        MessageBox.Show("Book " & BkTit & " successfully returned!")
-
+        MessageBox.Show("Book " & BkTit & " successfully returned!", "Success")
+        Console.Write("Book " & BkTit & " successfully returned!" & Environment.NewLine)
+        'MessageBox.Show(cnt)
         Clr()
         RefreshPage()
     End Sub
 
+    Private Sub BooksIssued_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-   
+    End Sub
 End Class

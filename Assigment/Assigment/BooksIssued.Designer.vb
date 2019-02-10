@@ -26,6 +26,7 @@ Partial Class BooksIssued
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnRet1 = New System.Windows.Forms.Button()
         Me.lblRet1 = New System.Windows.Forms.Label()
+        Me.tempRet1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblBklt
@@ -72,11 +73,26 @@ Partial Class BooksIssued
         Me.lblRet1.TabIndex = 26
         Me.lblRet1.Text = "Label1"
         '
+        'tempRet1
+        '
+        Me.tempRet1.AutoSize = True
+        Me.tempRet1.BackColor = System.Drawing.Color.White
+        Me.tempRet1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.tempRet1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tempRet1.Location = New System.Drawing.Point(550, 39)
+        Me.tempRet1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.tempRet1.Name = "tempRet1"
+        Me.tempRet1.Size = New System.Drawing.Size(57, 21)
+        Me.tempRet1.TabIndex = 31
+        Me.tempRet1.Text = "Label1"
+        Me.tempRet1.Visible = False
+        '
         'BooksIssued
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
+        Me.Controls.Add(Me.tempRet1)
         Me.Controls.Add(Me.lblBklt)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnRet1)
@@ -92,5 +108,6 @@ Partial Class BooksIssued
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnRet1 As System.Windows.Forms.Button
     Friend WithEvents lblRet1 As System.Windows.Forms.Label
+    Friend WithEvents tempRet1 As System.Windows.Forms.Label
 
 End Class

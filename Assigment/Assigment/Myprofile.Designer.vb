@@ -34,7 +34,7 @@ Partial Class Myprofile
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Snow
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Arrow)
         Me.Panel1.Controls.Add(Me.btnPasschange)
         Me.Panel1.Controls.Add(Me.btnItems)
@@ -46,10 +46,11 @@ Partial Class Myprofile
         '
         'Arrow
         '
+        Me.Arrow.BackColor = System.Drawing.Color.Transparent
         Me.Arrow.Image = CType(resources.GetObject("Arrow.Image"), System.Drawing.Image)
         Me.Arrow.Location = New System.Drawing.Point(12, 15)
         Me.Arrow.Name = "Arrow"
-        Me.Arrow.Size = New System.Drawing.Size(25, 18)
+        Me.Arrow.Size = New System.Drawing.Size(25, 24)
         Me.Arrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Arrow.TabIndex = 6
         Me.Arrow.TabStop = False
@@ -57,47 +58,51 @@ Partial Class Myprofile
         '
         'btnPasschange
         '
+        Me.btnPasschange.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.btnPasschange.FlatAppearance.BorderSize = 0
         Me.btnPasschange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPasschange.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPasschange.ForeColor = System.Drawing.Color.Black
+        Me.btnPasschange.ForeColor = System.Drawing.Color.Snow
         Me.btnPasschange.Location = New System.Drawing.Point(39, 109)
         Me.btnPasschange.Name = "btnPasschange"
         Me.btnPasschange.Size = New System.Drawing.Size(87, 47)
         Me.btnPasschange.TabIndex = 5
         Me.btnPasschange.Text = "Change Password"
-        Me.btnPasschange.UseVisualStyleBackColor = True
+        Me.btnPasschange.UseVisualStyleBackColor = False
         '
         'btnItems
         '
+        Me.btnItems.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.btnItems.FlatAppearance.BorderSize = 0
         Me.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnItems.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnItems.ForeColor = System.Drawing.Color.Black
+        Me.btnItems.ForeColor = System.Drawing.Color.Snow
         Me.btnItems.Location = New System.Drawing.Point(40, 56)
         Me.btnItems.Name = "btnItems"
         Me.btnItems.Size = New System.Drawing.Size(87, 47)
         Me.btnItems.TabIndex = 4
         Me.btnItems.Text = "Items Checked out"
-        Me.btnItems.UseVisualStyleBackColor = True
+        Me.btnItems.UseVisualStyleBackColor = False
         '
         'btnmyprofile
         '
+        Me.btnmyprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.btnmyprofile.FlatAppearance.BorderSize = 0
         Me.btnmyprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmyprofile.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmyprofile.ForeColor = System.Drawing.Color.Black
+        Me.btnmyprofile.ForeColor = System.Drawing.Color.Snow
         Me.btnmyprofile.Location = New System.Drawing.Point(40, 3)
         Me.btnmyprofile.Name = "btnmyprofile"
         Me.btnmyprofile.Size = New System.Drawing.Size(87, 47)
         Me.btnmyprofile.TabIndex = 0
         Me.btnmyprofile.Text = "My Profile"
-        Me.btnmyprofile.UseVisualStyleBackColor = True
+        Me.btnmyprofile.UseVisualStyleBackColor = False
         '
         'Myprofile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Myprofile"
         Me.Size = New System.Drawing.Size(130, 624)

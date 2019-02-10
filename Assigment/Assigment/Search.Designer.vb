@@ -30,6 +30,7 @@ Partial Class Search
         Me.dgvSrch = New System.Windows.Forms.DataGridView()
         Me.lblSrch1 = New System.Windows.Forms.Label()
         Me.btnSrch1 = New System.Windows.Forms.Button()
+        Me.tempSrch1 = New System.Windows.Forms.Label()
         CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -116,11 +117,26 @@ Partial Class Search
         Me.btnSrch1.Text = "Issue Now!"
         Me.btnSrch1.UseVisualStyleBackColor = True
         '
+        'tempSrch1
+        '
+        Me.tempSrch1.AutoSize = True
+        Me.tempSrch1.BackColor = System.Drawing.Color.White
+        Me.tempSrch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.tempSrch1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tempSrch1.Location = New System.Drawing.Point(16, 166)
+        Me.tempSrch1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.tempSrch1.Name = "tempSrch1"
+        Me.tempSrch1.Size = New System.Drawing.Size(57, 21)
+        Me.tempSrch1.TabIndex = 23
+        Me.tempSrch1.Text = "Label1"
+        Me.tempSrch1.Visible = False
+        '
         'Search
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
+        Me.Controls.Add(Me.tempSrch1)
         Me.Controls.Add(Me.btnSrch1)
         Me.Controls.Add(Me.lblSrch1)
         Me.Controls.Add(Me.dgvSrch)
@@ -144,5 +160,6 @@ Partial Class Search
     Friend WithEvents dgvSrch As System.Windows.Forms.DataGridView
     Friend WithEvents lblSrch1 As System.Windows.Forms.Label
     Friend WithEvents btnSrch1 As System.Windows.Forms.Button
+    Friend WithEvents tempSrch1 As System.Windows.Forms.Label
 
 End Class

@@ -72,4 +72,11 @@
         Form1.NewLogin.BringToFront()
     End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
+    End Sub
+
+    Private Sub Forgot_Click(sender As Object, e As EventArgs) Handles Forgot.Click
+
+    End Sub
 End Class

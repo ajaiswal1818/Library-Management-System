@@ -38,6 +38,7 @@
         If Log.CurID <> 0 Then
             Myprofile.Visible = False
         End If
+        BooksIssued.RefreshPage()
     End Sub
 
 
@@ -124,5 +125,17 @@
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         DiscRoom.BringToFront()
         DiscRoom.Visible = True
+    End Sub
+
+    Private Sub Myprofile_Load(sender As Object, e As EventArgs) Handles Myprofile.Load
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Panel6_Paint(sender As Object, e As PaintEventArgs) Handles Panel6.Paint
+
     End Sub
 End Class

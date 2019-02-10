@@ -75,6 +75,7 @@ Partial Class userDetail
         'uPanel
         '
         Me.uPanel.AutoScroll = True
+        Me.uPanel.BackColor = System.Drawing.Color.Transparent
         Me.uPanel.Controls.Add(Me.Label1)
         Me.uPanel.Controls.Add(Me.Dept)
         Me.uPanel.Controls.Add(Me.webmail)
@@ -183,13 +184,15 @@ Partial Class userDetail
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.uPanel)
         Me.Controls.Add(Me.lblissue)
         Me.Controls.Add(Me.Usearch)
         Me.Controls.Add(Me.Udetail)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "userDetail"
-        Me.Size = New System.Drawing.Size(852, 700)
+        Me.Size = New System.Drawing.Size(869, 740)
         Me.uPanel.ResumeLayout(False)
         Me.uPanel.PerformLayout()
         CType(Me.displayPic, System.ComponentModel.ISupportInitialize).EndInit()
