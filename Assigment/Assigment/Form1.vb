@@ -5,24 +5,25 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles RecommendBtn.Click
         SidePanel.Height = RecommendBtn.Height
         SidePanel.Top = RecommendBtn.Top
+        SidePanel.BringToFront()
+        Rec_book1.BringToFront()
         SidePanel.Visible = True
-        Myprofile.Visible = False
-        EBooks1.Visible = False
-        Search1.Visible = False
-        Log1.Visible = False
-        NewLogin.Visible = False
         Rec_book1.Visible = True
+        If Log.CurID <> 0 Then
+            Myprofile.Visible = False
+        End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles eBookBtn.Click
         SidePanel.Height = eBookBtn.Height
         SidePanel.Top = eBookBtn.Top
+        SidePanel.BringToFront()
+        EBooks1.BringToFront()
         SidePanel.Visible = True
         EBooks1.Visible = True
-        Search1.Visible = False
-        Log1.Visible = False
-        Myprofile.Visible = False
-
+        If Log.CurID <> 0 Then
+            Myprofile.Visible = False
+        End If
     End Sub
 
 
@@ -30,68 +31,98 @@
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
         SidePanel.Height = SearchBtn.Height
         SidePanel.Top = SearchBtn.Top
-        EBooks1.Visible = False
+        Search1.BringToFront()
+        SidePanel.BringToFront()
         Search1.Visible = True
-        Log1.Visible = False
-        Myprofile.Visible = False
         SidePanel.Visible = True
-
+        If Log.CurID <> 0 Then
+            Myprofile.Visible = False
+        End If
     End Sub
 
 
     Private Sub MyAccount_Click(sender As Object, e As EventArgs) Handles MyAccount.Click
         SidePanel.Height = MyAccount.Height()
         SidePanel.Top = MyAccount.Top()
-        EBooks1.Visible = False
-        Search1.Visible = False
+        Log1.BringToFront()
         Log1.Visible = True
+        SidePanel.BringToFront()
         SidePanel.Visible = True
         If Log.CurID <> 0 Then
+            Myprofile.BringToFront()
             Myprofile.Visible = True
+            Myprofile.Arrow.Visible = True
+            Myprofile.Arrow.Top = Myprofile.btnmyprofile.Top + 12
+            CurProfile.BringToFront()
+            CurProfile.Visible = True
         End If
 
     End Sub
 
     Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
-        Panel4.Visible = False
-        Panel1.Visible = True
-        Myprofile.Visible = False
-        Search1.Visible = True
-        Myprofile.Arrow.Visible = False
-        BooksIssued.Visible = False
+        Panel1.BringToFront()
+        Search1.BringToFront()
         adminPanel.Visible = False
+        Panel1.Visible = True
+        Search1.Visible = True
         SidePanel.Height = SearchBtn.Height
         SidePanel.Top = SearchBtn.Top
-        Log1.Visible = False
-        ChngPass.Visible = False
-
-    End Sub
-
-    Private Sub Myprofile_Load(sender As Object, e As EventArgs)
-
+        Myprofile.Visible = False
+        Panel4.Visible = False
+        Log.CurID = 0
+        Log.CurUser = ""
+        Log.CurPass = ""
+        Log.CurRoll = 0
+        Log.CurName = ""
+        Log.CurAccess = ""
+        Log.CurProg = ""
+        Log.CurDept = ""
+        Log.CurBkLimit = 0
+        Log.CurBooks = ""
     End Sub
 
     Private Sub recommended_Click(sender As Object, e As EventArgs) Handles recommended.Click
-        Reco.Visible = True
-
         Reco.BringToFront()
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Reco.Visible = True
     End Sub
 
     Private Sub AddBook_Click(sender As Object, e As EventArgs) Handles AddBook.Click
         AddBookP.BringToFront()
-        Search1.Visible = False
+        AddBookP.Visible = True
+        Panel6.Visible = True
+        Panel6.BringToFront()
+        Panel6.Height = AddBook.Height
+        Panel6.Top = AddBook.Top
     End Sub
 
     Private Sub RemoveBook_Click(sender As Object, e As EventArgs) Handles RemoveBook.Click
         remove_detail.BringToFront()
-
+        remove_detail.Visible = True
+        Panel6.Visible = True
+        Panel6.BringToFront()
+        Panel6.Height = RemoveBook.Height
+        Panel6.Top = RemoveBook.Top
     End Sub
 
-    Private Sub remove_detail_Load(sender As Object, e As EventArgs)
+    Private Sub UserDetail_Click(sender As Object, e As EventArgs) Handles UserDetail.Click
+        UserDetail1.BringToFront()
+        UserDetail1.Visible = True
+        Panel6.Visible = True
+        Panel6.BringToFront()
+        Panel6.Height = UserDetail.Height
+        Panel6.Top = UserDetail.Top
+    End Sub
 
+
+    Private Sub BookDetail_Click(sender As Object, e As EventArgs) Handles BookDetail.Click
+        Panel6.Visible = True
+        Panel6.BringToFront()
+        Panel6.Height = BookDetail.Height
+        Panel6.Top = BookDetail.Top
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        DiscRoom.BringToFront()
+        DiscRoom.Visible = True
     End Sub
 End Class

@@ -115,10 +115,11 @@
             MessageBox.Show("User " & txtMail.Text & " successfully created")
             Console.WriteLine("User " & txtMail.Text & " successfully created")
             Form1.Myprofile.Visible = True
-            Form1.NewLogin.Visible = False
+            Form1.Myprofile.BringToFront()
             Form1.SidePanel.Height = Form1.MyAccount.Height
             Form1.SidePanel.Top = Form1.MyAccount.Top
             Form1.CurProfile.Visible = True
+            Form1.CurProfile.BringToFront()
             Form1.Myprofile.Arrow.Height = Form1.Myprofile.btnmyprofile.Height
             Form1.Myprofile.Arrow.Top = Form1.Myprofile.btnmyprofile.Top + 12
         Else

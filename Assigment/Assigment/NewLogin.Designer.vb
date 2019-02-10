@@ -42,9 +42,10 @@ Partial Class NewLogin
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(234, 77)
+        Me.Label1.Location = New System.Drawing.Point(176, 63)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(400, 49)
+        Me.Label1.Size = New System.Drawing.Size(322, 39)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Create an Account"
         '
@@ -53,10 +54,11 @@ Partial Class NewLogin
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtName.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.ForeColor = System.Drawing.Color.Silver
-        Me.txtName.Location = New System.Drawing.Point(169, 172)
+        Me.txtName.Location = New System.Drawing.Point(127, 140)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtName.Multiline = True
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(253, 31)
+        Me.txtName.Size = New System.Drawing.Size(190, 25)
         Me.txtName.TabIndex = 1
         Me.txtName.Text = "Name"
         '
@@ -65,10 +67,11 @@ Partial Class NewLogin
         Me.txtRoll.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtRoll.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRoll.ForeColor = System.Drawing.Color.Silver
-        Me.txtRoll.Location = New System.Drawing.Point(456, 172)
+        Me.txtRoll.Location = New System.Drawing.Point(342, 140)
+        Me.txtRoll.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtRoll.Multiline = True
         Me.txtRoll.Name = "txtRoll"
-        Me.txtRoll.Size = New System.Drawing.Size(253, 31)
+        Me.txtRoll.Size = New System.Drawing.Size(190, 25)
         Me.txtRoll.TabIndex = 2
         Me.txtRoll.Text = "Roll Number"
         '
@@ -77,10 +80,11 @@ Partial Class NewLogin
         Me.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMail.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMail.ForeColor = System.Drawing.Color.Silver
-        Me.txtMail.Location = New System.Drawing.Point(169, 236)
+        Me.txtMail.Location = New System.Drawing.Point(127, 192)
+        Me.txtMail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtMail.Multiline = True
         Me.txtMail.Name = "txtMail"
-        Me.txtMail.Size = New System.Drawing.Size(253, 31)
+        Me.txtMail.Size = New System.Drawing.Size(190, 25)
         Me.txtMail.TabIndex = 3
         Me.txtMail.Text = "Webmail"
         '
@@ -88,9 +92,10 @@ Partial Class NewLogin
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(428, 239)
+        Me.Label2.Location = New System.Drawing.Point(321, 194)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(105, 23)
+        Me.Label2.Size = New System.Drawing.Size(90, 21)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "@iitg.ac.in"
         '
@@ -98,9 +103,10 @@ Partial Class NewLogin
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(165, 309)
+        Me.Label3.Location = New System.Drawing.Point(124, 251)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(166, 23)
+        Me.Label3.Size = New System.Drawing.Size(137, 21)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Faculty/Student"
         '
@@ -108,27 +114,30 @@ Partial Class NewLogin
         '
         Me.cmbStf.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbStf.FormattingEnabled = True
-        Me.cmbStf.Location = New System.Drawing.Point(169, 335)
+        Me.cmbStf.Location = New System.Drawing.Point(127, 272)
+        Me.cmbStf.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbStf.Name = "cmbStf"
-        Me.cmbStf.Size = New System.Drawing.Size(145, 31)
+        Me.cmbStf.Size = New System.Drawing.Size(110, 29)
         Me.cmbStf.TabIndex = 6
         '
         'cmbDisc
         '
         Me.cmbDisc.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDisc.FormattingEnabled = True
-        Me.cmbDisc.Location = New System.Drawing.Point(373, 335)
+        Me.cmbDisc.Location = New System.Drawing.Point(280, 272)
+        Me.cmbDisc.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbDisc.Name = "cmbDisc"
-        Me.cmbDisc.Size = New System.Drawing.Size(145, 31)
+        Me.cmbDisc.Size = New System.Drawing.Size(110, 29)
         Me.cmbDisc.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(369, 309)
+        Me.Label4.Location = New System.Drawing.Point(277, 251)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 23)
+        Me.Label4.Size = New System.Drawing.Size(81, 21)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Discipline"
         '
@@ -136,18 +145,20 @@ Partial Class NewLogin
         '
         Me.cmbDept.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDept.FormattingEnabled = True
-        Me.cmbDept.Location = New System.Drawing.Point(564, 335)
+        Me.cmbDept.Location = New System.Drawing.Point(423, 272)
+        Me.cmbDept.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbDept.Name = "cmbDept"
-        Me.cmbDept.Size = New System.Drawing.Size(145, 31)
+        Me.cmbDept.Size = New System.Drawing.Size(110, 29)
         Me.cmbDept.TabIndex = 10
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(560, 309)
+        Me.Label5.Location = New System.Drawing.Point(420, 251)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(130, 23)
+        Me.Label5.Size = New System.Drawing.Size(108, 21)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Department"
         '
@@ -156,10 +167,11 @@ Partial Class NewLogin
         Me.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPass.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.Silver
-        Me.txtPass.Location = New System.Drawing.Point(169, 413)
+        Me.txtPass.Location = New System.Drawing.Point(127, 336)
+        Me.txtPass.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtPass.Multiline = True
         Me.txtPass.Name = "txtPass"
-        Me.txtPass.Size = New System.Drawing.Size(253, 31)
+        Me.txtPass.Size = New System.Drawing.Size(190, 25)
         Me.txtPass.TabIndex = 11
         Me.txtPass.Text = "Password"
         '
@@ -168,26 +180,28 @@ Partial Class NewLogin
         Me.txtConf.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtConf.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtConf.ForeColor = System.Drawing.Color.Silver
-        Me.txtConf.Location = New System.Drawing.Point(456, 413)
+        Me.txtConf.Location = New System.Drawing.Point(342, 336)
+        Me.txtConf.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtConf.Multiline = True
         Me.txtConf.Name = "txtConf"
-        Me.txtConf.Size = New System.Drawing.Size(253, 31)
+        Me.txtConf.Size = New System.Drawing.Size(190, 25)
         Me.txtConf.TabIndex = 12
         Me.txtConf.Text = "Confirm Password"
         '
         'btnSign
         '
         Me.btnSign.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSign.Location = New System.Drawing.Point(356, 518)
+        Me.btnSign.Location = New System.Drawing.Point(267, 421)
+        Me.btnSign.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnSign.Name = "btnSign"
-        Me.btnSign.Size = New System.Drawing.Size(150, 61)
+        Me.btnSign.Size = New System.Drawing.Size(112, 50)
         Me.btnSign.TabIndex = 13
         Me.btnSign.Text = "Sign Up"
         Me.btnSign.UseVisualStyleBackColor = True
         '
         'NewLogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btnSign)
         Me.Controls.Add(Me.txtConf)
@@ -203,8 +217,9 @@ Partial Class NewLogin
         Me.Controls.Add(Me.txtRoll)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "NewLogin"
-        Me.Size = New System.Drawing.Size(852, 700)
+        Me.Size = New System.Drawing.Size(639, 569)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

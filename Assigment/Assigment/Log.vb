@@ -36,41 +36,40 @@
             MessageBox.Show("Incorrect Username or Password", "Error")
             Exit Sub
         ElseIf txtUser.Text = "root" Then
+            Form1.adminPanel.BringToFront()
             Form1.adminPanel.Visible = True
-            Form1.Panel1.Visible = False
-            Form1.remove_detail.Visible = True
-            Form1.Search1.Visible = False
+            'Form1.remove_detail.Visible = True
+            'Form1.remove_detail.BringToFront()
             Form1.AddBookP.Visible = True
+            Form1.AddBookP.BringToFront()
+            Form1.Panel4.Visible = True
+            Form1.Panel4.BringToFront()
+            Form1.Panel1.Visible = False
+        Else
+            CurID = Access.DBDT.Rows(0).Item(0)
+            CurUser = Access.DBDT.Rows(0).Item(1)
+            CurPass = Access.DBDT.Rows(0).Item(2)
+            CurRoll = Access.DBDT.Rows(0).Item(3)
+            CurName = Access.DBDT.Rows(0).Item(4)
+            CurAccess = Access.DBDT.Rows(0).Item(5)
+            CurProg = Access.DBDT.Rows(0).Item(6)
+            CurDept = Access.DBDT.Rows(0).Item(7)
+            CurBkLimit = Access.DBDT.Rows(0).Item(8)
+            CurBooks = Access.DBDT.Rows(0).Item(9)
 
+            Form1.Panel4.Visible = True
+            Form1.Panel4.BringToFront()
+            Form1.Search1.Visible = True
+            Form1.Search1.BringToFront()
+            Form1.SidePanel.Height = Form1.SearchBtn.Height
+            Form1.SidePanel.Top = Form1.SearchBtn.Top
         End If
-
-
-        CurID = Access.DBDT.Rows(0).Item(0)
-        CurUser = Access.DBDT.Rows(0).Item(1)
-        CurPass = Access.DBDT.Rows(0).Item(2)
-        CurRoll = Access.DBDT.Rows(0).Item(3)
-        CurName = Access.DBDT.Rows(0).Item(4)
-        CurAccess = Access.DBDT.Rows(0).Item(5)
-        CurProg = Access.DBDT.Rows(0).Item(6)
-        CurDept = Access.DBDT.Rows(0).Item(7)
-        CurBkLimit = Access.DBDT.Rows(0).Item(8)
-        CurBooks = Access.DBDT.Rows(0).Item(9)
-
-        Form1.Panel4.Visible = True
-        Form1.Log1.Visible = False
-        Form1.Myprofile.Visible = False
-        Form1.Search1.Visible = True
-        Form1.SidePanel.Height = Form1.SearchBtn.Height
-        Form1.SidePanel.Top = Form1.SearchBtn.Top
 
     End Sub
 
     Private Sub Sign_Click(sender As Object, e As EventArgs) Handles Sign_up.Click
         Form1.NewLogin.Visible = True
-        Form1.Panel4.Visible = False
-        Form1.Log1.Visible = False
-        Form1.Myprofile.Visible = False
-
+        Form1.NewLogin.BringToFront()
     End Sub
 
 End Class
