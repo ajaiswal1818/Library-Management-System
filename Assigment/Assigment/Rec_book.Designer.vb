@@ -22,59 +22,59 @@ Partial Class Rec_book
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.Rectbn = New System.Windows.Forms.Button()
-        Me.Rec_isbn = New System.Windows.Forms.RichTextBox()
         Me.Rec_Auth = New System.Windows.Forms.RichTextBox()
+        Me.Rec_isbn = New System.Windows.Forms.RichTextBox()
+        Me.Rectbn = New System.Windows.Forms.Button()
+        Me.Rec_title = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox1.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.Silver
-        Me.RichTextBox1.Location = New System.Drawing.Point(289, 80)
-        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(553, 37)
-        Me.RichTextBox1.TabIndex = 0
-        Me.RichTextBox1.Text = "Title"
-        '
-        'Rectbn
-        '
-        Me.Rectbn.FlatAppearance.BorderSize = 0
-        Me.Rectbn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Rectbn.Location = New System.Drawing.Point(467, 358)
-        Me.Rectbn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Rectbn.Name = "Rectbn"
-        Me.Rectbn.Size = New System.Drawing.Size(195, 47)
-        Me.Rectbn.TabIndex = 3
-        Me.Rectbn.Text = "Recommend"
-        Me.Rectbn.UseVisualStyleBackColor = True
-        '
-        'Rec_isbn
-        '
-        Me.Rec_isbn.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Rec_isbn.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Rec_isbn.ForeColor = System.Drawing.Color.Silver
-        Me.Rec_isbn.Location = New System.Drawing.Point(289, 245)
-        Me.Rec_isbn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Rec_isbn.Name = "Rec_isbn"
-        Me.Rec_isbn.Size = New System.Drawing.Size(553, 37)
-        Me.Rec_isbn.TabIndex = 4
-        Me.Rec_isbn.Text = "ISBN"
         '
         'Rec_Auth
         '
         Me.Rec_Auth.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Rec_Auth.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rec_Auth.ForeColor = System.Drawing.Color.Silver
-        Me.Rec_Auth.Location = New System.Drawing.Point(289, 165)
-        Me.Rec_Auth.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Rec_Auth.Location = New System.Drawing.Point(292, 354)
+        Me.Rec_Auth.Margin = New System.Windows.Forms.Padding(4)
         Me.Rec_Auth.Name = "Rec_Auth"
         Me.Rec_Auth.Size = New System.Drawing.Size(553, 37)
-        Me.Rec_Auth.TabIndex = 5
+        Me.Rec_Auth.TabIndex = 9
         Me.Rec_Auth.Text = "Author"
+        '
+        'Rec_isbn
+        '
+        Me.Rec_isbn.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Rec_isbn.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Rec_isbn.ForeColor = System.Drawing.Color.Silver
+        Me.Rec_isbn.Location = New System.Drawing.Point(292, 434)
+        Me.Rec_isbn.Margin = New System.Windows.Forms.Padding(4)
+        Me.Rec_isbn.Name = "Rec_isbn"
+        Me.Rec_isbn.Size = New System.Drawing.Size(553, 37)
+        Me.Rec_isbn.TabIndex = 8
+        Me.Rec_isbn.Text = "ISBN"
+        '
+        'Rectbn
+        '
+        Me.Rectbn.FlatAppearance.BorderSize = 0
+        Me.Rectbn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Rectbn.Location = New System.Drawing.Point(470, 547)
+        Me.Rectbn.Margin = New System.Windows.Forms.Padding(4)
+        Me.Rectbn.Name = "Rectbn"
+        Me.Rectbn.Size = New System.Drawing.Size(195, 47)
+        Me.Rectbn.TabIndex = 7
+        Me.Rectbn.Text = "Recommend"
+        Me.Rectbn.UseVisualStyleBackColor = True
+        '
+        'Rec_title
+        '
+        Me.Rec_title.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Rec_title.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Rec_title.ForeColor = System.Drawing.Color.Silver
+        Me.Rec_title.Location = New System.Drawing.Point(292, 269)
+        Me.Rec_title.Margin = New System.Windows.Forms.Padding(4)
+        Me.Rec_title.Name = "Rec_title"
+        Me.Rec_title.Size = New System.Drawing.Size(553, 37)
+        Me.Rec_title.TabIndex = 6
+        Me.Rec_title.Text = "Title"
         '
         'Rec_book
         '
@@ -83,16 +83,16 @@ Partial Class Rec_book
         Me.Controls.Add(Me.Rec_Auth)
         Me.Controls.Add(Me.Rec_isbn)
         Me.Controls.Add(Me.Rectbn)
-        Me.Controls.Add(Me.RichTextBox1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Controls.Add(Me.Rec_title)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Rec_book"
         Me.Size = New System.Drawing.Size(1136, 862)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
-    Friend WithEvents Rectbn As System.Windows.Forms.Button
-    Friend WithEvents Rec_isbn As System.Windows.Forms.RichTextBox
     Friend WithEvents Rec_Auth As System.Windows.Forms.RichTextBox
+    Friend WithEvents Rec_isbn As System.Windows.Forms.RichTextBox
+    Friend WithEvents Rectbn As System.Windows.Forms.Button
+    Friend WithEvents Rec_title As System.Windows.Forms.RichTextBox
 
 End Class

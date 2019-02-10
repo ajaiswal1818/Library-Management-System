@@ -11,7 +11,7 @@
         Search1.Visible = False
         Log1.Visible = False
         NewLogin.Visible = False
-
+        Rec_book1.Visible = True
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles eBookBtn.Click
@@ -73,5 +73,25 @@
 
     Private Sub recommended_Click(sender As Object, e As EventArgs) Handles recommended.Click
         Reco.Visible = True
+
+        Reco.BringToFront()
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub AddBook_Click(sender As Object, e As EventArgs) Handles AddBook.Click
+        AddBookP.BringToFront()
+        Search1.Visible = False
+    End Sub
+
+    Private Sub RemoveBook_Click(sender As Object, e As EventArgs) Handles RemoveBook.Click
+        remove_detail.BringToFront()
+
+    End Sub
+
+    Private Sub remove_detail_Load(sender As Object, e As EventArgs)
+
     End Sub
 End Class

@@ -38,7 +38,10 @@
         ElseIf txtUser.Text = "root" Then
             Form1.adminPanel.Visible = True
             Form1.Panel1.Visible = False
-            Form1.remove_detail.visible = True
+            Form1.remove_detail.Visible = True
+            Form1.Search1.Visible = False
+            Form1.AddBookP.Visible = True
+
         End If
 
 
