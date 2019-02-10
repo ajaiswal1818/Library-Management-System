@@ -165,7 +165,7 @@ Public Class NewLogin
                 Dim extension As String = ext(ext.Length - 1)
                 If extension <> "jpg" Or extension <> "jpeg" Or extension <> "png" Or extension <> "bmp" Or extension <> "gif" Then
                     Try
-                        System.IO.File.Copy(OpenFileDialog1.FileName, "Resource\\" + Form1.NewLogin.txtMail.Text + "." + extension)
+                        System.IO.File.Copy(OpenFileDialog1.FileName, "Resource\\" + Form1.NewLogin.txtMail.Text + ".jpg")
                     Catch ex As Exception
                         MessageBox.Show("image can not be added")
                     End Try

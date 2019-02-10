@@ -22,14 +22,15 @@ Partial Class CurProfile
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CurProfile))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Dept = New System.Windows.Forms.Label()
         Me.webmail = New System.Windows.Forms.Label()
         Me.discipline = New System.Windows.Forms.Label()
         Me.rollNo = New System.Windows.Forms.Label()
         Me.nameLabel = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PicProfile = New System.Windows.Forms.PictureBox()
+        CType(Me.PicProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -91,14 +92,15 @@ Partial Class CurProfile
         Me.nameLabel.TabIndex = 8
         Me.nameLabel.Text = "Name"
         '
-        'PictureBox1
+        'PicProfile
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(58, 53)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(116, 156)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
+        Me.PicProfile.Image = CType(resources.GetObject("PicProfile.Image"), System.Drawing.Image)
+        Me.PicProfile.Location = New System.Drawing.Point(58, 53)
+        Me.PicProfile.Name = "PicProfile"
+        Me.PicProfile.Size = New System.Drawing.Size(116, 156)
+        Me.PicProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicProfile.TabIndex = 7
+        Me.PicProfile.TabStop = False
         '
         'CurProfile
         '
@@ -110,11 +112,11 @@ Partial Class CurProfile
         Me.Controls.Add(Me.discipline)
         Me.Controls.Add(Me.rollNo)
         Me.Controls.Add(Me.nameLabel)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Controls.Add(Me.PicProfile)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "CurProfile"
         Me.Size = New System.Drawing.Size(852, 700)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -125,6 +127,6 @@ Partial Class CurProfile
     Friend WithEvents discipline As System.Windows.Forms.Label
     Friend WithEvents rollNo As System.Windows.Forms.Label
     Friend WithEvents nameLabel As System.Windows.Forms.Label
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents PicProfile As System.Windows.Forms.PictureBox
 
 End Class

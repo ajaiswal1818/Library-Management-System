@@ -76,6 +76,7 @@ Partial Class BooksIssued
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.Controls.Add(Me.lblBklt)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnRet1)
