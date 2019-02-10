@@ -181,7 +181,6 @@
     End Sub
 
 
-    Private Sub btnRet1_Click(sender As Object, e As EventArgs) Handles btnRet1.Click
+   
 
-    End Sub
 End Class

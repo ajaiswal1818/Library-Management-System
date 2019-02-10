@@ -1,4 +1,6 @@
-﻿Public Class NewLogin
+﻿Imports System.IO
+
+Public Class NewLogin
 
     Public CurUser As String = ""
 
@@ -34,6 +36,12 @@
         cmbDept.Items.Add("EP")
         cmbDept.Items.Add("BT")
         cmbDept.Items.Add("HSS")
+
+        Dim StoredPath As String = "/bin/Debug/Resource"
+        If File.Exists(StoredPath) Then
+            profilePic.Image = Image.FromFile(StoredPath)
+            profilePic.Refresh()
+        End If
 
     End Sub
 
@@ -125,6 +133,48 @@
         Else
             Console.WriteLine("User " & txtMail.Text & " creation failed")
         End If
+
+    End Sub
+
+    'Private Sub OpenFileDialog_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OFGSelectImage.FileOk
+    '    OFGSelectImage.ShowDialog()
+    '    profilePic.Image = Image.FromFile(OFGSelectImage.FileName)
+    'End Sub
+
+    Private Sub BtnView_Click(sender As Object, e As EventArgs) Handles BtnView.Click
+        'If OFGSelectImage.ShowDialog = DialogResult.OK Then
+        '    profilePic.Image = Image.FromFile(OFGSelectImage.FileName)
+        'End If
+
+        If (Not System.IO.Directory.Exists("Reso urce")) Then
+            System.IO.Directory.CreateDirectory("Resource")
+        End If
+
+
+        Dim OpenFileDialog1 As New OpenFileDialog
+        With OpenFileDialog1
+            .CheckFileExists = True
+            .ShowReadOnly = False
+            .Filter = "All Files|*.*|Bitmap Files|*.bmp|GIF Files|*.gif|JPG Files|*.jpg|JPEG Files|*.jpeg|PNG Files|*.png"
+            .FilterIndex = 1
+
+            '
+            If .ShowDialog = DialogResult.OK Then
+                Dim FName() As String = OpenFileDialog1.FileName.Split("\\")
+                Dim ext() As String = FName(FName.Length - 1).Split(".")
+                Dim extension As String = ext(ext.Length - 1)
+                If extension <> "jpg" Or extension <> "jpeg" Or extension <> "png" Or extension <> "bmp" Or extension <> "gif" Then
+                    Try
+                        System.IO.File.Copy(OpenFileDialog1.FileName, "Resource\\" + Form1.NewLogin.txtMail.Text + "." + extension)
+                    Catch ex As Exception
+                        MessageBox.Show("image can not be added")
+                    End Try
+
+                    profilePic.Image = Image.FromFile(.FileName)
+
+                End If
+            End If
+        End With
 
     End Sub
 End Class

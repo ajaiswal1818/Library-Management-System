@@ -200,7 +200,7 @@ Partial Class Form1
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(129, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1120, 14)
+        Me.Panel3.Size = New System.Drawing.Size(1171, 14)
         Me.Panel3.TabIndex = 2
         '
         'Button8
@@ -504,7 +504,7 @@ Partial Class Form1
         'CurProfile
         '
         Me.CurProfile.Location = New System.Drawing.Point(133, 55)
-        Me.CurProfile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
         Me.CurProfile.Name = "CurProfile"
         Me.CurProfile.Size = New System.Drawing.Size(852, 700)
         Me.CurProfile.TabIndex = 33
@@ -516,7 +516,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1266, 609)
+        Me.ClientSize = New System.Drawing.Size(1317, 609)
         Me.Controls.Add(Me.adminPanel)
         Me.Controls.Add(Me.ChngPass)
         Me.Controls.Add(Me.UserDetail1)

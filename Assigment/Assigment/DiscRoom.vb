@@ -8,6 +8,15 @@
 
     Private Sub DiscRoom_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
         'btn0_0.Font = New Font("Century Gothic", 9)
+
+        'My.Computer.FileSystem.WriteAllText("Resource\\RoomLastAccess.txt", "This is new text to be added.", False)
+        Dim fileReader As String = My.Computer.FileSystem.ReadAllText("Resource\\RoomLastAccess.txt")
+        Dim thisDate As Date
+        thisDate = Today
+        If CStr(thisDate) <> CStr(fileReader) Then
+            Access.ExecQuery("Update Room Set 0=0, 1=0, 2=0, 3=0, 4=0, 5=0, 6=0, 7=0")
+        End If
+
         Access.ExecQuery("SELECT * from Room")
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
         Dim avail(4, 8) As Integer
@@ -47,6 +56,9 @@
                 DynamicButton(i, j, nm)
             Next
         Next
+
+        My.Computer.FileSystem.WriteAllText("Resource\\RoomLastAccess.txt", thisDate, False)
+
     End Sub
 
     Private Sub DynamicButton(i As Integer, j As Integer, nm As String)
@@ -86,18 +98,17 @@
         If selectedBtn.BackColor = Color.White Then
             If Log.CurUser = "" Then
                 MessageBox.Show("You must be logged in to book a room!", "Error")
-                Console.Write("Failed room booking")
+                Console.Write("Failed room booking: User not logged in" & Environment.NewLine)
                 Exit Sub
             End If
-            Dim ans As String() = Split(selectedBtn.Name.Substring(3), "-")
-
+            Dim ans As String() = Split(selectedBtn.Name.Substring(3), "_")
             '(Me.Controls.Find(send), True)(0)
             'Dim send As Array = Split
 
-            Access.ExecQuery("Update Rooms Set " & CStr(ans(1)) & "=" & Log.CurID & "where Room_no=" & ans(1))
+            Access.ExecQuery("Update Room Set " & CStr(ans(1)) & "=" & Log.CurID & " where Room_no=" & (ans(0) + 1))
             If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
             MessageBox.Show("Room successfully booked!", "Success")
-            Console.Write("User " & Log.CurName & "Booked a room")
+            Console.Write("User " & Log.CurName & " booked a room")
 
         End If
     End Sub

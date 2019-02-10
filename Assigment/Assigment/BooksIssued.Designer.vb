@@ -80,7 +80,7 @@ Partial Class BooksIssued
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnRet1)
         Me.Controls.Add(Me.lblRet1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BooksIssued"
         Me.Size = New System.Drawing.Size(639, 569)
         Me.ResumeLayout(False)
