@@ -4,7 +4,7 @@
 
     Private Access As New LMS
 
-    Private Sub RefreshPage()
+    Public Sub RefreshPage()
         Dim cnt As Integer = 0
         lblBklt.Text = "You can issue " & Log.CurBkLimit & " more books!"
         AddHandler btnRet1.Click, AddressOf Me.Button_Click
@@ -62,10 +62,6 @@
         End If
     End Sub
 
-    Private Sub BooksIssued_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Clr()
-        RefreshPage()
-    End Sub
 
     Private Sub DynamicBooks(i As Integer, txt As String, R As DataRow)
         'MessageBox.Show("Hello")
@@ -102,7 +98,7 @@
 
     End Sub
 
-    Private Sub Clr()
+    Public Sub Clr()
         lblRet1.Text = ""
         For i As Integer = 2 To cnt
             Me.Controls.Remove(Me.Controls.Find("lblRet" & CStr(i), True)(0))

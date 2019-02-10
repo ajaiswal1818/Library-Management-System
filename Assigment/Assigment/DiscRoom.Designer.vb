@@ -258,6 +258,7 @@ Partial Class DiscRoom
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.Controls.Add(Me.lbl0_0)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label11)
@@ -274,7 +275,7 @@ Partial Class DiscRoom
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn0_0)
         Me.Name = "DiscRoom"
-        Me.Size = New System.Drawing.Size(639, 569)
+        Me.Size = New System.Drawing.Size(622, 569)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

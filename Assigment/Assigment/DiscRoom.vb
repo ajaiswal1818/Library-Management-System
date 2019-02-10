@@ -10,7 +10,7 @@
         'btn0_0.Font = New Font("Century Gothic", 9)
 
         'My.Computer.FileSystem.WriteAllText("Resource\\RoomLastAccess.txt", "This is new text to be added.", False)
-        Dim fileReader As String = My.Computer.FileSystem.ReadAllText("Resource\\RoomLastAccess.txt")
+        Dim fileReader As String = My.Computer.FileSystem.ReadAllText("Assigment\bin\Debug\Resource\\RoomLastAccess.txt")
         Dim thisDate As Date
         thisDate = Today
         If CStr(thisDate) <> CStr(fileReader) Then
@@ -57,7 +57,7 @@
             Next
         Next
 
-        My.Computer.FileSystem.WriteAllText("Resource\\RoomLastAccess.txt", thisDate, False)
+        My.Computer.FileSystem.WriteAllText("Assigment\bin\Debug\Resource\\RoomLastAccess.txt", thisDate, False)
 
     End Sub
 

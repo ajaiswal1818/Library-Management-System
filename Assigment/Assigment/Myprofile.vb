@@ -11,6 +11,8 @@
         Arrow.Top = btnItems.Top + 12
         Form1.BooksIssued.BringToFront()
         Form1.BooksIssued.Visible = True
+        Form1.BooksIssued.Clr()
+        Form1.BooksIssued.RefreshPage()
     End Sub
 
     Private Sub btnPasschange_Click(sender As Object, e As EventArgs) Handles btnPasschange.Click

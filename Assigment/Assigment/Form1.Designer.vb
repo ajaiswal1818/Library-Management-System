@@ -458,6 +458,7 @@ Partial Class Form1
         '
         'BooksIssued
         '
+        Me.BooksIssued.AutoScroll = True
         Me.BooksIssued.Location = New System.Drawing.Point(134, 50)
         Me.BooksIssued.Margin = New System.Windows.Forms.Padding(2)
         Me.BooksIssued.Name = "BooksIssued"

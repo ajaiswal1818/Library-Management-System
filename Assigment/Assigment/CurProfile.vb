@@ -5,6 +5,10 @@ Public Class CurProfile
 
     Private Sub CurProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        If Log.CurID = 0 Then
+            Exit Sub
+        End If
+
         Access.ExecQuery("SELECT * from Users WHERE [ID] =" & Log.CurID)
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
