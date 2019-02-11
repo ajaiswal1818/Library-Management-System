@@ -123,7 +123,7 @@ Partial Class CurProfile
         Me.Controls.Add(Me.PicProfile)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "CurProfile"
-        Me.Size = New System.Drawing.Size(852, 700)
+        Me.Size = New System.Drawing.Size(852, 740)
         CType(Me.PicProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

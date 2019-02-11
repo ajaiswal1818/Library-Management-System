@@ -51,8 +51,10 @@ Partial Class Form1
         Me.RemoveBook = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.AddBook = New System.Windows.Forms.Button()
-        Me.Search1 = New Assigment.Search()
+        Me.CurProfile = New Assigment.CurProfile()
+        Me.UserDetail1 = New Assigment.userDetail()
         Me.DiscRoom = New Assigment.DiscRoom()
+        Me.Search1 = New Assigment.Search()
         Me.EBooks1 = New Assigment.eBooks()
         Me.NewLogin = New Assigment.NewLogin()
         Me.BooksIssued = New Assigment.BooksIssued()
@@ -60,8 +62,6 @@ Partial Class Form1
         Me.AddBookP = New Assigment.addBook()
         Me.Rec_book1 = New Assigment.Rec_book()
         Me.Reco = New Assigment.reco()
-        Me.UserDetail1 = New Assigment.userDetail()
-        Me.CurProfile = New Assigment.CurProfile()
         Me.Log1 = New Assigment.Log()
         Me.ChngPass = New Assigment.ChngPass()
         Me.Myprofile = New Assigment.Myprofile()
@@ -394,6 +394,43 @@ Partial Class Form1
         Me.AddBook.Text = "Add Book"
         Me.AddBook.UseVisualStyleBackColor = True
         '
+        'CurProfile
+        '
+        Me.CurProfile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CurProfile.BackgroundImage = CType(resources.GetObject("CurProfile.BackgroundImage"), System.Drawing.Image)
+        Me.CurProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CurProfile.Location = New System.Drawing.Point(139, 30)
+        Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
+        Me.CurProfile.Name = "CurProfile"
+        Me.CurProfile.Size = New System.Drawing.Size(835, 740)
+        Me.CurProfile.TabIndex = 33
+        Me.CurProfile.Visible = False
+        '
+        'UserDetail1
+        '
+        Me.UserDetail1.AutoScroll = True
+        Me.UserDetail1.BackgroundImage = CType(resources.GetObject("UserDetail1.BackgroundImage"), System.Drawing.Image)
+        Me.UserDetail1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.UserDetail1.Location = New System.Drawing.Point(139, 30)
+        Me.UserDetail1.Margin = New System.Windows.Forms.Padding(4)
+        Me.UserDetail1.Name = "UserDetail1"
+        Me.UserDetail1.Size = New System.Drawing.Size(869, 740)
+        Me.UserDetail1.TabIndex = 36
+        Me.UserDetail1.Visible = False
+        '
+        'DiscRoom
+        '
+        Me.DiscRoom.AutoSize = True
+        Me.DiscRoom.BackgroundImage = CType(resources.GetObject("DiscRoom.BackgroundImage"), System.Drawing.Image)
+        Me.DiscRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.DiscRoom.Location = New System.Drawing.Point(139, 30)
+        Me.DiscRoom.Margin = New System.Windows.Forms.Padding(4)
+        Me.DiscRoom.Name = "DiscRoom"
+        Me.DiscRoom.Size = New System.Drawing.Size(869, 740)
+        Me.DiscRoom.TabIndex = 31
+        Me.DiscRoom.Visible = False
+        '
         'Search1
         '
         Me.Search1.AutoScroll = True
@@ -404,16 +441,6 @@ Partial Class Form1
         Me.Search1.Name = "Search1"
         Me.Search1.Size = New System.Drawing.Size(869, 740)
         Me.Search1.TabIndex = 21
-        '
-        'DiscRoom
-        '
-        Me.DiscRoom.AutoSize = True
-        Me.DiscRoom.Location = New System.Drawing.Point(139, 30)
-        Me.DiscRoom.Margin = New System.Windows.Forms.Padding(4)
-        Me.DiscRoom.Name = "DiscRoom"
-        Me.DiscRoom.Size = New System.Drawing.Size(869, 740)
-        Me.DiscRoom.TabIndex = 31
-        Me.DiscRoom.Visible = False
         '
         'EBooks1
         '
@@ -493,31 +520,6 @@ Partial Class Form1
         Me.Reco.TabIndex = 34
         Me.Reco.Visible = False
         '
-        'UserDetail1
-        '
-        Me.UserDetail1.AutoScroll = True
-        Me.UserDetail1.BackgroundImage = CType(resources.GetObject("UserDetail1.BackgroundImage"), System.Drawing.Image)
-        Me.UserDetail1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.UserDetail1.Location = New System.Drawing.Point(139, 30)
-        Me.UserDetail1.Margin = New System.Windows.Forms.Padding(4)
-        Me.UserDetail1.Name = "UserDetail1"
-        Me.UserDetail1.Size = New System.Drawing.Size(869, 740)
-        Me.UserDetail1.TabIndex = 36
-        Me.UserDetail1.Visible = False
-        '
-        'CurProfile
-        '
-        Me.CurProfile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CurProfile.BackgroundImage = CType(resources.GetObject("CurProfile.BackgroundImage"), System.Drawing.Image)
-        Me.CurProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.CurProfile.Location = New System.Drawing.Point(139, 30)
-        Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
-        Me.CurProfile.Name = "CurProfile"
-        Me.CurProfile.Size = New System.Drawing.Size(617, 740)
-        Me.CurProfile.TabIndex = 33
-        Me.CurProfile.Visible = False
-        '
         'Log1
         '
         Me.Log1.BackColor = System.Drawing.SystemColors.Control
@@ -559,9 +561,11 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1008, 729)
-        Me.Controls.Add(Me.adminPanel)
-        Me.Controls.Add(Me.Search1)
+        Me.Controls.Add(Me.CurProfile)
+        Me.Controls.Add(Me.UserDetail1)
         Me.Controls.Add(Me.DiscRoom)
+        Me.Controls.Add(Me.Search1)
+        Me.Controls.Add(Me.adminPanel)
         Me.Controls.Add(Me.EBooks1)
         Me.Controls.Add(Me.NewLogin)
         Me.Controls.Add(Me.BooksIssued)
@@ -569,8 +573,6 @@ Partial Class Form1
         Me.Controls.Add(Me.AddBookP)
         Me.Controls.Add(Me.Rec_book1)
         Me.Controls.Add(Me.Reco)
-        Me.Controls.Add(Me.UserDetail1)
-        Me.Controls.Add(Me.CurProfile)
         Me.Controls.Add(Me.Log1)
         Me.Controls.Add(Me.ChngPass)
         Me.Controls.Add(Me.Panel3)

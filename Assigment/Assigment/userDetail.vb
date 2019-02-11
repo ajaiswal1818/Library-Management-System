@@ -25,7 +25,7 @@ Public Class userDetail
 
         Dim fullPath As String = IO.Path.GetFullPath(My.Resources.ResourceManager.BaseName)
 
-        fullPath = fullPath.Substring(0, fullPath.Length - 39) & "\Assigment\bin\Debug\Resource\"
+        fullPath = fullPath.Substring(0, fullPath.Length - 39) & "\Resource\"
 
         Dim Path As String = fullPath & Access.DBDT.Rows(0).Item(1) & ".jpg"
         If File.Exists(Path) Then
