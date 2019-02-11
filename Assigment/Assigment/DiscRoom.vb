@@ -3,7 +3,7 @@
 
 Public Class DiscRoom
 
-    Dim open As Boolean = 0
+    'Dim open As Boolean = 0
 
     Private Access As New LMS
 
@@ -11,10 +11,7 @@ Public Class DiscRoom
         'btn0_0.Font = New Font("Century Gothic", 9)
 
         'My.Computer.FileSystem.WriteAllText("Resource\\RoomLastAccess.txt", "This is new text to be added.", False)
-        If open = 1 Then
-            Clear()
-        End If
-        open = 1
+        
         btn0_0.Show()
         Dim fileReader As String = My.Computer.FileSystem.ReadAllText("Resource\\RoomLastAccess.txt")
         Dim thisDate As Date
@@ -63,7 +60,7 @@ Public Class DiscRoom
                 DynamicButton(i, j, nm)
             Next
         Next
-        open = 1
+        'open = 1
         My.Computer.FileSystem.WriteAllText("Resource\\RoomLastAccess.txt", thisDate, False)
 
     End Sub
@@ -130,11 +127,12 @@ Public Class DiscRoom
             MessageBox.Show("Room successfully booked!", "Success")
             Console.Write("User " & Log.CurName & " booked a room")
 
+            Clear()
+            DiscRoom_Load_1()
 
 
         End If
-        Clear()
-        DiscRoom_Load_1()
+        
     End Sub
 
 End Class
