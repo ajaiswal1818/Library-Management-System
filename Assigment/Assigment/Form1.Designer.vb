@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Myprofile = New Assigment.Myprofile()
         Me.MyAccount = New System.Windows.Forms.Button()
         Me.SearchBtn = New System.Windows.Forms.Button()
         Me.eBookBtn = New System.Windows.Forms.Button()
@@ -36,9 +37,9 @@ Partial Class Form1
         Me.RecommendBtn = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.logoutBtn = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.logoutBtn = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.adminPanel = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -51,10 +52,10 @@ Partial Class Form1
         Me.RemoveBook = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.AddBook = New System.Windows.Forms.Button()
+        Me.CurProfile = New Assigment.CurProfile()
         Me.Log1 = New Assigment.Log()
         Me.ChngPass = New Assigment.ChngPass()
         Me.UserDetail1 = New Assigment.userDetail()
-        Me.Myprofile = New Assigment.Myprofile()
         Me.Reco = New Assigment.reco()
         Me.Rec_book1 = New Assigment.Rec_book()
         Me.AddBookP = New Assigment.addBook()
@@ -64,13 +65,12 @@ Partial Class Form1
         Me.NewLogin = New Assigment.NewLogin()
         Me.EBooks1 = New Assigment.eBooks()
         Me.DiscRoom = New Assigment.DiscRoom()
-        Me.CurProfile = New Assigment.CurProfile()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        CType(Me.logoutBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
+        CType(Me.logoutBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.adminPanel.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,6 +91,16 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(139, 770)
         Me.Panel1.TabIndex = 0
+        '
+        'Myprofile
+        '
+        Me.Myprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Myprofile.Location = New System.Drawing.Point(11, 442)
+        Me.Myprofile.Margin = New System.Windows.Forms.Padding(4)
+        Me.Myprofile.Name = "Myprofile"
+        Me.Myprofile.Size = New System.Drawing.Size(128, 250)
+        Me.Myprofile.TabIndex = 29
+        Me.Myprofile.Visible = False
         '
         'MyAccount
         '
@@ -223,16 +233,16 @@ Partial Class Form1
         Me.Button8.Text = "Discussion Room"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'Label3
+        'Panel4
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Snow
-        Me.Label3.Location = New System.Drawing.Point(16, 6)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(73, 17)
-        Me.Label3.TabIndex = 23
-        Me.Label3.Text = "Welcome!"
+        Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4.Controls.Add(Me.logoutBtn)
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Location = New System.Drawing.Point(535, 2)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(163, 28)
+        Me.Panel4.TabIndex = 25
+        Me.Panel4.Visible = False
         '
         'logoutBtn
         '
@@ -246,16 +256,16 @@ Partial Class Form1
         Me.logoutBtn.TabStop = False
         Me.ToolTip1.SetToolTip(Me.logoutBtn, "LogOut")
         '
-        'Panel4
+        'Label3
         '
-        Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.Controls.Add(Me.logoutBtn)
-        Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Location = New System.Drawing.Point(535, 2)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(163, 28)
-        Me.Panel4.TabIndex = 25
-        Me.Panel4.Visible = False
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Snow
+        Me.Label3.Location = New System.Drawing.Point(16, 6)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(73, 17)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "Welcome!"
         '
         'adminPanel
         '
@@ -394,6 +404,19 @@ Partial Class Form1
         Me.AddBook.Text = "Add Book"
         Me.AddBook.UseVisualStyleBackColor = True
         '
+        'CurProfile
+        '
+        Me.CurProfile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CurProfile.BackgroundImage = CType(resources.GetObject("CurProfile.BackgroundImage"), System.Drawing.Image)
+        Me.CurProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CurProfile.Location = New System.Drawing.Point(139, 30)
+        Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
+        Me.CurProfile.Name = "CurProfile"
+        Me.CurProfile.Size = New System.Drawing.Size(872, 740)
+        Me.CurProfile.TabIndex = 33
+        Me.CurProfile.Visible = False
+        '
         'Log1
         '
         Me.Log1.BackColor = System.Drawing.SystemColors.Control
@@ -418,7 +441,6 @@ Partial Class Form1
         '
         'UserDetail1
         '
-        Me.UserDetail1.AutoScroll = True
         Me.UserDetail1.BackgroundImage = CType(resources.GetObject("UserDetail1.BackgroundImage"), System.Drawing.Image)
         Me.UserDetail1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.UserDetail1.Location = New System.Drawing.Point(139, 30)
@@ -427,16 +449,6 @@ Partial Class Form1
         Me.UserDetail1.Size = New System.Drawing.Size(869, 740)
         Me.UserDetail1.TabIndex = 36
         Me.UserDetail1.Visible = False
-        '
-        'Myprofile
-        '
-        Me.Myprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Myprofile.Location = New System.Drawing.Point(11, 442)
-        Me.Myprofile.Margin = New System.Windows.Forms.Padding(4)
-        Me.Myprofile.Name = "Myprofile"
-        Me.Myprofile.Size = New System.Drawing.Size(128, 250)
-        Me.Myprofile.TabIndex = 29
-        Me.Myprofile.Visible = False
         '
         'Reco
         '
@@ -525,17 +537,6 @@ Partial Class Form1
         Me.DiscRoom.TabIndex = 31
         Me.DiscRoom.Visible = False
         '
-        'CurProfile
-        '
-        Me.CurProfile.BackgroundImage = CType(resources.GetObject("CurProfile.BackgroundImage"), System.Drawing.Image)
-        Me.CurProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.CurProfile.Location = New System.Drawing.Point(139, 30)
-        Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
-        Me.CurProfile.Name = "CurProfile"
-        Me.CurProfile.Size = New System.Drawing.Size(869, 740)
-        Me.CurProfile.TabIndex = 33
-        Me.CurProfile.Visible = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -544,6 +545,7 @@ Partial Class Form1
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1008, 729)
         Me.Controls.Add(Me.adminPanel)
+        Me.Controls.Add(Me.CurProfile)
         Me.Controls.Add(Me.Log1)
         Me.Controls.Add(Me.ChngPass)
         Me.Controls.Add(Me.UserDetail1)
@@ -558,7 +560,6 @@ Partial Class Form1
         Me.Controls.Add(Me.NewLogin)
         Me.Controls.Add(Me.EBooks1)
         Me.Controls.Add(Me.DiscRoom)
-        Me.Controls.Add(Me.CurProfile)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "Form1"
         Me.Text = "LIB"
@@ -567,9 +568,9 @@ Partial Class Form1
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
-        CType(Me.logoutBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.logoutBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.adminPanel.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
@@ -613,11 +614,11 @@ Partial Class Form1
     Friend WithEvents DiscRoom As Assigment.DiscRoom
     Friend WithEvents ChngPass As Assigment.ChngPass
     Friend WithEvents remove_detail As Assigment.remove_detail
-    Friend WithEvents CurProfile As Assigment.CurProfile
     Friend WithEvents recommended As System.Windows.Forms.Button
     Friend WithEvents Reco As Assigment.reco
     Friend WithEvents AddBookP As Assigment.addBook
     Friend WithEvents Rec_book1 As Assigment.Rec_book
     Friend WithEvents UserDetail1 As Assigment.userDetail
+    Friend WithEvents CurProfile As Assigment.CurProfile
 
 End Class

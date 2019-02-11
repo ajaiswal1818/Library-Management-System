@@ -33,45 +33,47 @@ Partial Class Rec_book
         '
         'Rec_Auth
         '
-        Me.Rec_Auth.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Rec_Auth.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rec_Auth.ForeColor = System.Drawing.Color.Silver
         Me.Rec_Auth.Location = New System.Drawing.Point(201, 273)
         Me.Rec_Auth.Name = "Rec_Auth"
-        Me.Rec_Auth.Size = New System.Drawing.Size(415, 30)
+        Me.Rec_Auth.Size = New System.Drawing.Size(415, 37)
         Me.Rec_Auth.TabIndex = 9
         Me.Rec_Auth.Text = "Author"
         '
         'Rec_isbn
         '
-        Me.Rec_isbn.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Rec_isbn.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rec_isbn.ForeColor = System.Drawing.Color.Silver
         Me.Rec_isbn.Location = New System.Drawing.Point(201, 338)
         Me.Rec_isbn.Name = "Rec_isbn"
-        Me.Rec_isbn.Size = New System.Drawing.Size(415, 30)
+        Me.Rec_isbn.Size = New System.Drawing.Size(415, 37)
         Me.Rec_isbn.TabIndex = 8
         Me.Rec_isbn.Text = "ISBN"
         '
         'Rectbn
         '
+        Me.Rectbn.BackColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(8, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.Rectbn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Rectbn.FlatAppearance.BorderSize = 0
+        Me.Rectbn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Rectbn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Rectbn.Location = New System.Drawing.Point(334, 429)
+        Me.Rectbn.ForeColor = System.Drawing.Color.Snow
+        Me.Rectbn.Location = New System.Drawing.Point(318, 412)
         Me.Rectbn.Name = "Rectbn"
-        Me.Rectbn.Size = New System.Drawing.Size(146, 38)
+        Me.Rectbn.Size = New System.Drawing.Size(196, 40)
         Me.Rectbn.TabIndex = 7
         Me.Rectbn.Text = "Recommend"
-        Me.Rectbn.UseVisualStyleBackColor = True
+        Me.Rectbn.UseVisualStyleBackColor = False
         '
         'Rec_title
         '
-        Me.Rec_title.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Rec_title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Rec_title.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rec_title.ForeColor = System.Drawing.Color.Silver
-        Me.Rec_title.Location = New System.Drawing.Point(201, 204)
+        Me.Rec_title.Location = New System.Drawing.Point(201, 202)
         Me.Rec_title.Name = "Rec_title"
-        Me.Rec_title.Size = New System.Drawing.Size(415, 30)
+        Me.Rec_title.Size = New System.Drawing.Size(415, 37)
         Me.Rec_title.TabIndex = 6
         Me.Rec_title.Text = "Title"
         '

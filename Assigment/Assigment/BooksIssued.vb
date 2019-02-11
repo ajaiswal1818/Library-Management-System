@@ -77,7 +77,7 @@
         'lbl1.Height = lblissue1.Hseight
         'lbl1.Width = lblissue1.Width
         lbl1.BorderStyle = Windows.Forms.BorderStyle.Fixed3D
-        lbl1.BackColor = Color.White
+        lbl1.BackColor = Color.Transparent
         lbl1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(lbl1)
         lbl1.Location = New Point(lblRet1.Location.X, yt)
@@ -91,6 +91,9 @@
         btn1.Text = "Return book!"
         btn1.Height = btnRet1.Height
         btn1.Width = btnRet1.Width
+        btn1.BackColor = System.Drawing.Color.FromArgb(171, 8, 55)
+        btn1.ForeColor = Color.Snow
+        btn1.FlatStyle = FlatStyle.Flat
         'btn1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(btn1)
         btn1.Location = New Point(btnRet1.Location.X, yb)
@@ -197,7 +200,4 @@
         RefreshPage()
     End Sub
 
-    Private Sub BooksIssued_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

@@ -112,7 +112,7 @@
         'lbl1.Height = lblSrch1.Hseight
         'lbl1.Width = lblSrch1.Width
         lbl1.BorderStyle = Windows.Forms.BorderStyle.Fixed3D
-        lbl1.BackColor = Color.White
+        lbl1.BackColor = Color.Transparent
         lbl1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(lbl1)
         lbl1.Location = New Point(lblSrch1.Location.X, yt)
@@ -126,6 +126,9 @@
         btn1.Text = "Issue Now!"
         btn1.Height = btnSrch1.Height
         btn1.Width = btnSrch1.Width
+        btn1.FlatStyle = FlatStyle.Flat
+        btn1.BackColor = System.Drawing.Color.FromArgb(172, 8, 55)
+        btn1.ForeColor = Color.Snow
         'btn1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(btn1)
         btn1.Location = New Point(btnSrch1.Location.X, yb)
@@ -211,6 +214,10 @@
     End Sub
 
     Private Sub btnSrch1_Click(sender As Object, e As EventArgs) Handles btnSrch1.Click
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
     End Sub
 End Class

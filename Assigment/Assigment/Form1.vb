@@ -125,6 +125,8 @@
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         DiscRoom.BringToFront()
         DiscRoom.Visible = True
+        SidePanel.Visible = False
+        Panel6.Visible = False
     End Sub
 
     Private Sub Myprofile_Load(sender As Object, e As EventArgs) Handles Myprofile.Load

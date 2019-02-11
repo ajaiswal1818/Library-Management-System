@@ -41,7 +41,7 @@ Partial Class userDetail
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Location = New System.Drawing.Point(10, 104)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(1)
         Me.Panel1.Name = "Panel1"
@@ -63,18 +63,20 @@ Partial Class userDetail
         '
         'Usearch
         '
+        Me.Usearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(8, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.Usearch.FlatAppearance.BorderSize = 0
+        Me.Usearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Usearch.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Usearch.ForeColor = System.Drawing.Color.Snow
         Me.Usearch.Location = New System.Drawing.Point(588, 42)
         Me.Usearch.Name = "Usearch"
         Me.Usearch.Size = New System.Drawing.Size(95, 30)
         Me.Usearch.TabIndex = 27
         Me.Usearch.Text = "Search"
-        Me.Usearch.UseVisualStyleBackColor = True
+        Me.Usearch.UseVisualStyleBackColor = False
         '
         'uPanel
         '
-        Me.uPanel.AutoScroll = True
         Me.uPanel.BackColor = System.Drawing.Color.Transparent
         Me.uPanel.Controls.Add(Me.Label1)
         Me.uPanel.Controls.Add(Me.Dept)
@@ -169,7 +171,7 @@ Partial Class userDetail
         'lblissue
         '
         Me.lblissue.AutoSize = True
-        Me.lblissue.BackColor = System.Drawing.Color.White
+        Me.lblissue.BackColor = System.Drawing.Color.Transparent
         Me.lblissue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblissue.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblissue.Location = New System.Drawing.Point(61, 427)
@@ -183,7 +185,6 @@ Partial Class userDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoScroll = True
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.uPanel)

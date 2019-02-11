@@ -115,7 +115,9 @@ Public Class userDetail
         'lbl1.Height = lblissue1.Hseight
         'lbl1.Width = lblissue1.Width
         lbl1.BorderStyle = Windows.Forms.BorderStyle.Fixed3D
-        lbl1.BackColor = Color.White
+        lbl1.ForeColor = Color.Black
+        'lbl1.BackColor = System.Drawing.Color.FromArgb(171, 8, 55)
+        lbl1.BackColor = Color.Transparent
         lbl1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(lbl1)
         lbl1.Location = New Point(lblissue.Location.X, yt)
@@ -126,4 +128,7 @@ Public Class userDetail
         Clear()
     End Sub
 
+    Private Sub lblissue_Click(sender As Object, e As EventArgs) Handles lblissue.Click
+
+    End Sub
 End Class

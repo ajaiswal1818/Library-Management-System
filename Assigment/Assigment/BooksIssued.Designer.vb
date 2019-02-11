@@ -32,6 +32,7 @@ Partial Class BooksIssued
         'lblBklt
         '
         Me.lblBklt.AutoSize = True
+        Me.lblBklt.BackColor = System.Drawing.Color.Transparent
         Me.lblBklt.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBklt.Location = New System.Drawing.Point(28, 108)
         Me.lblBklt.Name = "lblBklt"
@@ -51,19 +52,22 @@ Partial Class BooksIssued
         '
         'btnRet1
         '
+        Me.btnRet1.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(8, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.btnRet1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRet1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRet1.ForeColor = System.Drawing.Color.Snow
         Me.btnRet1.Location = New System.Drawing.Point(32, 169)
         Me.btnRet1.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRet1.Name = "btnRet1"
         Me.btnRet1.Size = New System.Drawing.Size(61, 50)
         Me.btnRet1.TabIndex = 27
         Me.btnRet1.Text = "Return Book"
-        Me.btnRet1.UseVisualStyleBackColor = True
+        Me.btnRet1.UseVisualStyleBackColor = False
         '
         'lblRet1
         '
         Me.lblRet1.AutoSize = True
-        Me.lblRet1.BackColor = System.Drawing.Color.White
+        Me.lblRet1.BackColor = System.Drawing.Color.Transparent
         Me.lblRet1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblRet1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRet1.Location = New System.Drawing.Point(134, 145)
@@ -77,12 +81,11 @@ Partial Class BooksIssued
         '
         Me.tempRet1.AutoSize = True
         Me.tempRet1.BackColor = System.Drawing.Color.White
-        Me.tempRet1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.tempRet1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tempRet1.Location = New System.Drawing.Point(550, 39)
         Me.tempRet1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.tempRet1.Name = "tempRet1"
-        Me.tempRet1.Size = New System.Drawing.Size(57, 21)
+        Me.tempRet1.Size = New System.Drawing.Size(55, 19)
         Me.tempRet1.TabIndex = 31
         Me.tempRet1.Text = "Label1"
         Me.tempRet1.Visible = False
