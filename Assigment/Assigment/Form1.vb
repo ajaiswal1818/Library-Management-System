@@ -106,8 +106,8 @@
         Panel6.BringToFront()
         Panel6.Height = RemoveBook.Height
         Panel6.Top = RemoveBook.Top
-        Remove_detail1.Clr_Rem()
-        Remove_detail1.Clr_lbl()
+        remove_detail.Clr_Rem()
+        remove_detail.Clr_lbl()
         If remove_detail.cnt_del <> 0 Then
             remove_detail.Clr_Del()
         End If
@@ -150,17 +150,8 @@
         DiscRoom.Visible = True
         SidePanel.Visible = False
         Panel6.Visible = False
+
+        DiscRoom.DiscRoom_Load_1()
     End Sub
 
-    Private Sub Myprofile_Load(sender As Object, e As EventArgs) Handles Myprofile.Load
-
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub Panel6_Paint(sender As Object, e As PaintEventArgs) Handles Panel6.Paint
-
-    End Sub
 End Class

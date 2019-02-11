@@ -60,6 +60,7 @@
 
             Form1.Panel4.Visible = True
             Form1.Panel4.BringToFront()
+            Form1.Label3.Text = "Welcome!  " & CurName
             Form1.Search1.Visible = True
             Form1.Search1.BringToFront()
             Form1.SidePanel.Height = Form1.SearchBtn.Height

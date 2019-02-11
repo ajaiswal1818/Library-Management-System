@@ -318,7 +318,7 @@
     End Sub
 
     Public Sub Clr_lbl()
-        MessageBox.Show("cnt_lbl: " & remove_detail.cnt_lbl & "\ncnt_rem: " & remove_detail.cnt_rem & "\ncnt_del: " & remove_detail.cnt_del)
+        'MessageBox.Show("cnt_lbl: " & remove_detail.cnt_lbl & "\ncnt_rem: " & remove_detail.cnt_rem & "\ncnt_del: " & remove_detail.cnt_del)
         lblSrch1.Text = ""
         lbltemp1.Text = ""
         For i As Integer = 2 To cnt_lbl
@@ -338,5 +338,10 @@
     
     Private Sub remove_detail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub btnDel1_Click(sender As Object, e As EventArgs) Handles btnDel1.Click
+        Form1.Book_details.Visible = True
+        Form1.Book_details.BringToFront()
     End Sub
 End Class

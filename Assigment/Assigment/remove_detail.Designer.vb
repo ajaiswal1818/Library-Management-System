@@ -35,10 +35,10 @@ Partial Class remove_detail
         'btnSrch1
         '
         Me.btnSrch1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSrch1.Location = New System.Drawing.Point(22, 273)
+        Me.btnSrch1.Location = New System.Drawing.Point(15, 274)
         Me.btnSrch1.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSrch1.Name = "btnSrch1"
-        Me.btnSrch1.Size = New System.Drawing.Size(62, 29)
+        Me.btnSrch1.Size = New System.Drawing.Size(79, 29)
         Me.btnSrch1.TabIndex = 26
         Me.btnSrch1.Text = "Remove"
         Me.btnSrch1.UseVisualStyleBackColor = True
@@ -92,10 +92,10 @@ Partial Class remove_detail
         'btnDel1
         '
         Me.btnDel1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDel1.Location = New System.Drawing.Point(22, 226)
+        Me.btnDel1.Location = New System.Drawing.Point(15, 227)
         Me.btnDel1.Margin = New System.Windows.Forms.Padding(2)
         Me.btnDel1.Name = "btnDel1"
-        Me.btnDel1.Size = New System.Drawing.Size(62, 29)
+        Me.btnDel1.Size = New System.Drawing.Size(79, 29)
         Me.btnDel1.TabIndex = 27
         Me.btnDel1.Text = "Details"
         Me.btnDel1.UseVisualStyleBackColor = True

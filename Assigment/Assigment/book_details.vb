@@ -28,7 +28,4 @@
         Access.ExecQuery("")
     End Sub
 
-    Private Sub lbl_bookContent_Click(sender As Object, e As EventArgs) Handles lbl_bookContent.Click
-
-    End Sub
 End Class

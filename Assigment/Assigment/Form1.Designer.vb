@@ -42,9 +42,9 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.adminPanel = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.recommended = New System.Windows.Forms.Button()
         Me.BookDetail = New System.Windows.Forms.Button()
         Me.UserDetail = New System.Windows.Forms.Button()
@@ -52,6 +52,7 @@ Partial Class Form1
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.AddBook = New System.Windows.Forms.Button()
         Me.Book_details = New Assigment.book_details()
+        Me.ChngPass = New Assigment.ChngPass()
         Me.EBooks1 = New Assigment.eBooks()
         Me.CurProfile = New Assigment.CurProfile()
         Me.Search1 = New Assigment.Search()
@@ -65,7 +66,6 @@ Partial Class Form1
         Me.Rec_book1 = New Assigment.Rec_book()
         Me.Reco = New Assigment.reco()
         Me.Log1 = New Assigment.Log()
-        Me.ChngPass = New Assigment.ChngPass()
         Me.Myprofile = New Assigment.Myprofile()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -230,9 +230,9 @@ Partial Class Form1
         Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel4.Controls.Add(Me.logoutBtn)
         Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Location = New System.Drawing.Point(535, 2)
+        Me.Panel4.Location = New System.Drawing.Point(504, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(163, 28)
+        Me.Panel4.Size = New System.Drawing.Size(194, 28)
         Me.Panel4.TabIndex = 25
         Me.Panel4.Visible = False
         '
@@ -240,7 +240,7 @@ Partial Class Form1
         '
         Me.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.logoutBtn.Image = CType(resources.GetObject("logoutBtn.Image"), System.Drawing.Image)
-        Me.logoutBtn.Location = New System.Drawing.Point(125, 3)
+        Me.logoutBtn.Location = New System.Drawing.Point(159, 2)
         Me.logoutBtn.Name = "logoutBtn"
         Me.logoutBtn.Size = New System.Drawing.Size(25, 25)
         Me.logoutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -253,7 +253,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Snow
-        Me.Label3.Location = New System.Drawing.Point(16, 6)
+        Me.Label3.Location = New System.Drawing.Point(3, 5)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(73, 17)
         Me.Label3.TabIndex = 23
@@ -282,21 +282,22 @@ Partial Class Form1
         Me.Panel7.Controls.Add(Me.Label5)
         Me.Panel7.Controls.Add(Me.Label4)
         Me.Panel7.Controls.Add(Me.PictureBox3)
-        Me.Panel7.Controls.Add(Me.Book_details)
         Me.Panel7.Location = New System.Drawing.Point(0, 3)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(139, 182)
         Me.Panel7.TabIndex = 1
         '
-        'PictureBox3
+        'Label5
         '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(0, 43)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(139, 139)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 2
-        Me.PictureBox3.TabStop = False
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Snow
+        Me.Label5.Location = New System.Drawing.Point(11, -3)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(112, 21)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "IIT Guwahati"
         '
         'Label4
         '
@@ -310,17 +311,15 @@ Partial Class Form1
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Library"
         '
-        'Label5
+        'PictureBox3
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Snow
-        Me.Label5.Location = New System.Drawing.Point(11, -3)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 21)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "IIT Guwahati"
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(0, 43)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(139, 139)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 2
+        Me.PictureBox3.TabStop = False
         '
         'recommended
         '
@@ -399,10 +398,23 @@ Partial Class Form1
         '
         'Book_details
         '
-        Me.Book_details.Location = New System.Drawing.Point(0, -5)
+        Me.Book_details.BackgroundImage = CType(resources.GetObject("Book_details.BackgroundImage"), System.Drawing.Image)
+        Me.Book_details.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Book_details.Location = New System.Drawing.Point(139, 30)
         Me.Book_details.Name = "Book_details"
         Me.Book_details.Size = New System.Drawing.Size(869, 740)
         Me.Book_details.TabIndex = 38
+        '
+        'ChngPass
+        '
+        Me.ChngPass.BackgroundImage = CType(resources.GetObject("ChngPass.BackgroundImage"), System.Drawing.Image)
+        Me.ChngPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ChngPass.Location = New System.Drawing.Point(139, 30)
+        Me.ChngPass.Margin = New System.Windows.Forms.Padding(2)
+        Me.ChngPass.Name = "ChngPass"
+        Me.ChngPass.Size = New System.Drawing.Size(869, 740)
+        Me.ChngPass.TabIndex = 32
+        Me.ChngPass.Visible = False
         '
         'EBooks1
         '
@@ -424,7 +436,7 @@ Partial Class Form1
         Me.CurProfile.Location = New System.Drawing.Point(139, 30)
         Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
         Me.CurProfile.Name = "CurProfile"
-        Me.CurProfile.Size = New System.Drawing.Size(767, 740)
+        Me.CurProfile.Size = New System.Drawing.Size(648, 740)
         Me.CurProfile.TabIndex = 33
         Me.CurProfile.Visible = False
         '
@@ -554,17 +566,6 @@ Partial Class Form1
         Me.Log1.TabIndex = 20
         Me.Log1.Visible = False
         '
-        'ChngPass
-        '
-        Me.ChngPass.BackgroundImage = CType(resources.GetObject("ChngPass.BackgroundImage"), System.Drawing.Image)
-        Me.ChngPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ChngPass.Location = New System.Drawing.Point(139, 30)
-        Me.ChngPass.Margin = New System.Windows.Forms.Padding(2)
-        Me.ChngPass.Name = "ChngPass"
-        Me.ChngPass.Size = New System.Drawing.Size(869, 740)
-        Me.ChngPass.TabIndex = 32
-        Me.ChngPass.Visible = False
-        '
         'Myprofile
         '
         Me.Myprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
@@ -582,8 +583,9 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1008, 729)
-        Me.Controls.Add(Me.ChngPass)
+        Me.Controls.Add(Me.Book_details)
         Me.Controls.Add(Me.adminPanel)
+        Me.Controls.Add(Me.ChngPass)
         Me.Controls.Add(Me.EBooks1)
         Me.Controls.Add(Me.CurProfile)
         Me.Controls.Add(Me.Search1)

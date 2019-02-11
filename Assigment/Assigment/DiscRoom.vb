@@ -1,17 +1,21 @@
 ﻿Imports System.IO
 
+
 Public Class DiscRoom
+
+    Dim open As Boolean = 0
 
     Private Access As New LMS
 
-    Private Sub DiscRoom_Load(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
-
-    End Sub
-
-    Private Sub DiscRoom_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub DiscRoom_Load_1()
         'btn0_0.Font = New Font("Century Gothic", 9)
 
         'My.Computer.FileSystem.WriteAllText("Resource\\RoomLastAccess.txt", "This is new text to be added.", False)
+        If open = 1 Then
+            Clear()
+        End If
+        open = 1
+        btn0_0.Show()
         Dim fileReader As String = My.Computer.FileSystem.ReadAllText("Resource\\RoomLastAccess.txt")
         Dim thisDate As Date
         thisDate = Today
@@ -37,6 +41,7 @@ Public Class DiscRoom
                 If avail(i, j) = 0 Then
                     If i = 0 And j = 0 Then
                         'btn0_0.Enabled = True
+                        AddHandler btn0_0.Click, AddressOf Me.Button_Click
                         Continue For
                     End If
                 Else
@@ -58,8 +63,24 @@ Public Class DiscRoom
                 DynamicButton(i, j, nm)
             Next
         Next
-
+        open = 1
         My.Computer.FileSystem.WriteAllText("Resource\\RoomLastAccess.txt", thisDate, False)
+
+    End Sub
+
+    Private Sub Clear()
+        RemoveHandler btn0_0.Click, AddressOf Me.Button_Click
+        btn0_0.Hide()
+        For i As Integer = 0 To 3
+            For j As Integer = 0 To 7
+                If i = 0 And j = 0 Then
+                    Continue For
+                End If
+                RemoveHandler Me.Controls.Find("btn" & CStr(i) & "_" & CStr(j), True)(0).Click, AddressOf Me.Button_Click
+                Me.Controls.Remove(Me.Controls.Find("btn" & CStr(i) & "_" & CStr(j), True)(0))
+
+            Next
+        Next
 
     End Sub
 
@@ -90,13 +111,6 @@ Public Class DiscRoom
         btn1.Location = New Point(btn0_0.Location.X + i * btn0_0.Width, btn0_0.Location.Y + j * btn0_0.Height)
         AddHandler btn1.Click, AddressOf Me.Button_Click
 
-        'Dim lblName As String
-        'lblName = "lbl" & CStr(i) & "_" & CStr(j)
-        'Dim lbl1 As New Label
-        'lbl1.Name = lblName
-        'lbl1.Text = i & " " & j
-        'lbl1.Hide()
-        'Me.Controls.Add(lbl1)
     End Sub
 
     Private Sub Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -116,14 +130,11 @@ Public Class DiscRoom
             MessageBox.Show("Room successfully booked!", "Success")
             Console.Write("User " & Log.CurName & " booked a room")
 
+
+
         End If
+        Clear()
+        DiscRoom_Load_1()
     End Sub
 
-    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
-
-    End Sub
 End Class
