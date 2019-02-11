@@ -23,25 +23,12 @@ Partial Class eBooks
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(eBooks))
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Search = New System.Windows.Forms.RichTextBox()
         Me.Search_Button = New System.Windows.Forms.Button()
+        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.Location = New System.Drawing.Point(98, 218)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(673, 416)
-        Me.Panel1.TabIndex = 2
-        '
-        'Search
-        '
-        Me.Search.Location = New System.Drawing.Point(233, 98)
-        Me.Search.Name = "Search"
-        Me.Search.Size = New System.Drawing.Size(317, 37)
-        Me.Search.TabIndex = 3
-        Me.Search.Text = ""
         '
         'Search_Button
         '
@@ -50,12 +37,37 @@ Partial Class eBooks
         Me.Search_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Search_Button.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Search_Button.ForeColor = System.Drawing.Color.Snow
-        Me.Search_Button.Location = New System.Drawing.Point(582, 112)
+        Me.Search_Button.Location = New System.Drawing.Point(61, 111)
         Me.Search_Button.Name = "Search_Button"
         Me.Search_Button.Size = New System.Drawing.Size(156, 23)
         Me.Search_Button.TabIndex = 4
-        Me.Search_Button.Text = "Search"
+        Me.Search_Button.Text = "Load E-Book"
         Me.Search_Button.UseVisualStyleBackColor = False
+        '
+        'AxAcroPDF1
+        '
+        Me.AxAcroPDF1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.AxAcroPDF1.Enabled = True
+        Me.AxAcroPDF1.Location = New System.Drawing.Point(61, 149)
+        Me.AxAcroPDF1.Name = "AxAcroPDF1"
+        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxAcroPDF1.Size = New System.Drawing.Size(751, 546)
+        Me.AxAcroPDF1.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(296, 27)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(266, 78)
+        Me.Label1.TabIndex = 26
+        Me.Label1.Text = "E-Books"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'eBooks
         '
@@ -63,16 +75,19 @@ Partial Class eBooks
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.AxAcroPDF1)
         Me.Controls.Add(Me.Search_Button)
-        Me.Controls.Add(Me.Search)
-        Me.Controls.Add(Me.Panel1)
         Me.Name = "eBooks"
         Me.Size = New System.Drawing.Size(869, 740)
+        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Search As System.Windows.Forms.RichTextBox
     Friend WithEvents Search_Button As System.Windows.Forms.Button
+    Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 
 End Class

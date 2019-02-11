@@ -51,10 +51,10 @@ Partial Class Form1
         Me.RemoveBook = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.AddBook = New System.Windows.Forms.Button()
+        Me.CurProfile = New Assigment.CurProfile()
         Me.Book_details = New Assigment.book_details()
         Me.ChngPass = New Assigment.ChngPass()
         Me.EBooks1 = New Assigment.eBooks()
-        Me.CurProfile = New Assigment.CurProfile()
         Me.Search1 = New Assigment.Search()
         Me.Remove_detail1 = New Assigment.remove_detail()
         Me.DiscRoom = New Assigment.DiscRoom()
@@ -396,6 +396,19 @@ Partial Class Form1
         Me.AddBook.Text = "Add Book"
         Me.AddBook.UseVisualStyleBackColor = True
         '
+        'CurProfile
+        '
+        Me.CurProfile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CurProfile.BackgroundImage = CType(resources.GetObject("CurProfile.BackgroundImage"), System.Drawing.Image)
+        Me.CurProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CurProfile.Location = New System.Drawing.Point(139, 30)
+        Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
+        Me.CurProfile.Name = "CurProfile"
+        Me.CurProfile.Size = New System.Drawing.Size(869, 740)
+        Me.CurProfile.TabIndex = 33
+        Me.CurProfile.Visible = False
+        '
         'Book_details
         '
         Me.Book_details.BackgroundImage = CType(resources.GetObject("Book_details.BackgroundImage"), System.Drawing.Image)
@@ -404,6 +417,7 @@ Partial Class Form1
         Me.Book_details.Name = "Book_details"
         Me.Book_details.Size = New System.Drawing.Size(869, 740)
         Me.Book_details.TabIndex = 38
+        Me.Book_details.Visible = False
         '
         'ChngPass
         '
@@ -427,19 +441,6 @@ Partial Class Form1
         Me.EBooks1.TabIndex = 19
         Me.EBooks1.Visible = False
         '
-        'CurProfile
-        '
-        Me.CurProfile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CurProfile.BackgroundImage = CType(resources.GetObject("CurProfile.BackgroundImage"), System.Drawing.Image)
-        Me.CurProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.CurProfile.Location = New System.Drawing.Point(139, 30)
-        Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
-        Me.CurProfile.Name = "CurProfile"
-        Me.CurProfile.Size = New System.Drawing.Size(648, 740)
-        Me.CurProfile.TabIndex = 33
-        Me.CurProfile.Visible = False
-        '
         'Search1
         '
         Me.Search1.AutoScroll = True
@@ -453,9 +454,12 @@ Partial Class Form1
         '
         'Remove_detail1
         '
+        Me.Remove_detail1.AutoScroll = True
         Me.Remove_detail1.BackgroundImage = CType(resources.GetObject("Remove_detail1.BackgroundImage"), System.Drawing.Image)
         Me.Remove_detail1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Remove_detail1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Remove_detail1.Location = New System.Drawing.Point(139, 30)
+        Me.Remove_detail1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Remove_detail1.Name = "Remove_detail1"
         Me.Remove_detail1.Size = New System.Drawing.Size(869, 700)
         Me.Remove_detail1.TabIndex = 37
@@ -509,8 +513,10 @@ Partial Class Form1
         '
         'remove_detail
         '
+        Me.remove_detail.AutoScroll = True
         Me.remove_detail.BackgroundImage = CType(resources.GetObject("remove_detail.BackgroundImage"), System.Drawing.Image)
         Me.remove_detail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.remove_detail.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.remove_detail.Location = New System.Drawing.Point(139, 30)
         Me.remove_detail.Margin = New System.Windows.Forms.Padding(4)
         Me.remove_detail.Name = "remove_detail"
@@ -546,7 +552,7 @@ Partial Class Form1
         Me.Reco.BackgroundImage = CType(resources.GetObject("Reco.BackgroundImage"), System.Drawing.Image)
         Me.Reco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Reco.Location = New System.Drawing.Point(139, 30)
-        Me.Reco.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Reco.Margin = New System.Windows.Forms.Padding(2)
         Me.Reco.Name = "Reco"
         Me.Reco.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Reco.Size = New System.Drawing.Size(869, 740)
@@ -583,11 +589,11 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1008, 729)
-        Me.Controls.Add(Me.Book_details)
         Me.Controls.Add(Me.adminPanel)
+        Me.Controls.Add(Me.CurProfile)
+        Me.Controls.Add(Me.Book_details)
         Me.Controls.Add(Me.ChngPass)
         Me.Controls.Add(Me.EBooks1)
-        Me.Controls.Add(Me.CurProfile)
         Me.Controls.Add(Me.Search1)
         Me.Controls.Add(Me.Remove_detail1)
         Me.Controls.Add(Me.DiscRoom)

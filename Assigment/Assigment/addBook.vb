@@ -12,7 +12,7 @@
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
         If Access.DBDT.Rows.Count = 1 Then
             Dim temp As Integer = Access.DBDT.Rows(0).Item(4) + 1
-            Dim increment As String = "Update Book set Copies_Available =" & temp & "where ISBN =" & ISBN.Text
+            Dim increment As String = "Update Book set Copies_Available =" & temp & " where ISBN ='" & ISBN.Text & "'"
             Access.ExecQuery(increment)
             If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
         Else
@@ -32,10 +32,10 @@
         Access.ExecQuery("Select * from Book where ISBN = '" & ISBN.Text & "'")
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
         If Access.DBDT.Rows.Count = 1 Then
-            MessageBox.Show("User " & bookTitle.Text & " successfully added")
-            Console.WriteLine("User " & bookTitle.Text & " successfully added")
+            MessageBox.Show("Book " & bookTitle.Text & " successfully added")
+            Console.WriteLine("Book " & bookTitle.Text & " successfully added")
         Else
-            Console.WriteLine("User " & bookTitle.Text & " Book not added")
+            Console.WriteLine("Book " & bookTitle.Text & " Book not added")
         End If
 
     End Sub

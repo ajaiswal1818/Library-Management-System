@@ -18,7 +18,7 @@
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
         ''Fill Datagrid
-        dgvUser.DataSource = Access.DBDT
+        'dgvUser.DataSource = Access.DBDT
 
     End Sub
 
@@ -35,7 +35,24 @@
         If Access.DBDT.Rows.Count = 0 Then
             MessageBox.Show("Incorrect Username or Password", "Error")
             Exit Sub
-        ElseIf txtUser.Text = "root" Then
+        End If
+
+        CurID = Access.DBDT.Rows(0).Item(0)
+        CurUser = Access.DBDT.Rows(0).Item(1)
+        CurPass = Access.DBDT.Rows(0).Item(2)
+        CurRoll = Access.DBDT.Rows(0).Item(3)
+        CurName = Access.DBDT.Rows(0).Item(4)
+        CurAccess = Access.DBDT.Rows(0).Item(5)
+        CurProg = Access.DBDT.Rows(0).Item(6)
+        CurDept = Access.DBDT.Rows(0).Item(7)
+        CurBkLimit = Access.DBDT.Rows(0).Item(8)
+        CurBooks = Access.DBDT.Rows(0).Item(9)
+
+
+        If Access.DBDT.Rows.Count = 0 Then
+            MessageBox.Show("Incorrect Username or Password", "Error")
+            Exit Sub
+        ElseIf txtUser.Text.ToLower = "root" Then
             Form1.adminPanel.BringToFront()
             Form1.adminPanel.Visible = True
             'Form1.remove_detail.Visible = True
@@ -47,20 +64,11 @@
             Form1.Panel1.Visible = False
             Form1.CurProfile.CurProfile_Load()
         Else
-            CurID = Access.DBDT.Rows(0).Item(0)
-            CurUser = Access.DBDT.Rows(0).Item(1)
-            CurPass = Access.DBDT.Rows(0).Item(2)
-            CurRoll = Access.DBDT.Rows(0).Item(3)
-            CurName = Access.DBDT.Rows(0).Item(4)
-            CurAccess = Access.DBDT.Rows(0).Item(5)
-            CurProg = Access.DBDT.Rows(0).Item(6)
-            CurDept = Access.DBDT.Rows(0).Item(7)
-            CurBkLimit = Access.DBDT.Rows(0).Item(8)
-            CurBooks = Access.DBDT.Rows(0).Item(9)
+
 
             Form1.Panel4.Visible = True
             Form1.Panel4.BringToFront()
-            Form1.Label3.Text = "Welcome!  " & CurName
+
             Form1.Search1.Visible = True
             Form1.Search1.BringToFront()
             Form1.SidePanel.Height = Form1.SearchBtn.Height
@@ -68,7 +76,7 @@
             Form1.CurProfile.CurProfile_Load()
         End If
 
-
+        Form1.Label3.Text = "Welcome!  " & CurName
 
     End Sub
 
@@ -83,6 +91,25 @@
         Else
             txtPass.PasswordChar = Nothing
         End If
+
+    End Sub
+
+    Private Sub txtUser_TextChanged(sender As Object, e As EventArgs) Handles txtUser.Click
+        txtUser.Text = ""
+        txtUser.ForeColor = Color.Black
+    End Sub
+
+    Private Sub txtPass_TextChanged(sender As Object, e As EventArgs) Handles txtPass.Click
+        txtPass.Text = ""
+        txtPass.ForeColor = Color.Black
+        If CheckBox1.Checked Then
+            txtPass.PasswordChar = Nothing
+        Else
+            txtPass.PasswordChar = "*"
+        End If
+    End Sub
+
+    Private Sub txtUser_TextChanged_1(sender As Object, e As EventArgs) Handles txtUser.TextChanged
 
     End Sub
 End Class

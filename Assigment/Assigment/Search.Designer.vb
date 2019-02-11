@@ -27,13 +27,11 @@ Partial Class Search
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtSrch = New System.Windows.Forms.RichTextBox()
         Me.SearchBtn = New System.Windows.Forms.Button()
-        Me.dgvSrch = New System.Windows.Forms.DataGridView()
         Me.lblSrch1 = New System.Windows.Forms.Label()
         Me.btnSrch1 = New System.Windows.Forms.Button()
         Me.tempSrch1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -81,23 +79,13 @@ Partial Class Search
         Me.SearchBtn.Text = "Search"
         Me.SearchBtn.UseVisualStyleBackColor = False
         '
-        'dgvSrch
-        '
-        Me.dgvSrch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSrch.Location = New System.Drawing.Point(183, 250)
-        Me.dgvSrch.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgvSrch.Name = "dgvSrch"
-        Me.dgvSrch.RowTemplate.Height = 24
-        Me.dgvSrch.Size = New System.Drawing.Size(467, 122)
-        Me.dgvSrch.TabIndex = 19
-        '
         'lblSrch1
         '
         Me.lblSrch1.AutoSize = True
-        Me.lblSrch1.BackColor = System.Drawing.Color.Transparent
+        Me.lblSrch1.BackColor = System.Drawing.Color.Snow
         Me.lblSrch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblSrch1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSrch1.Location = New System.Drawing.Point(183, 397)
+        Me.lblSrch1.Location = New System.Drawing.Point(168, 260)
         Me.lblSrch1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSrch1.Name = "lblSrch1"
         Me.lblSrch1.Size = New System.Drawing.Size(57, 21)
@@ -110,10 +98,10 @@ Partial Class Search
         Me.btnSrch1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSrch1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSrch1.ForeColor = System.Drawing.Color.Snow
-        Me.btnSrch1.Location = New System.Drawing.Point(120, 423)
+        Me.btnSrch1.Location = New System.Drawing.Point(73, 294)
         Me.btnSrch1.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSrch1.Name = "btnSrch1"
-        Me.btnSrch1.Size = New System.Drawing.Size(51, 50)
+        Me.btnSrch1.Size = New System.Drawing.Size(61, 50)
         Me.btnSrch1.TabIndex = 21
         Me.btnSrch1.Text = "Issue Now!"
         Me.btnSrch1.UseVisualStyleBackColor = False
@@ -124,7 +112,7 @@ Partial Class Search
         Me.tempSrch1.BackColor = System.Drawing.Color.Transparent
         Me.tempSrch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.tempSrch1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tempSrch1.Location = New System.Drawing.Point(114, 304)
+        Me.tempSrch1.Location = New System.Drawing.Point(775, 157)
         Me.tempSrch1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.tempSrch1.Name = "tempSrch1"
         Me.tempSrch1.Size = New System.Drawing.Size(57, 21)
@@ -166,14 +154,12 @@ Partial Class Search
         Me.Controls.Add(Me.tempSrch1)
         Me.Controls.Add(Me.btnSrch1)
         Me.Controls.Add(Me.lblSrch1)
-        Me.Controls.Add(Me.dgvSrch)
         Me.Controls.Add(Me.SearchBtn)
         Me.Controls.Add(Me.txtSrch)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cbxSrch)
         Me.Name = "Search"
         Me.Size = New System.Drawing.Size(855, 740)
-        CType(Me.dgvSrch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -183,7 +169,6 @@ Partial Class Search
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtSrch As System.Windows.Forms.RichTextBox
     Friend WithEvents SearchBtn As System.Windows.Forms.Button
-    Friend WithEvents dgvSrch As System.Windows.Forms.DataGridView
     Friend WithEvents lblSrch1 As System.Windows.Forms.Label
     Friend WithEvents btnSrch1 As System.Windows.Forms.Button
     Friend WithEvents tempSrch1 As System.Windows.Forms.Label

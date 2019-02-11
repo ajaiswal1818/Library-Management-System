@@ -3,7 +3,7 @@
 
 Public Class DiscRoom
 
-    'Dim open As Boolean = 0
+    Dim open As Boolean = 0
 
     Private Access As New LMS
 
@@ -11,13 +11,35 @@ Public Class DiscRoom
         'btn0_0.Font = New Font("Century Gothic", 9)
 
         'My.Computer.FileSystem.WriteAllText("Resource\\RoomLastAccess.txt", "This is new text to be added.", False)
-        
+
         btn0_0.Show()
         Dim fileReader As String = My.Computer.FileSystem.ReadAllText("Resource\\RoomLastAccess.txt")
         Dim thisDate As Date
         thisDate = Today
+
+        'MessageBox.Show(thisDate & " " & fileReader)
+
         If CStr(thisDate) <> CStr(fileReader) Then
             Access.ExecQuery("Update Room Set 0=0, 1=0, 2=0, 3=0, 4=0, 5=0, 6=0, 7=0")
+            If open = 1 Then
+                For i As Integer = 0 To 3
+                    For j As Integer = 0 To 7
+                        If i = 0 And j = 0 Then
+                            btn0_0.ForeColor = Color.Black
+                            btn0_0.BackColor = Color.Snow
+                            btn0_0.Text = "Book Me!"
+                        Else
+                            Me.Controls.Find("btn" & CStr(i) & "_" & CStr(j), True)(0).ForeColor = Color.Black
+                            Me.Controls.Find("btn" & CStr(i) & "_" & CStr(j), True)(0).BackColor = Color.Snow
+                            Me.Controls.Find("btn" & CStr(i) & "_" & CStr(j), True)(0).Text = "Book Me!"
+                        End If
+                    Next
+                Next
+            End If
+        End If
+
+        If open = 0 Then
+            open = 1
         End If
 
         Access.ExecQuery("SELECT * from Room")
@@ -48,7 +70,7 @@ Public Class DiscRoom
                         nm = Access.DBDT.Rows(0).Item(0)
                         If i = 0 And j = 0 Then
                             'btn0_0.Enabled = False
-                            btn0_0.BackColor = Color.Blue
+                            btn0_0.BackColor = System.Drawing.Color.FromArgb(171, 8, 55)
                             btn0_0.ForeColor = Color.White
                             btn0_0.Text = nm
                         Else
@@ -96,7 +118,7 @@ Public Class DiscRoom
         Else
 
             btn1.ForeColor = Color.White
-            btn1.BackColor = Color.Blue
+            btn1.BackColor = System.Drawing.Color.FromArgb(171, 8, 55)
             btn1.Text = nm
         End If
         btn1.FlatStyle = FlatStyle.Flat
@@ -127,12 +149,12 @@ Public Class DiscRoom
             MessageBox.Show("Room successfully booked!", "Success")
             Console.Write("User " & Log.CurName & " booked a room")
 
-            Clear()
-            DiscRoom_Load_1()
-
+            selectedBtn.ForeColor = Color.White
+            selectedBtn.BackColor = System.Drawing.Color.FromArgb(171, 8, 55)
+            selectedBtn.Text = Log.CurName
 
         End If
-        
+
     End Sub
 
 End Class

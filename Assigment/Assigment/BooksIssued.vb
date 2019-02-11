@@ -42,8 +42,8 @@
                 checktemp &= "Copies Available: " & R.Item(4) & Environment.NewLine
 
                 If cnt = 1 Then
-                    lblRet1.Font = New Font("Century Gothic", 7)
-                    btnRet1.Font = New Font("Century Gothic", 7)
+                    lblRet1.Font = New Font("Century Gothic", 9)
+                    btnRet1.Font = New Font("Century Gothic", 9)
                     'btnRet1.DialogResult = R.Item(0)
                     lblRet1.Text = checktemp
                     AddHandler btnRet1.Click, AddressOf Me.Button_Click
@@ -70,7 +70,7 @@
         lblName = "lblRet" & CStr(i)
         Dim yt As Integer = lblRet1.Location.Y + 120 * (i - 1)
         Dim lbl1 As New Label
-        lbl1.Font = New Font("Century Gothic", 7)
+        lbl1.Font = New Font("Century Gothic", 9)
         lbl1.Name = lblName
         lbl1.Text = txt
         lbl1.AutoSize = True
@@ -86,7 +86,7 @@
         btnName = "btnRet" & CStr(i)
         Dim yb As Integer = btnRet1.Location.Y + 120 * (i - 1)
         Dim btn1 As New Button
-        btn1.Font = New Font("Century Gothic", 7)
+        btn1.Font = New Font("Century Gothic", 9)
         btn1.Name = btnName
         btn1.Text = "Return book!"
         btn1.Height = btnRet1.Height
@@ -205,6 +205,10 @@
     End Sub
 
     Private Sub BooksIssued_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btnRet1_Click(sender As Object, e As EventArgs) Handles btnRet1.Click
 
     End Sub
 End Class

@@ -12,10 +12,10 @@
                     If num = 0 Then
                         Continue For
                     End If
-                    Access.ExecQuery("Select Title from Users where [ID]=" & num)
+                    Access.ExecQuery("Select Username from Users where [ID]=" & num)
                     If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
                     If Access.DBDT.Rows.Count = 1 Then
-                        Op1 &= Access.DBDT.Rows(0).Item(0) & "; "
+                        Op1 &= Access.DBDT.Rows(0).Item(0) & Environment.NewLine
                     End If
                 End If
             Catch ex As Exception

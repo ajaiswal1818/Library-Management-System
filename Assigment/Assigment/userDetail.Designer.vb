@@ -171,10 +171,11 @@ Partial Class userDetail
         'lblissue1
         '
         Me.lblissue1.AutoSize = True
-        Me.lblissue1.BackColor = System.Drawing.Color.Transparent
+        Me.lblissue1.BackColor = System.Drawing.Color.Snow
         Me.lblissue1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblissue1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblissue1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblissue1.Location = New System.Drawing.Point(61, 427)
+        Me.lblissue1.Location = New System.Drawing.Point(107, 427)
         Me.lblissue1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblissue1.Name = "lblissue1"
         Me.lblissue1.Size = New System.Drawing.Size(57, 21)

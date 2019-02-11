@@ -35,7 +35,7 @@ Partial Class BooksIssued
         Me.lblBklt.AutoSize = True
         Me.lblBklt.BackColor = System.Drawing.Color.Transparent
         Me.lblBklt.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBklt.Location = New System.Drawing.Point(28, 108)
+        Me.lblBklt.Location = New System.Drawing.Point(166, 110)
         Me.lblBklt.Name = "lblBklt"
         Me.lblBklt.Size = New System.Drawing.Size(94, 21)
         Me.lblBklt.TabIndex = 29
@@ -45,10 +45,10 @@ Partial Class BooksIssued
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(171, 39)
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(258, 39)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(307, 39)
+        Me.Label4.Size = New System.Drawing.Size(338, 42)
         Me.Label4.TabIndex = 28
         Me.Label4.Text = "Your Current Books"
         '
@@ -58,10 +58,10 @@ Partial Class BooksIssued
         Me.btnRet1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRet1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRet1.ForeColor = System.Drawing.Color.Snow
-        Me.btnRet1.Location = New System.Drawing.Point(32, 169)
+        Me.btnRet1.Location = New System.Drawing.Point(40, 187)
         Me.btnRet1.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRet1.Name = "btnRet1"
-        Me.btnRet1.Size = New System.Drawing.Size(61, 50)
+        Me.btnRet1.Size = New System.Drawing.Size(72, 50)
         Me.btnRet1.TabIndex = 27
         Me.btnRet1.Text = "Return Book"
         Me.btnRet1.UseVisualStyleBackColor = False
@@ -72,7 +72,7 @@ Partial Class BooksIssued
         Me.lblRet1.BackColor = System.Drawing.Color.Snow
         Me.lblRet1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblRet1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRet1.Location = New System.Drawing.Point(134, 145)
+        Me.lblRet1.Location = New System.Drawing.Point(153, 163)
         Me.lblRet1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblRet1.Name = "lblRet1"
         Me.lblRet1.Size = New System.Drawing.Size(57, 21)
@@ -84,7 +84,7 @@ Partial Class BooksIssued
         Me.tempRet1.AutoSize = True
         Me.tempRet1.BackColor = System.Drawing.Color.Transparent
         Me.tempRet1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tempRet1.Location = New System.Drawing.Point(550, 39)
+        Me.tempRet1.Location = New System.Drawing.Point(675, 39)
         Me.tempRet1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.tempRet1.Name = "tempRet1"
         Me.tempRet1.Size = New System.Drawing.Size(55, 19)
@@ -106,7 +106,7 @@ Partial Class BooksIssued
         Me.Controls.Add(Me.lblRet1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BooksIssued"
-        Me.Size = New System.Drawing.Size(639, 569)
+        Me.Size = New System.Drawing.Size(869, 740)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

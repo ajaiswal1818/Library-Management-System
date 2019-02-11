@@ -19,7 +19,7 @@
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
 
         ''Fill Datagrid
-        dgvSrch.DataSource = Access.DBDT
+        'dgvSrch.DataSource = Access.DBDT
 
         'Display first name found
         If Access.RecordCount > 0 Then cbxSrch.SelectedIndex = 0
@@ -80,8 +80,8 @@
             Op1 &= "Copies Available: " & R.Item(4) & Environment.NewLine
 
             If cnt = 1 Then
-                lblSrch1.Font = New Font("Century Gothic", 7)
-                btnSrch1.Font = New Font("Century Gothic", 7)
+                lblSrch1.Font = New Font("Century Gothic", 9)
+                btnSrch1.Font = New Font("Century Gothic", 9)
                 'btnSrch1.DialogResult = R.Item(0)
                 tempSrch1.Text = R.Item(0)
                 lblSrch1.Text = Op1
@@ -92,7 +92,7 @@
             End If
         Next
 
-        dgvSrch.DataSource = Access.DBDT
+        'dgvSrch.DataSource = Access.DBDT
     End Sub
 
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
@@ -105,14 +105,14 @@
         lblName = "lblSrch" & CStr(i)
         Dim yt As Integer = lblSrch1.Location.Y + 120 * (i - 1)
         Dim lbl1 As New Label
-        lbl1.Font = New Font("Century Gothic", 7)
+        lbl1.Font = New Font("Century Gothic", 9)
         lbl1.Name = lblName
         lbl1.Text = txt
         lbl1.AutoSize = True
         'lbl1.Height = lblSrch1.Hseight
         'lbl1.Width = lblSrch1.Width
         lbl1.BorderStyle = Windows.Forms.BorderStyle.Fixed3D
-        lbl1.BackColor = Color.Transparent
+        lbl1.BackColor = Color.Snow
         lbl1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(lbl1)
         lbl1.Location = New Point(lblSrch1.Location.X, yt)
@@ -121,7 +121,7 @@
         btnName = "btnSrch" & CStr(i)
         Dim yb As Integer = btnSrch1.Location.Y + 120 * (i - 1)
         Dim btn1 As New Button
-        btn1.Font = New Font("Century Gothic", 7)
+        btn1.Font = New Font("Century Gothic", 9)
         btn1.Name = btnName
         btn1.Text = "Issue Now!"
         btn1.Height = btnSrch1.Height

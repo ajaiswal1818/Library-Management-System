@@ -93,8 +93,8 @@
             Op1 &= "Copies Available: " & R.Item(4) & Environment.NewLine
 
             If cnt_rem = 1 Then
-                lblSrch1.Font = New Font("Century Gothic", 7)
-                btnSrch1.Font = New Font("Century Gothic", 7)
+                lblSrch1.Font = New Font("Century Gothic", 9)
+                btnSrch1.Font = New Font("Century Gothic", 9)
                 'btnSrch1.DialogResult = R.Item(0)
                 lblSrch1.Text = Op1
                 lbltemp1.Text = R.Item(0)
@@ -120,8 +120,8 @@
             Op1 &= "Copies Available: " & R.Item(4) & Environment.NewLine
 
             If cnt_del = 1 Then
-                lblSrch1.Font = New Font("Century Gothic", 7)
-                btnDel1.Font = New Font("Century Gothic", 7)
+                lblSrch1.Font = New Font("Century Gothic", 9)
+                btnDel1.Font = New Font("Century Gothic", 9)
                 'btnDel1.DialogResult = R.Item(0)
                 lblSrch1.Text = Op1
                 lbltemp1.Text = R.Item(0)
@@ -139,7 +139,7 @@
         lblName = "lblSrch" & CStr(i)
         Dim yt As Integer = lblSrch1.Location.Y + 120 * (i - 1)
         Dim lbl1 As New Label
-        lbl1.Font = New Font("Century Gothic", 7)
+        lbl1.Font = New Font("Century Gothic", 9)
         lbl1.Name = lblName
         lbl1.Text = txt
         lbl1.AutoSize = True
@@ -155,12 +155,14 @@
         btnName = "btnSrch" & CStr(i)
         Dim yb As Integer = btnSrch1.Location.Y + 120 * (i - 1)
         Dim btn1 As New Button
-        btn1.Font = New Font("Century Gothic", 7)
+        btn1.Font = New Font("Century Gothic", 9)
         btn1.Name = btnName
         btn1.Text = "Remove"
         btn1.Height = btnSrch1.Height
         btn1.Width = btnSrch1.Width
-        'btn1.Margin = New Padding(10, 10, 10, 10)
+        btn1.FlatStyle = FlatStyle.Flat
+        btn1.BackColor = System.Drawing.Color.FromArgb(172, 8, 55)
+        btn1.ForeColor = Color.Snow 'btn1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(btn1)
         btn1.Location = New Point(btnSrch1.Location.X, yb)
         'btn1.DialogResult = R.Item(0)
@@ -183,7 +185,7 @@
         lblName = "lblSrch" & CStr(i)
         Dim yt As Integer = lblSrch1.Location.Y + 120 * (i - 1)
         Dim lbl1 As New Label
-        lbl1.Font = New Font("Century Gothic", 7)
+        lbl1.Font = New Font("Century Gothic", 9)
         lbl1.Name = lblName
         lbl1.Text = txt
         lbl1.AutoSize = True
@@ -199,12 +201,14 @@
         btnName = "btnDel" & CStr(i)
         Dim yb As Integer = btnDel1.Location.Y + 120 * (i - 1)
         Dim btn1 As New Button
-        btn1.Font = New Font("Century Gothic", 7)
+        btn1.Font = New Font("Century Gothic", 9)
         btn1.Name = btnName
         btn1.Text = "Details"
         btn1.Height = btnDel1.Height
         btn1.Width = btnDel1.Width
-        'btn1.Margin = New Padding(10, 10, 10, 10)
+        btn1.FlatStyle = FlatStyle.Flat
+        btn1.BackColor = System.Drawing.Color.FromArgb(172, 8, 55)
+        btn1.ForeColor = Color.Snow 'btn1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(btn1)
         btn1.Location = New Point(btnDel1.Location.X, yb)
         'btn1.DialogResult = R.Item(0)
@@ -341,7 +345,18 @@
     End Sub
 
     Private Sub btnDel1_Click(sender As Object, e As EventArgs) Handles btnDel1.Click
-        Form1.Book_details.Visible = True
-        Form1.Book_details.BringToFront()
+
+    End Sub
+
+    Private Sub lbltemp1_Click(sender As Object, e As EventArgs) Handles lbltemp1.Click
+
+    End Sub
+
+    Private Sub lblSrch1_Click(sender As Object, e As EventArgs) Handles lblSrch1.Click
+
+    End Sub
+
+    Private Sub btnSrch1_Click(sender As Object, e As EventArgs) Handles btnSrch1.Click
+
     End Sub
 End Class

@@ -19,12 +19,11 @@ Public Class CurProfile
         nameLabel.Text = Access.DBDT.Rows(0).Item(4)
         rollNo.Text = "Roll No :   " & Access.DBDT.Rows(0).Item(3)
         discipline.Text = "Discipline :   " & Access.DBDT.Rows(0).Item(6)
-        webmail.Text = "Webmail :   " & Access.DBDT.Rows(0).Item(1)
+        webmail.Text = "Webmail :   " & Access.DBDT.Rows(0).Item(1) & "@iitg.ac.in"
         Dept.Text = "Department :   " & Access.DBDT.Rows(0).Item(7)
 
 
         Dim fullPath As String = IO.Path.GetFullPath(My.Resources.ResourceManager.BaseName)
-
         fullPath = fullPath.Substring(0, fullPath.Length - 39) & "\Resource\"
 
         Dim Path As String = fullPath & Access.DBDT.Rows(0).Item(1) & ".jpg"

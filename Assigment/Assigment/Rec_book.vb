@@ -18,6 +18,11 @@
 
 
     Private Sub Rectbn_Click(sender As Object, e As EventArgs) Handles Rectbn.Click
+        If Rec_Auth.Text = "Authors" Or Rec_title.Text = "Title" Or Rec_isbn.Text = "ISBN" Then
+            MessageBox.Show("Please fill in all fields!")
+            Console.Write("Error: Not all field filled!")
+            Exit Sub
+        End If
         If Log.CurUser <> "" Then
             Access.ExecQuery("SELECT * FROM Book WHERE ISBN = '" & Rec_isbn.Text & "'")
             If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub

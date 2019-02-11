@@ -43,4 +43,8 @@
         newpass.Clear()
         newpass2.Clear()
     End Sub
+
+    Private Sub ChngPass_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

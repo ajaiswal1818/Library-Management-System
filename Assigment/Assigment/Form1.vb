@@ -12,6 +12,9 @@
         If Log.CurID <> 0 Then
             Myprofile.Visible = False
         End If
+        Rec_book1.Rec_title.Text = "Title"
+        Rec_book1.Rec_Auth.Text = "Authors"
+        Rec_book1.Rec_isbn.Text = "ISBN"
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles eBookBtn.Click
@@ -88,6 +91,10 @@
     Private Sub recommended_Click(sender As Object, e As EventArgs) Handles recommended.Click
         Reco.BringToFront()
         Reco.Visible = True
+        Panel6.Height = recommended.Height
+        Panel6.Top = recommended.Top
+        Panel6.Visible = True
+        Panel6.BringToFront()
     End Sub
 
     Private Sub AddBook_Click(sender As Object, e As EventArgs) Handles AddBook.Click
@@ -154,4 +161,7 @@
         DiscRoom.DiscRoom_Load_1()
     End Sub
 
+    Private Sub Myprofile_Load(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

@@ -8,20 +8,21 @@ Public Class userDetail
         Clear()   'will clear all the previously generated book labbels
 
 
-        uPanel.Visible = True
-        uPanel.BringToFront()
+
         Access.ExecQuery("SELECT * from Users WHERE Username LIKE '%" & Udetail.Text & "%'")
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
         If Access.DBDT.Rows.Count = 0 Then
-            MessageBox.Show("Username not exist!")
+            MessageBox.Show("Username not exist!", "Error")
             Clear()
             Exit Sub
         End If
+        uPanel.Visible = True
+        uPanel.BringToFront()
 
         nameLabel.Text = "Name : " & Access.DBDT.Rows(0).Item(4)
         rollNo.Text = "Roll No : " & Access.DBDT.Rows(0).Item(3)
         discipline.Text = "Discipline : " & Access.DBDT.Rows(0).Item(6)
-        webmail.Text = "Webmail : " & Access.DBDT.Rows(0).Item(1)
+        webmail.Text = "Webmail : " & Access.DBDT.Rows(0).Item(1) & "@iitg.ac.in"
         Dept.Text = "Department : " & Access.DBDT.Rows(0).Item(7)
 
         Dim fullPath As String = IO.Path.GetFullPath(My.Resources.ResourceManager.BaseName)
@@ -98,7 +99,7 @@ Public Class userDetail
                 checktemp &= "Copies Available: " & R.Item(4) & Environment.NewLine
 
                 If count = 1 Then
-                    lblissue1.Font = New Font("Century Gothic", 7)
+                    lblissue1.Font = New Font("Century Gothic", 9)
                     lblissue1.Text = checktemp
                 Else
                     DynamicBook(count, checktemp, R)
@@ -120,18 +121,17 @@ Public Class userDetail
         lblName = "lblissue" & CStr(i)
         Dim yt As Integer = lblissue1.Location.Y + 120 * (i - 1)
         Dim lbl1 As New Label
-        lbl1.Font = New Font("Century Gothic", 7)
+        lbl1.Font = New Font("Century Gothic", 9)
         lbl1.Name = lblName
         lbl1.Text = txt
         lbl1.AutoSize = True
-        lbl1.Anchor = AnchorStyles.Top
-        ' lbl1.Anchor = AnchorStyles.Left
+        'lbl1.Anchor = AnchorStyles.Top
+        lbl1.BorderStyle = Windows.Forms.BorderStyle.Fixed3D
+        lbl1.BackColor = Color.Snow
         'lbl1.Height = lblissue1.Hseight
         'lbl1.Width = lblissue1.Width
         lbl1.BorderStyle = Windows.Forms.BorderStyle.Fixed3D
         lbl1.ForeColor = Color.Black
-        'lbl1.BackColor = System.Drawing.Color.FromArgb(171, 8, 55)
-        lbl1.BackColor = Color.Transparent
         lbl1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(lbl1)
         lbl1.Location = New Point(lblissue1.Location.X, yt)
