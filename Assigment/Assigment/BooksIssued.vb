@@ -77,7 +77,7 @@
         'lbl1.Height = lblissue1.Hseight
         'lbl1.Width = lblissue1.Width
         lbl1.BorderStyle = Windows.Forms.BorderStyle.Fixed3D
-        lbl1.BackColor = Color.Transparent
+        lbl1.BackColor = Color.Snow
         lbl1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(lbl1)
         lbl1.Location = New Point(lblRet1.Location.X, yt)
@@ -200,4 +200,7 @@
         RefreshPage()
     End Sub
 
+    Private Sub lblRet1_Click(sender As Object, e As EventArgs) Handles lblRet1.Click
+
+    End Sub
 End Class

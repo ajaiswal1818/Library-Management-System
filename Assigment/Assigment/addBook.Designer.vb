@@ -29,8 +29,6 @@ Partial Class addBook
         Me.publisher = New System.Windows.Forms.RichTextBox()
         Me.genre = New System.Windows.Forms.RichTextBox()
         Me.addBtn = New System.Windows.Forms.Button()
-        Me.thumbnail = New System.Windows.Forms.PictureBox()
-        CType(Me.thumbnail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'bookTitle
@@ -38,7 +36,7 @@ Partial Class addBook
         Me.bookTitle.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.bookTitle.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bookTitle.ForeColor = System.Drawing.Color.Silver
-        Me.bookTitle.Location = New System.Drawing.Point(67, 46)
+        Me.bookTitle.Location = New System.Drawing.Point(200, 136)
         Me.bookTitle.Name = "bookTitle"
         Me.bookTitle.Size = New System.Drawing.Size(415, 37)
         Me.bookTitle.TabIndex = 1
@@ -49,7 +47,7 @@ Partial Class addBook
         Me.author.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.author.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.author.ForeColor = System.Drawing.Color.Silver
-        Me.author.Location = New System.Drawing.Point(67, 117)
+        Me.author.Location = New System.Drawing.Point(200, 207)
         Me.author.Name = "author"
         Me.author.Size = New System.Drawing.Size(415, 37)
         Me.author.TabIndex = 2
@@ -60,7 +58,7 @@ Partial Class addBook
         Me.ISBN.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ISBN.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ISBN.ForeColor = System.Drawing.Color.Silver
-        Me.ISBN.Location = New System.Drawing.Point(67, 185)
+        Me.ISBN.Location = New System.Drawing.Point(200, 275)
         Me.ISBN.Name = "ISBN"
         Me.ISBN.Size = New System.Drawing.Size(230, 37)
         Me.ISBN.TabIndex = 3
@@ -71,7 +69,7 @@ Partial Class addBook
         Me.publisher.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.publisher.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.publisher.ForeColor = System.Drawing.Color.Silver
-        Me.publisher.Location = New System.Drawing.Point(67, 266)
+        Me.publisher.Location = New System.Drawing.Point(200, 356)
         Me.publisher.Name = "publisher"
         Me.publisher.Size = New System.Drawing.Size(415, 37)
         Me.publisher.TabIndex = 4
@@ -82,7 +80,7 @@ Partial Class addBook
         Me.genre.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.genre.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.genre.ForeColor = System.Drawing.Color.Silver
-        Me.genre.Location = New System.Drawing.Point(319, 185)
+        Me.genre.Location = New System.Drawing.Point(452, 275)
         Me.genre.Name = "genre"
         Me.genre.Size = New System.Drawing.Size(163, 37)
         Me.genre.TabIndex = 5
@@ -90,30 +88,24 @@ Partial Class addBook
         '
         'addBtn
         '
+        Me.addBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(8, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.addBtn.FlatAppearance.BorderSize = 0
+        Me.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.addBtn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addBtn.Location = New System.Drawing.Point(94, 370)
+        Me.addBtn.ForeColor = System.Drawing.Color.Snow
+        Me.addBtn.Location = New System.Drawing.Point(334, 455)
         Me.addBtn.Name = "addBtn"
         Me.addBtn.Size = New System.Drawing.Size(146, 38)
         Me.addBtn.TabIndex = 6
         Me.addBtn.Text = "Add"
-        Me.addBtn.UseVisualStyleBackColor = True
-        '
-        'thumbnail
-        '
-        Me.thumbnail.Image = CType(resources.GetObject("thumbnail.Image"), System.Drawing.Image)
-        Me.thumbnail.Location = New System.Drawing.Point(612, 46)
-        Me.thumbnail.Name = "thumbnail"
-        Me.thumbnail.Size = New System.Drawing.Size(218, 257)
-        Me.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.thumbnail.TabIndex = 7
-        Me.thumbnail.TabStop = False
+        Me.addBtn.UseVisualStyleBackColor = False
         '
         'addBook
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.thumbnail)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.addBtn)
         Me.Controls.Add(Me.genre)
         Me.Controls.Add(Me.publisher)
@@ -122,7 +114,6 @@ Partial Class addBook
         Me.Controls.Add(Me.bookTitle)
         Me.Name = "addBook"
         Me.Size = New System.Drawing.Size(852, 700)
-        CType(Me.thumbnail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -132,6 +123,5 @@ Partial Class addBook
     Friend WithEvents publisher As System.Windows.Forms.RichTextBox
     Friend WithEvents genre As System.Windows.Forms.RichTextBox
     Friend WithEvents addBtn As System.Windows.Forms.Button
-    Friend WithEvents thumbnail As System.Windows.Forms.PictureBox
 
 End Class

@@ -27,9 +27,12 @@ Public Class userDetail
 
         fullPath = fullPath.Substring(0, fullPath.Length - 39) & "\Assigment\bin\Debug\Resource\"
 
-        Dim Path As String = fullPath & Udetail.Text & ".jpg"
-     
+        Dim Path As String = fullPath & Access.DBDT.Rows(0).Item(1) & ".jpg"
         If File.Exists(Path) Then
+            displayPic.ImageLocation = (Path)
+            displayPic.Load()
+        Else
+            Path = fullPath & "Default.jpg"
             displayPic.ImageLocation = (Path)
             displayPic.Load()
         End If
@@ -38,20 +41,22 @@ Public Class userDetail
 
     End Sub
 
-    Private Sub Clear()
-        lblissue.Text = ""
+    Public Sub Clear()
+        lblissue1.Text = ""
         For i As Integer = 2 To count
             Me.Controls.Remove(Me.Controls.Find("lblissue" & CStr(i), True)(0))
         Next
         count = 0
-        lblissue.Hide()
+        lblissue1.Hide()
+        displayPic.Image = Nothing
     End Sub
 
 
     Private Sub Refresh_Page()
-        Dim count As Integer = 0
 
-        lblissue.Show()
+        'Dim count As Integer = 0
+
+        lblissue1.Show()
 
         Access.ExecQuery("SELECT * from Users WHERE Username LIKE '%" & Udetail.Text & "%'")
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
@@ -84,8 +89,8 @@ Public Class userDetail
                 checktemp &= "Copies Available: " & R.Item(4) & Environment.NewLine
 
                 If count = 1 Then
-                    lblissue.Font = New Font("Century Gothic", 7)
-                    lblissue.Text = checktemp
+                    lblissue1.Font = New Font("Century Gothic", 7)
+                    lblissue1.Text = checktemp
                 Else
                     DynamicBook(count, checktemp, R)
                 End If
@@ -95,7 +100,7 @@ Public Class userDetail
         'MessageBox.Show(bkno)
 
         If bkno = 0 Then
-            lblissue.Hide()
+            lblissue1.Hide()
 
         End If
     End Sub
@@ -104,7 +109,7 @@ Public Class userDetail
         'MessageBox.Show("Hello")
         Dim lblName As String
         lblName = "lblissue" & CStr(i)
-        Dim yt As Integer = lblissue.Location.Y + 120 * (i - 1)
+        Dim yt As Integer = lblissue1.Location.Y + 120 * (i - 1)
         Dim lbl1 As New Label
         lbl1.Font = New Font("Century Gothic", 7)
         lbl1.Name = lblName
@@ -120,15 +125,9 @@ Public Class userDetail
         lbl1.BackColor = Color.Transparent
         lbl1.Margin = New Padding(10, 10, 10, 10)
         Me.Controls.Add(lbl1)
-        lbl1.Location = New Point(lblissue.Location.X, yt)
+        lbl1.Location = New Point(lblissue1.Location.X, yt)
 
     End Sub
 
-    Private Sub userDetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Clear()
-    End Sub
-
-    Private Sub lblissue_Click(sender As Object, e As EventArgs) Handles lblissue.Click
-
-    End Sub
+    
 End Class

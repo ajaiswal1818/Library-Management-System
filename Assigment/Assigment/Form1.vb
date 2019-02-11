@@ -43,6 +43,8 @@
 
 
     Private Sub MyAccount_Click(sender As Object, e As EventArgs) Handles MyAccount.Click
+        Log1.txtUser.Clear()
+        Log1.txtPass.Clear()
         SidePanel.Height = MyAccount.Height()
         SidePanel.Top = MyAccount.Top()
         Log1.BringToFront()
@@ -70,6 +72,7 @@
         SidePanel.Top = SearchBtn.Top
         Myprofile.Visible = False
         Panel4.Visible = False
+
         Log.CurID = 0
         Log.CurUser = ""
         Log.CurPass = ""
@@ -112,6 +115,8 @@
         Panel6.BringToFront()
         Panel6.Height = UserDetail.Height
         Panel6.Top = UserDetail.Top
+        UserDetail1.Clear()
+
     End Sub
 
 

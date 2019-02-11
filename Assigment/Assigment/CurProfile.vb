@@ -3,7 +3,7 @@ Public Class CurProfile
 
     Private Access As New LMS
 
-    Private Sub CurProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub CurProfile_Load()
 
         If Log.CurID = 0 Then
             Exit Sub
@@ -24,8 +24,11 @@ Public Class CurProfile
         fullPath = fullPath.Substring(0, fullPath.Length - 39) & "\Assigment\bin\Debug\Resource\"
 
         Dim Path As String = fullPath & Access.DBDT.Rows(0).Item(1) & ".jpg"
-
         If File.Exists(Path) Then
+            PicProfile.ImageLocation = (Path)
+            PicProfile.Load()
+        Else
+            Path = fullPath & "Default.jpg"
             PicProfile.ImageLocation = (Path)
             PicProfile.Load()
         End If

@@ -22,6 +22,7 @@ Partial Class remove_detail
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(remove_detail))
         Me.removeBtn = New System.Windows.Forms.Button()
         Me.lblSrch2 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
@@ -56,14 +57,18 @@ Partial Class remove_detail
         '
         'btnSearch
         '
+        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(8, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSearch.FlatAppearance.BorderSize = 0
-        Me.btnSearch.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearch.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.ForeColor = System.Drawing.Color.Snow
         Me.btnSearch.Location = New System.Drawing.Point(538, 117)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(80, 24)
+        Me.btnSearch.Size = New System.Drawing.Size(80, 25)
         Me.btnSearch.TabIndex = 24
         Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
+        Me.btnSearch.UseVisualStyleBackColor = False
         '
         'srchTxt
         '
@@ -98,6 +103,8 @@ Partial Class remove_detail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.details)
         Me.Controls.Add(Me.removeBtn)
         Me.Controls.Add(Me.lblSrch2)

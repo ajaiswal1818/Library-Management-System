@@ -25,7 +25,6 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Myprofile = New Assigment.Myprofile()
         Me.MyAccount = New System.Windows.Forms.Button()
         Me.SearchBtn = New System.Windows.Forms.Button()
         Me.eBookBtn = New System.Windows.Forms.Button()
@@ -52,19 +51,20 @@ Partial Class Form1
         Me.RemoveBook = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.AddBook = New System.Windows.Forms.Button()
+        Me.Search1 = New Assigment.Search()
+        Me.DiscRoom = New Assigment.DiscRoom()
+        Me.EBooks1 = New Assigment.eBooks()
+        Me.NewLogin = New Assigment.NewLogin()
+        Me.BooksIssued = New Assigment.BooksIssued()
+        Me.remove_detail = New Assigment.remove_detail()
+        Me.AddBookP = New Assigment.addBook()
+        Me.Rec_book1 = New Assigment.Rec_book()
+        Me.Reco = New Assigment.reco()
+        Me.UserDetail1 = New Assigment.userDetail()
         Me.CurProfile = New Assigment.CurProfile()
         Me.Log1 = New Assigment.Log()
         Me.ChngPass = New Assigment.ChngPass()
-        Me.UserDetail1 = New Assigment.userDetail()
-        Me.Reco = New Assigment.reco()
-        Me.Rec_book1 = New Assigment.Rec_book()
-        Me.AddBookP = New Assigment.addBook()
-        Me.remove_detail = New Assigment.remove_detail()
-        Me.BooksIssued = New Assigment.BooksIssued()
-        Me.Search1 = New Assigment.Search()
-        Me.NewLogin = New Assigment.NewLogin()
-        Me.EBooks1 = New Assigment.eBooks()
-        Me.DiscRoom = New Assigment.DiscRoom()
+        Me.Myprofile = New Assigment.Myprofile()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,16 +91,6 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(139, 770)
         Me.Panel1.TabIndex = 0
-        '
-        'Myprofile
-        '
-        Me.Myprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Myprofile.Location = New System.Drawing.Point(11, 442)
-        Me.Myprofile.Margin = New System.Windows.Forms.Padding(4)
-        Me.Myprofile.Name = "Myprofile"
-        Me.Myprofile.Size = New System.Drawing.Size(128, 250)
-        Me.Myprofile.TabIndex = 29
-        Me.Myprofile.Visible = False
         '
         'MyAccount
         '
@@ -143,7 +133,7 @@ Partial Class Form1
         '
         'SidePanel
         '
-        Me.SidePanel.BackColor = System.Drawing.Color.Snow
+        Me.SidePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(8, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.SidePanel.Location = New System.Drawing.Point(3, 189)
         Me.SidePanel.Name = "SidePanel"
         Me.SidePanel.Size = New System.Drawing.Size(10, 38)
@@ -383,7 +373,7 @@ Partial Class Form1
         '
         'Panel6
         '
-        Me.Panel6.BackColor = System.Drawing.Color.Snow
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(8, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.Panel6.ForeColor = System.Drawing.Color.Snow
         Me.Panel6.Location = New System.Drawing.Point(3, 210)
         Me.Panel6.Name = "Panel6"
@@ -404,6 +394,117 @@ Partial Class Form1
         Me.AddBook.Text = "Add Book"
         Me.AddBook.UseVisualStyleBackColor = True
         '
+        'Search1
+        '
+        Me.Search1.AutoScroll = True
+        Me.Search1.BackgroundImage = CType(resources.GetObject("Search1.BackgroundImage"), System.Drawing.Image)
+        Me.Search1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Search1.Location = New System.Drawing.Point(139, 30)
+        Me.Search1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Search1.Name = "Search1"
+        Me.Search1.Size = New System.Drawing.Size(869, 740)
+        Me.Search1.TabIndex = 21
+        '
+        'DiscRoom
+        '
+        Me.DiscRoom.AutoSize = True
+        Me.DiscRoom.Location = New System.Drawing.Point(139, 30)
+        Me.DiscRoom.Margin = New System.Windows.Forms.Padding(4)
+        Me.DiscRoom.Name = "DiscRoom"
+        Me.DiscRoom.Size = New System.Drawing.Size(869, 740)
+        Me.DiscRoom.TabIndex = 31
+        Me.DiscRoom.Visible = False
+        '
+        'EBooks1
+        '
+        Me.EBooks1.Location = New System.Drawing.Point(139, 30)
+        Me.EBooks1.Margin = New System.Windows.Forms.Padding(4)
+        Me.EBooks1.Name = "EBooks1"
+        Me.EBooks1.Size = New System.Drawing.Size(869, 740)
+        Me.EBooks1.TabIndex = 19
+        Me.EBooks1.Visible = False
+        '
+        'NewLogin
+        '
+        Me.NewLogin.BackgroundImage = CType(resources.GetObject("NewLogin.BackgroundImage"), System.Drawing.Image)
+        Me.NewLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.NewLogin.Location = New System.Drawing.Point(139, 30)
+        Me.NewLogin.Margin = New System.Windows.Forms.Padding(2)
+        Me.NewLogin.Name = "NewLogin"
+        Me.NewLogin.Size = New System.Drawing.Size(869, 740)
+        Me.NewLogin.TabIndex = 28
+        Me.NewLogin.Visible = False
+        '
+        'BooksIssued
+        '
+        Me.BooksIssued.AutoScroll = True
+        Me.BooksIssued.BackgroundImage = CType(resources.GetObject("BooksIssued.BackgroundImage"), System.Drawing.Image)
+        Me.BooksIssued.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BooksIssued.Location = New System.Drawing.Point(139, 30)
+        Me.BooksIssued.Margin = New System.Windows.Forms.Padding(2)
+        Me.BooksIssued.Name = "BooksIssued"
+        Me.BooksIssued.Size = New System.Drawing.Size(869, 740)
+        Me.BooksIssued.TabIndex = 29
+        Me.BooksIssued.Visible = False
+        '
+        'remove_detail
+        '
+        Me.remove_detail.BackgroundImage = CType(resources.GetObject("remove_detail.BackgroundImage"), System.Drawing.Image)
+        Me.remove_detail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.remove_detail.Location = New System.Drawing.Point(139, 30)
+        Me.remove_detail.Margin = New System.Windows.Forms.Padding(4)
+        Me.remove_detail.Name = "remove_detail"
+        Me.remove_detail.Size = New System.Drawing.Size(869, 740)
+        Me.remove_detail.TabIndex = 32
+        Me.remove_detail.Visible = False
+        '
+        'AddBookP
+        '
+        Me.AddBookP.BackgroundImage = CType(resources.GetObject("AddBookP.BackgroundImage"), System.Drawing.Image)
+        Me.AddBookP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AddBookP.Location = New System.Drawing.Point(139, 30)
+        Me.AddBookP.Margin = New System.Windows.Forms.Padding(4)
+        Me.AddBookP.Name = "AddBookP"
+        Me.AddBookP.Size = New System.Drawing.Size(869, 740)
+        Me.AddBookP.TabIndex = 34
+        Me.AddBookP.Visible = False
+        '
+        'Rec_book1
+        '
+        Me.Rec_book1.BackgroundImage = CType(resources.GetObject("Rec_book1.BackgroundImage"), System.Drawing.Image)
+        Me.Rec_book1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Rec_book1.Location = New System.Drawing.Point(139, 30)
+        Me.Rec_book1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Rec_book1.Name = "Rec_book1"
+        Me.Rec_book1.Size = New System.Drawing.Size(869, 740)
+        Me.Rec_book1.TabIndex = 35
+        Me.Rec_book1.Visible = False
+        '
+        'Reco
+        '
+        Me.Reco.AutoScroll = True
+        Me.Reco.BackgroundImage = CType(resources.GetObject("Reco.BackgroundImage"), System.Drawing.Image)
+        Me.Reco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Reco.Location = New System.Drawing.Point(139, 30)
+        Me.Reco.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Reco.Name = "Reco"
+        Me.Reco.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Reco.Size = New System.Drawing.Size(869, 740)
+        Me.Reco.TabIndex = 34
+        Me.Reco.Visible = False
+        '
+        'UserDetail1
+        '
+        Me.UserDetail1.AutoScroll = True
+        Me.UserDetail1.BackgroundImage = CType(resources.GetObject("UserDetail1.BackgroundImage"), System.Drawing.Image)
+        Me.UserDetail1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.UserDetail1.Location = New System.Drawing.Point(139, 30)
+        Me.UserDetail1.Margin = New System.Windows.Forms.Padding(4)
+        Me.UserDetail1.Name = "UserDetail1"
+        Me.UserDetail1.Size = New System.Drawing.Size(869, 740)
+        Me.UserDetail1.TabIndex = 36
+        Me.UserDetail1.Visible = False
+        '
         'CurProfile
         '
         Me.CurProfile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -413,7 +514,7 @@ Partial Class Form1
         Me.CurProfile.Location = New System.Drawing.Point(139, 30)
         Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
         Me.CurProfile.Name = "CurProfile"
-        Me.CurProfile.Size = New System.Drawing.Size(872, 740)
+        Me.CurProfile.Size = New System.Drawing.Size(617, 740)
         Me.CurProfile.TabIndex = 33
         Me.CurProfile.Visible = False
         '
@@ -432,110 +533,24 @@ Partial Class Form1
         '
         'ChngPass
         '
+        Me.ChngPass.BackgroundImage = CType(resources.GetObject("ChngPass.BackgroundImage"), System.Drawing.Image)
+        Me.ChngPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ChngPass.Location = New System.Drawing.Point(139, 30)
-        Me.ChngPass.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChngPass.Margin = New System.Windows.Forms.Padding(2)
         Me.ChngPass.Name = "ChngPass"
         Me.ChngPass.Size = New System.Drawing.Size(869, 740)
         Me.ChngPass.TabIndex = 32
         Me.ChngPass.Visible = False
         '
-        'UserDetail1
+        'Myprofile
         '
-        Me.UserDetail1.BackgroundImage = CType(resources.GetObject("UserDetail1.BackgroundImage"), System.Drawing.Image)
-        Me.UserDetail1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.UserDetail1.Location = New System.Drawing.Point(139, 30)
-        Me.UserDetail1.Margin = New System.Windows.Forms.Padding(4)
-        Me.UserDetail1.Name = "UserDetail1"
-        Me.UserDetail1.Size = New System.Drawing.Size(869, 740)
-        Me.UserDetail1.TabIndex = 36
-        Me.UserDetail1.Visible = False
-        '
-        'Reco
-        '
-        Me.Reco.AutoScroll = True
-        Me.Reco.Location = New System.Drawing.Point(139, 30)
-        Me.Reco.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Reco.Name = "Reco"
-        Me.Reco.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Reco.Size = New System.Drawing.Size(869, 740)
-        Me.Reco.TabIndex = 34
-        Me.Reco.Visible = False
-        '
-        'Rec_book1
-        '
-        Me.Rec_book1.BackgroundImage = CType(resources.GetObject("Rec_book1.BackgroundImage"), System.Drawing.Image)
-        Me.Rec_book1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Rec_book1.Location = New System.Drawing.Point(139, 30)
-        Me.Rec_book1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Rec_book1.Name = "Rec_book1"
-        Me.Rec_book1.Size = New System.Drawing.Size(869, 740)
-        Me.Rec_book1.TabIndex = 35
-        Me.Rec_book1.Visible = False
-        '
-        'AddBookP
-        '
-        Me.AddBookP.Location = New System.Drawing.Point(139, 30)
-        Me.AddBookP.Margin = New System.Windows.Forms.Padding(4)
-        Me.AddBookP.Name = "AddBookP"
-        Me.AddBookP.Size = New System.Drawing.Size(869, 740)
-        Me.AddBookP.TabIndex = 34
-        Me.AddBookP.Visible = False
-        '
-        'remove_detail
-        '
-        Me.remove_detail.Location = New System.Drawing.Point(139, 30)
-        Me.remove_detail.Margin = New System.Windows.Forms.Padding(4)
-        Me.remove_detail.Name = "remove_detail"
-        Me.remove_detail.Size = New System.Drawing.Size(869, 740)
-        Me.remove_detail.TabIndex = 32
-        Me.remove_detail.Visible = False
-        '
-        'BooksIssued
-        '
-        Me.BooksIssued.AutoScroll = True
-        Me.BooksIssued.Location = New System.Drawing.Point(139, 30)
-        Me.BooksIssued.Margin = New System.Windows.Forms.Padding(2)
-        Me.BooksIssued.Name = "BooksIssued"
-        Me.BooksIssued.Size = New System.Drawing.Size(869, 740)
-        Me.BooksIssued.TabIndex = 29
-        Me.BooksIssued.Visible = False
-        '
-        'Search1
-        '
-        Me.Search1.AutoScroll = True
-        Me.Search1.Location = New System.Drawing.Point(139, 30)
-        Me.Search1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Search1.Name = "Search1"
-        Me.Search1.Size = New System.Drawing.Size(869, 740)
-        Me.Search1.TabIndex = 21
-        '
-        'NewLogin
-        '
-        Me.NewLogin.Location = New System.Drawing.Point(139, 30)
-        Me.NewLogin.Margin = New System.Windows.Forms.Padding(2)
-        Me.NewLogin.Name = "NewLogin"
-        Me.NewLogin.Size = New System.Drawing.Size(869, 740)
-        Me.NewLogin.TabIndex = 28
-        Me.NewLogin.Visible = False
-        '
-        'EBooks1
-        '
-        Me.EBooks1.Location = New System.Drawing.Point(139, 30)
-        Me.EBooks1.Margin = New System.Windows.Forms.Padding(4)
-        Me.EBooks1.Name = "EBooks1"
-        Me.EBooks1.Size = New System.Drawing.Size(869, 740)
-        Me.EBooks1.TabIndex = 19
-        Me.EBooks1.Visible = False
-        '
-        'DiscRoom
-        '
-        Me.DiscRoom.AutoSize = True
-        Me.DiscRoom.Location = New System.Drawing.Point(139, 30)
-        Me.DiscRoom.Margin = New System.Windows.Forms.Padding(4)
-        Me.DiscRoom.Name = "DiscRoom"
-        Me.DiscRoom.Size = New System.Drawing.Size(869, 740)
-        Me.DiscRoom.TabIndex = 31
-        Me.DiscRoom.Visible = False
+        Me.Myprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Myprofile.Location = New System.Drawing.Point(11, 442)
+        Me.Myprofile.Margin = New System.Windows.Forms.Padding(4)
+        Me.Myprofile.Name = "Myprofile"
+        Me.Myprofile.Size = New System.Drawing.Size(128, 250)
+        Me.Myprofile.TabIndex = 29
+        Me.Myprofile.Visible = False
         '
         'Form1
         '
@@ -545,21 +560,21 @@ Partial Class Form1
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1008, 729)
         Me.Controls.Add(Me.adminPanel)
+        Me.Controls.Add(Me.Search1)
+        Me.Controls.Add(Me.DiscRoom)
+        Me.Controls.Add(Me.EBooks1)
+        Me.Controls.Add(Me.NewLogin)
+        Me.Controls.Add(Me.BooksIssued)
+        Me.Controls.Add(Me.remove_detail)
+        Me.Controls.Add(Me.AddBookP)
+        Me.Controls.Add(Me.Rec_book1)
+        Me.Controls.Add(Me.Reco)
+        Me.Controls.Add(Me.UserDetail1)
         Me.Controls.Add(Me.CurProfile)
         Me.Controls.Add(Me.Log1)
         Me.Controls.Add(Me.ChngPass)
-        Me.Controls.Add(Me.UserDetail1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Reco)
-        Me.Controls.Add(Me.Rec_book1)
-        Me.Controls.Add(Me.AddBookP)
-        Me.Controls.Add(Me.remove_detail)
-        Me.Controls.Add(Me.BooksIssued)
-        Me.Controls.Add(Me.Search1)
-        Me.Controls.Add(Me.NewLogin)
-        Me.Controls.Add(Me.EBooks1)
-        Me.Controls.Add(Me.DiscRoom)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "Form1"
         Me.Text = "LIB"

@@ -45,6 +45,7 @@
             Form1.Panel4.Visible = True
             Form1.Panel4.BringToFront()
             Form1.Panel1.Visible = False
+            Form1.CurProfile.CurProfile_Load()
         Else
             CurID = Access.DBDT.Rows(0).Item(0)
             CurUser = Access.DBDT.Rows(0).Item(1)
@@ -63,7 +64,10 @@
             Form1.Search1.BringToFront()
             Form1.SidePanel.Height = Form1.SearchBtn.Height
             Form1.SidePanel.Top = Form1.SearchBtn.Top
+            Form1.CurProfile.CurProfile_Load()
         End If
+
+
 
     End Sub
 

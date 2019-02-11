@@ -22,6 +22,7 @@ Partial Class BooksIssued
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BooksIssued))
         Me.lblBklt = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnRet1 = New System.Windows.Forms.Button()
@@ -43,6 +44,7 @@ Partial Class BooksIssued
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(171, 39)
         Me.Label4.Name = "Label4"
@@ -67,7 +69,7 @@ Partial Class BooksIssued
         'lblRet1
         '
         Me.lblRet1.AutoSize = True
-        Me.lblRet1.BackColor = System.Drawing.Color.Transparent
+        Me.lblRet1.BackColor = System.Drawing.Color.Snow
         Me.lblRet1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblRet1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRet1.Location = New System.Drawing.Point(134, 145)
@@ -80,7 +82,7 @@ Partial Class BooksIssued
         'tempRet1
         '
         Me.tempRet1.AutoSize = True
-        Me.tempRet1.BackColor = System.Drawing.Color.White
+        Me.tempRet1.BackColor = System.Drawing.Color.Transparent
         Me.tempRet1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tempRet1.Location = New System.Drawing.Point(550, 39)
         Me.tempRet1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -95,6 +97,8 @@ Partial Class BooksIssued
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.tempRet1)
         Me.Controls.Add(Me.lblBklt)
         Me.Controls.Add(Me.Label4)

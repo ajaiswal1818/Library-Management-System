@@ -34,7 +34,7 @@ Partial Class userDetail
         Me.rollNo = New System.Windows.Forms.Label()
         Me.nameLabel = New System.Windows.Forms.Label()
         Me.displayPic = New System.Windows.Forms.PictureBox()
-        Me.lblissue = New System.Windows.Forms.Label()
+        Me.lblissue1 = New System.Windows.Forms.Label()
         Me.uPanel.SuspendLayout()
         CType(Me.displayPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -168,18 +168,18 @@ Partial Class userDetail
         Me.displayPic.TabIndex = 25
         Me.displayPic.TabStop = False
         '
-        'lblissue
+        'lblissue1
         '
-        Me.lblissue.AutoSize = True
-        Me.lblissue.BackColor = System.Drawing.Color.Transparent
-        Me.lblissue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblissue.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblissue.Location = New System.Drawing.Point(61, 427)
-        Me.lblissue.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblissue.Name = "lblissue"
-        Me.lblissue.Size = New System.Drawing.Size(57, 21)
-        Me.lblissue.TabIndex = 31
-        Me.lblissue.Text = "Label1"
+        Me.lblissue1.AutoSize = True
+        Me.lblissue1.BackColor = System.Drawing.Color.Transparent
+        Me.lblissue1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblissue1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblissue1.Location = New System.Drawing.Point(61, 427)
+        Me.lblissue1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblissue1.Name = "lblissue1"
+        Me.lblissue1.Size = New System.Drawing.Size(57, 21)
+        Me.lblissue1.TabIndex = 31
+        Me.lblissue1.Text = "Label1"
         '
         'userDetail
         '
@@ -188,7 +188,7 @@ Partial Class userDetail
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.uPanel)
-        Me.Controls.Add(Me.lblissue)
+        Me.Controls.Add(Me.lblissue1)
         Me.Controls.Add(Me.Usearch)
         Me.Controls.Add(Me.Udetail)
         Me.Controls.Add(Me.Panel1)
@@ -206,7 +206,7 @@ Partial Class userDetail
     Friend WithEvents Usearch As System.Windows.Forms.Button
     Friend WithEvents uPanel As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents lblissue As System.Windows.Forms.Label
+    Friend WithEvents lblissue1 As System.Windows.Forms.Label
     Friend WithEvents Dept As System.Windows.Forms.Label
     Friend WithEvents webmail As System.Windows.Forms.Label
     Friend WithEvents discipline As System.Windows.Forms.Label

@@ -48,8 +48,9 @@ Partial Class NewLogin
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(207, 44)
+        Me.Label1.Location = New System.Drawing.Point(251, 61)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(477, 58)
@@ -61,7 +62,7 @@ Partial Class NewLogin
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtName.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.ForeColor = System.Drawing.Color.Silver
-        Me.txtName.Location = New System.Drawing.Point(207, 145)
+        Me.txtName.Location = New System.Drawing.Point(282, 214)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtName.Multiline = True
         Me.txtName.Name = "txtName"
@@ -74,7 +75,7 @@ Partial Class NewLogin
         Me.txtRoll.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtRoll.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRoll.ForeColor = System.Drawing.Color.Silver
-        Me.txtRoll.Location = New System.Drawing.Point(422, 145)
+        Me.txtRoll.Location = New System.Drawing.Point(497, 214)
         Me.txtRoll.Margin = New System.Windows.Forms.Padding(2)
         Me.txtRoll.Multiline = True
         Me.txtRoll.Name = "txtRoll"
@@ -87,7 +88,7 @@ Partial Class NewLogin
         Me.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMail.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMail.ForeColor = System.Drawing.Color.Silver
-        Me.txtMail.Location = New System.Drawing.Point(207, 197)
+        Me.txtMail.Location = New System.Drawing.Point(282, 266)
         Me.txtMail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMail.Multiline = True
         Me.txtMail.Name = "txtMail"
@@ -98,8 +99,9 @@ Partial Class NewLogin
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(401, 199)
+        Me.Label2.Location = New System.Drawing.Point(476, 268)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 21)
@@ -109,8 +111,9 @@ Partial Class NewLogin
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(204, 256)
+        Me.Label3.Location = New System.Drawing.Point(279, 325)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(137, 21)
@@ -121,7 +124,7 @@ Partial Class NewLogin
         '
         Me.cmbStf.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbStf.FormattingEnabled = True
-        Me.cmbStf.Location = New System.Drawing.Point(207, 277)
+        Me.cmbStf.Location = New System.Drawing.Point(282, 346)
         Me.cmbStf.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbStf.Name = "cmbStf"
         Me.cmbStf.Size = New System.Drawing.Size(110, 29)
@@ -131,7 +134,7 @@ Partial Class NewLogin
         '
         Me.cmbDisc.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDisc.FormattingEnabled = True
-        Me.cmbDisc.Location = New System.Drawing.Point(360, 277)
+        Me.cmbDisc.Location = New System.Drawing.Point(435, 346)
         Me.cmbDisc.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbDisc.Name = "cmbDisc"
         Me.cmbDisc.Size = New System.Drawing.Size(110, 29)
@@ -140,8 +143,9 @@ Partial Class NewLogin
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(357, 256)
+        Me.Label4.Location = New System.Drawing.Point(432, 325)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(81, 21)
@@ -152,7 +156,7 @@ Partial Class NewLogin
         '
         Me.cmbDept.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDept.FormattingEnabled = True
-        Me.cmbDept.Location = New System.Drawing.Point(503, 277)
+        Me.cmbDept.Location = New System.Drawing.Point(578, 346)
         Me.cmbDept.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbDept.Name = "cmbDept"
         Me.cmbDept.Size = New System.Drawing.Size(110, 29)
@@ -161,8 +165,9 @@ Partial Class NewLogin
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(500, 256)
+        Me.Label5.Location = New System.Drawing.Point(575, 325)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 21)
@@ -174,7 +179,7 @@ Partial Class NewLogin
         Me.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPass.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.Silver
-        Me.txtPass.Location = New System.Drawing.Point(207, 341)
+        Me.txtPass.Location = New System.Drawing.Point(282, 410)
         Me.txtPass.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPass.Multiline = True
         Me.txtPass.Name = "txtPass"
@@ -187,7 +192,7 @@ Partial Class NewLogin
         Me.txtConf.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtConf.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtConf.ForeColor = System.Drawing.Color.Silver
-        Me.txtConf.Location = New System.Drawing.Point(422, 341)
+        Me.txtConf.Location = New System.Drawing.Point(497, 410)
         Me.txtConf.Margin = New System.Windows.Forms.Padding(2)
         Me.txtConf.Multiline = True
         Me.txtConf.Name = "txtConf"
@@ -201,7 +206,7 @@ Partial Class NewLogin
         Me.btnSign.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSign.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSign.ForeColor = System.Drawing.Color.Snow
-        Me.btnSign.Location = New System.Drawing.Point(347, 426)
+        Me.btnSign.Location = New System.Drawing.Point(414, 493)
         Me.btnSign.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSign.Name = "btnSign"
         Me.btnSign.Size = New System.Drawing.Size(112, 50)
@@ -215,9 +220,9 @@ Partial Class NewLogin
         Me.BtnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnView.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnView.ForeColor = System.Drawing.Color.Snow
-        Me.BtnView.Location = New System.Drawing.Point(207, 391)
+        Me.BtnView.Location = New System.Drawing.Point(93, 348)
         Me.BtnView.Name = "BtnView"
-        Me.BtnView.Size = New System.Drawing.Size(123, 26)
+        Me.BtnView.Size = New System.Drawing.Size(117, 26)
         Me.BtnView.TabIndex = 17
         Me.BtnView.Text = "Choose Image"
         Me.BtnView.UseVisualStyleBackColor = False
@@ -226,9 +231,9 @@ Partial Class NewLogin
         '
         Me.profilePic.BackColor = System.Drawing.Color.Transparent
         Me.profilePic.Image = CType(resources.GetObject("profilePic.Image"), System.Drawing.Image)
-        Me.profilePic.Location = New System.Drawing.Point(135, 370)
+        Me.profilePic.Location = New System.Drawing.Point(93, 214)
         Me.profilePic.Name = "profilePic"
-        Me.profilePic.Size = New System.Drawing.Size(47, 47)
+        Me.profilePic.Size = New System.Drawing.Size(117, 132)
         Me.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.profilePic.TabIndex = 16
         Me.profilePic.TabStop = False
@@ -250,7 +255,7 @@ Partial Class NewLogin
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(93, 34)
+        Me.PictureBox1.Location = New System.Drawing.Point(121, 49)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(89, 88)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -261,6 +266,8 @@ Partial Class NewLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BtnView)
