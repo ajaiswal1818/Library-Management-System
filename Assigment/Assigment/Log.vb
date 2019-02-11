@@ -76,11 +76,12 @@
         Form1.NewLogin.BringToFront()
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-
-    End Sub
-
-    Private Sub Forgot_Click(sender As Object, e As EventArgs) Handles Forgot.Click
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If txtPass.PasswordChar = Nothing Then
+            txtPass.PasswordChar = "*"
+        Else
+            txtPass.PasswordChar = Nothing
+        End If
 
     End Sub
 End Class

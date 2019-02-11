@@ -106,6 +106,32 @@
         Panel6.BringToFront()
         Panel6.Height = RemoveBook.Height
         Panel6.Top = RemoveBook.Top
+        Remove_detail1.Clr_Rem()
+        Remove_detail1.Clr_lbl()
+        If remove_detail.cnt_del <> 0 Then
+            remove_detail.Clr_Del()
+        End If
+        remove_detail.Refr()
+        remove_detail.check_btn = 0
+        'MessageBox.Show("cnt_lbl: " & remove_detail.cnt_lbl & "\ncnt_rem: " & remove_detail.cnt_rem & "\ncnt_del: " & remove_detail.cnt_del)
+    End Sub
+
+    Private Sub BookDetail_Click(sender As Object, e As EventArgs) Handles BookDetail.Click
+        remove_detail.BringToFront()
+        remove_detail.Visible = True
+        Panel6.Visible = True
+        Panel6.BringToFront()
+        Panel6.Height = BookDetail.Height
+        Panel6.Top = BookDetail.Top
+        remove_detail.Clr_Del()
+        remove_detail.Clr_lbl()
+        If remove_detail.cnt_rem <> 0 Then
+            remove_detail.Clr_Rem()
+        End If
+        remove_detail.Refr()
+        remove_detail.check_btn = 1
+        'MessageBox.Show("cnt_lbl: " & remove_detail.cnt_lbl & "\ncnt_rem: " & remove_detail.cnt_rem & "\ncnt_del: " & remove_detail.cnt_del)
+
     End Sub
 
     Private Sub UserDetail_Click(sender As Object, e As EventArgs) Handles UserDetail.Click
@@ -117,14 +143,6 @@
         Panel6.Top = UserDetail.Top
         UserDetail1.Clear()
 
-    End Sub
-
-
-    Private Sub BookDetail_Click(sender As Object, e As EventArgs) Handles BookDetail.Click
-        Panel6.Visible = True
-        Panel6.BringToFront()
-        Panel6.Height = BookDetail.Height
-        Panel6.Top = BookDetail.Top
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click

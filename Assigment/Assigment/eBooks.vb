@@ -15,4 +15,8 @@
     Private Sub eBooks_Load(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
 
     End Sub
+
+    Private Sub eBooks_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -23,7 +23,6 @@ Partial Class CurProfile
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CurProfile))
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Dept = New System.Windows.Forms.Label()
         Me.webmail = New System.Windows.Forms.Label()
         Me.discipline = New System.Windows.Forms.Label()
@@ -33,21 +32,12 @@ Partial Class CurProfile
         CType(Me.PicProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Panel1.Location = New System.Drawing.Point(1, 224)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(1)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(849, 3)
-        Me.Panel1.TabIndex = 13
-        '
         'Dept
         '
         Me.Dept.AutoSize = True
         Me.Dept.BackColor = System.Drawing.Color.Transparent
         Me.Dept.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Dept.Location = New System.Drawing.Point(507, 138)
+        Me.Dept.Location = New System.Drawing.Point(338, 381)
         Me.Dept.Name = "Dept"
         Me.Dept.Size = New System.Drawing.Size(55, 22)
         Me.Dept.TabIndex = 12
@@ -58,7 +48,7 @@ Partial Class CurProfile
         Me.webmail.AutoSize = True
         Me.webmail.BackColor = System.Drawing.Color.Transparent
         Me.webmail.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.webmail.Location = New System.Drawing.Point(248, 176)
+        Me.webmail.Location = New System.Drawing.Point(338, 350)
         Me.webmail.Name = "webmail"
         Me.webmail.Size = New System.Drawing.Size(87, 22)
         Me.webmail.TabIndex = 11
@@ -69,7 +59,7 @@ Partial Class CurProfile
         Me.discipline.AutoSize = True
         Me.discipline.BackColor = System.Drawing.Color.Transparent
         Me.discipline.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.discipline.Location = New System.Drawing.Point(248, 138)
+        Me.discipline.Location = New System.Drawing.Point(338, 317)
         Me.discipline.Name = "discipline"
         Me.discipline.Size = New System.Drawing.Size(91, 22)
         Me.discipline.TabIndex = 10
@@ -80,7 +70,7 @@ Partial Class CurProfile
         Me.rollNo.AutoSize = True
         Me.rollNo.BackColor = System.Drawing.Color.Transparent
         Me.rollNo.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rollNo.Location = New System.Drawing.Point(248, 98)
+        Me.rollNo.Location = New System.Drawing.Point(338, 282)
         Me.rollNo.Name = "rollNo"
         Me.rollNo.Size = New System.Drawing.Size(60, 22)
         Me.rollNo.TabIndex = 9
@@ -91,7 +81,7 @@ Partial Class CurProfile
         Me.nameLabel.AutoSize = True
         Me.nameLabel.BackColor = System.Drawing.Color.Transparent
         Me.nameLabel.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nameLabel.Location = New System.Drawing.Point(248, 63)
+        Me.nameLabel.Location = New System.Drawing.Point(338, 227)
         Me.nameLabel.Name = "nameLabel"
         Me.nameLabel.Size = New System.Drawing.Size(67, 23)
         Me.nameLabel.TabIndex = 8
@@ -101,9 +91,9 @@ Partial Class CurProfile
         '
         Me.PicProfile.BackColor = System.Drawing.Color.Transparent
         Me.PicProfile.Image = CType(resources.GetObject("PicProfile.Image"), System.Drawing.Image)
-        Me.PicProfile.Location = New System.Drawing.Point(58, 53)
+        Me.PicProfile.Location = New System.Drawing.Point(82, 208)
         Me.PicProfile.Name = "PicProfile"
-        Me.PicProfile.Size = New System.Drawing.Size(116, 156)
+        Me.PicProfile.Size = New System.Drawing.Size(184, 200)
         Me.PicProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PicProfile.TabIndex = 7
         Me.PicProfile.TabStop = False
@@ -114,7 +104,6 @@ Partial Class CurProfile
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Dept)
         Me.Controls.Add(Me.webmail)
         Me.Controls.Add(Me.discipline)
@@ -129,7 +118,6 @@ Partial Class CurProfile
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Dept As System.Windows.Forms.Label
     Friend WithEvents webmail As System.Windows.Forms.Label
     Friend WithEvents discipline As System.Windows.Forms.Label

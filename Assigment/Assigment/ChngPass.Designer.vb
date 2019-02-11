@@ -37,7 +37,7 @@ Partial Class ChngPass
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(118, 294)
+        Me.Label3.Location = New System.Drawing.Point(241, 350)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(171, 22)
         Me.Label3.TabIndex = 14
@@ -49,7 +49,7 @@ Partial Class ChngPass
         Me.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.update.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.update.ForeColor = System.Drawing.Color.Snow
-        Me.update.Location = New System.Drawing.Point(266, 382)
+        Me.update.Location = New System.Drawing.Point(379, 445)
         Me.update.Name = "update"
         Me.update.Size = New System.Drawing.Size(117, 40)
         Me.update.TabIndex = 13
@@ -61,7 +61,7 @@ Partial Class ChngPass
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(118, 147)
+        Me.Label2.Location = New System.Drawing.Point(241, 203)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(133, 22)
         Me.Label2.TabIndex = 12
@@ -72,7 +72,7 @@ Partial Class ChngPass
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(118, 225)
+        Me.Label1.Location = New System.Drawing.Point(241, 281)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(142, 22)
         Me.Label1.TabIndex = 11
@@ -81,7 +81,7 @@ Partial Class ChngPass
         'newpass2
         '
         Me.newpass2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.newpass2.Location = New System.Drawing.Point(335, 294)
+        Me.newpass2.Location = New System.Drawing.Point(458, 350)
         Me.newpass2.Name = "newpass2"
         Me.newpass2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.newpass2.Size = New System.Drawing.Size(188, 29)
@@ -90,7 +90,7 @@ Partial Class ChngPass
         'oldpass
         '
         Me.oldpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.oldpass.Location = New System.Drawing.Point(335, 147)
+        Me.oldpass.Location = New System.Drawing.Point(458, 203)
         Me.oldpass.Name = "oldpass"
         Me.oldpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.oldpass.Size = New System.Drawing.Size(188, 29)
@@ -99,7 +99,7 @@ Partial Class ChngPass
         'newpass
         '
         Me.newpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.newpass.Location = New System.Drawing.Point(335, 219)
+        Me.newpass.Location = New System.Drawing.Point(458, 275)
         Me.newpass.Name = "newpass"
         Me.newpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.newpass.Size = New System.Drawing.Size(188, 29)
@@ -118,9 +118,9 @@ Partial Class ChngPass
         Me.Controls.Add(Me.newpass2)
         Me.Controls.Add(Me.oldpass)
         Me.Controls.Add(Me.newpass)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "ChngPass"
-        Me.Size = New System.Drawing.Size(639, 569)
+        Me.Size = New System.Drawing.Size(869, 740)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

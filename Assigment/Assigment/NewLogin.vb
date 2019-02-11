@@ -11,10 +11,12 @@ Public Class NewLogin
 
     Private Sub NewLogin_Load(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
         cmbStf.AllowDrop() = True
+        cmbStf.Items.Clear()
         cmbStf.Items.Add("Faculty")
         cmbStf.Items.Add("Student")
 
         cmbDisc.AllowDrop() = True
+        cmbDisc.Items.Clear()
         cmbDisc.Items.Add("B.Tech")
         cmbDisc.Items.Add("B.Des")
         cmbDisc.Items.Add("M.Tech")
@@ -25,6 +27,7 @@ Public Class NewLogin
         cmbDisc.Items.Add("Other")
 
         cmbDept.AllowDrop() = True
+        cmbDept.Items.Clear()
         cmbDept.Items.Add("CSE")
         cmbDept.Items.Add("MnC")
         cmbDept.Items.Add("ECE")
@@ -36,6 +39,7 @@ Public Class NewLogin
         cmbDept.Items.Add("EP")
         cmbDept.Items.Add("BT")
         cmbDept.Items.Add("HSS")
+        cmbDept.Items.Add("Design")
 
         Dim StoredPath As String = "/bin/Debug/Resource"
         If File.Exists(StoredPath) Then
@@ -81,6 +85,28 @@ Public Class NewLogin
             cmbDisc.Items.Add("PhD")
             cmbDisc.Items.Add("PostDoc")
             BookLimit = 5
+        End If
+    End Sub
+
+    Private Sub cmbDisc_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDisc.SelectedIndexChanged
+        If cmbDisc.SelectedItem = "B.Des" Then
+            cmbDept.Items.Clear()
+            cmbDept.Items.Add("Design")
+        ElseIf cmbDisc.SelectedItem = "MA" Then
+            cmbDept.Items.Clear()
+            cmbDept.Items.Add("HSS")
+        Else
+            cmbDept.Items.Clear()
+            cmbDept.Items.Add("CSE")
+            cmbDept.Items.Add("MnC")
+            cmbDept.Items.Add("ECE")
+            cmbDept.Items.Add("EEE")
+            cmbDept.Items.Add("ME")
+            cmbDept.Items.Add("CL")
+            cmbDept.Items.Add("CST")
+            cmbDept.Items.Add("CE")
+            cmbDept.Items.Add("EP")
+            cmbDept.Items.Add("BT")
         End If
     End Sub
 
@@ -177,4 +203,10 @@ Public Class NewLogin
         End With
 
     End Sub
+
+    Private Sub NewLogin_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+
 End Class

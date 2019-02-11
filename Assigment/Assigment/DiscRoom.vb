@@ -69,15 +69,19 @@ Public Class DiscRoom
         Dim btn1 As New Button
         btn1.Font = btn0_0.Font
         If nm = "0" Then
-            btn1.ForeColor = Color.Blue
-            btn1.BackColor = Color.White
+            btn1.ForeColor = Color.Black
+            btn1.BackColor = Color.Snow
+
+            'btn1.ForeColor = Color.Blue
+            'btn1.BackColor = Color.White
             btn1.Text = "Book Me!"
         Else
+
             btn1.ForeColor = Color.White
             btn1.BackColor = Color.Blue
             btn1.Text = nm
         End If
-        btn1.FlatStyle = FlatStyle.Popup
+        btn1.FlatStyle = FlatStyle.Flat
         btn1.FlatAppearance.BorderSize = 0.5
         btn1.Name = btnName
         btn1.Height = btn0_0.Height
@@ -97,7 +101,7 @@ Public Class DiscRoom
 
     Private Sub Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim selectedBtn As Button = sender
-        If selectedBtn.BackColor = Color.White Then
+        If selectedBtn.Text = "Book Me!" Then
             If Log.CurUser = "" Then
                 MessageBox.Show("You must be logged in to book a room!", "Error")
                 Console.Write("Failed room booking: User not logged in" & Environment.NewLine)
@@ -115,4 +119,11 @@ Public Class DiscRoom
         End If
     End Sub
 
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
+
+    End Sub
 End Class

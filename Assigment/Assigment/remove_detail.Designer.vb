@@ -23,37 +23,38 @@ Partial Class remove_detail
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(remove_detail))
-        Me.removeBtn = New System.Windows.Forms.Button()
-        Me.lblSrch2 = New System.Windows.Forms.Label()
+        Me.btnSrch1 = New System.Windows.Forms.Button()
+        Me.lblSrch1 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.srchTxt = New System.Windows.Forms.RichTextBox()
         Me.Srchcbx = New System.Windows.Forms.ComboBox()
-        Me.details = New System.Windows.Forms.Button()
+        Me.btnDel1 = New System.Windows.Forms.Button()
+        Me.lbltemp1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'removeBtn
+        'btnSrch1
         '
-        Me.removeBtn.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.removeBtn.Location = New System.Drawing.Point(493, 264)
-        Me.removeBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.removeBtn.Name = "removeBtn"
-        Me.removeBtn.Size = New System.Drawing.Size(62, 29)
-        Me.removeBtn.TabIndex = 26
-        Me.removeBtn.Text = "Remove"
-        Me.removeBtn.UseVisualStyleBackColor = True
+        Me.btnSrch1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSrch1.Location = New System.Drawing.Point(22, 273)
+        Me.btnSrch1.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnSrch1.Name = "btnSrch1"
+        Me.btnSrch1.Size = New System.Drawing.Size(62, 29)
+        Me.btnSrch1.TabIndex = 26
+        Me.btnSrch1.Text = "Remove"
+        Me.btnSrch1.UseVisualStyleBackColor = True
         '
-        'lblSrch2
+        'lblSrch1
         '
-        Me.lblSrch2.AutoSize = True
-        Me.lblSrch2.BackColor = System.Drawing.Color.White
-        Me.lblSrch2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblSrch2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSrch2.Location = New System.Drawing.Point(105, 217)
-        Me.lblSrch2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblSrch2.Name = "lblSrch2"
-        Me.lblSrch2.Size = New System.Drawing.Size(57, 21)
-        Me.lblSrch2.TabIndex = 25
-        Me.lblSrch2.Text = "Label1"
+        Me.lblSrch1.AutoSize = True
+        Me.lblSrch1.BackColor = System.Drawing.Color.White
+        Me.lblSrch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblSrch1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSrch1.Location = New System.Drawing.Point(105, 217)
+        Me.lblSrch1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSrch1.Name = "lblSrch1"
+        Me.lblSrch1.Size = New System.Drawing.Size(57, 21)
+        Me.lblSrch1.TabIndex = 25
+        Me.lblSrch1.Text = "Label1"
         '
         'btnSearch
         '
@@ -88,16 +89,27 @@ Partial Class remove_detail
         Me.Srchcbx.Size = New System.Drawing.Size(88, 25)
         Me.Srchcbx.TabIndex = 22
         '
-        'details
+        'btnDel1
         '
-        Me.details.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.details.Location = New System.Drawing.Point(493, 217)
-        Me.details.Margin = New System.Windows.Forms.Padding(2)
-        Me.details.Name = "details"
-        Me.details.Size = New System.Drawing.Size(62, 29)
-        Me.details.TabIndex = 27
-        Me.details.Text = "Details"
-        Me.details.UseVisualStyleBackColor = True
+        Me.btnDel1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDel1.Location = New System.Drawing.Point(22, 226)
+        Me.btnDel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnDel1.Name = "btnDel1"
+        Me.btnDel1.Size = New System.Drawing.Size(62, 29)
+        Me.btnDel1.TabIndex = 27
+        Me.btnDel1.Text = "Details"
+        Me.btnDel1.UseVisualStyleBackColor = True
+        '
+        'lbltemp1
+        '
+        Me.lbltemp1.AutoSize = True
+        Me.lbltemp1.Location = New System.Drawing.Point(730, 108)
+        Me.lbltemp1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbltemp1.Name = "lbltemp1"
+        Me.lbltemp1.Size = New System.Drawing.Size(39, 13)
+        Me.lbltemp1.TabIndex = 29
+        Me.lbltemp1.Text = "Label1"
+        Me.lbltemp1.Visible = False
         '
         'remove_detail
         '
@@ -105,9 +117,10 @@ Partial Class remove_detail
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Controls.Add(Me.details)
-        Me.Controls.Add(Me.removeBtn)
-        Me.Controls.Add(Me.lblSrch2)
+        Me.Controls.Add(Me.lbltemp1)
+        Me.Controls.Add(Me.btnDel1)
+        Me.Controls.Add(Me.btnSrch1)
+        Me.Controls.Add(Me.lblSrch1)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.srchTxt)
         Me.Controls.Add(Me.Srchcbx)
@@ -117,11 +130,12 @@ Partial Class remove_detail
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents removeBtn As System.Windows.Forms.Button
-    Friend WithEvents lblSrch2 As System.Windows.Forms.Label
+    Friend WithEvents btnSrch1 As System.Windows.Forms.Button
+    Friend WithEvents lblSrch1 As System.Windows.Forms.Label
     Friend WithEvents btnSearch As System.Windows.Forms.Button
     Friend WithEvents srchTxt As System.Windows.Forms.RichTextBox
     Friend WithEvents Srchcbx As System.Windows.Forms.ComboBox
-    Friend WithEvents details As System.Windows.Forms.Button
+    Friend WithEvents btnDel1 As System.Windows.Forms.Button
+    Friend WithEvents lbltemp1 As System.Windows.Forms.Label
 
 End Class

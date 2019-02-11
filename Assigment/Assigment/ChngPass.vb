@@ -38,6 +38,7 @@
         'If Access.DBDT.Rows.Count = 0 Then
         '    MessageBox.Show("Username not found")
         'End If
+        MessageBox.Show("Password Changed Successfully")
         oldpass.Clear()
         newpass.Clear()
         newpass2.Clear()

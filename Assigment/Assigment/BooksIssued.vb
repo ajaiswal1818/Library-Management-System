@@ -203,4 +203,8 @@
     Private Sub lblRet1_Click(sender As Object, e As EventArgs) Handles lblRet1.Click
 
     End Sub
+
+    Private Sub BooksIssued_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

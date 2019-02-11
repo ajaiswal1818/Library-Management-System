@@ -25,7 +25,6 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Myprofile = New Assigment.Myprofile()
         Me.MyAccount = New System.Windows.Forms.Button()
         Me.SearchBtn = New System.Windows.Forms.Button()
         Me.eBookBtn = New System.Windows.Forms.Button()
@@ -52,11 +51,13 @@ Partial Class Form1
         Me.RemoveBook = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.AddBook = New System.Windows.Forms.Button()
-        Me.CurProfile = New Assigment.CurProfile()
-        Me.UserDetail1 = New Assigment.userDetail()
-        Me.DiscRoom = New Assigment.DiscRoom()
-        Me.Search1 = New Assigment.Search()
+        Me.Book_details = New Assigment.book_details()
         Me.EBooks1 = New Assigment.eBooks()
+        Me.CurProfile = New Assigment.CurProfile()
+        Me.Search1 = New Assigment.Search()
+        Me.Remove_detail1 = New Assigment.remove_detail()
+        Me.DiscRoom = New Assigment.DiscRoom()
+        Me.UserDetail1 = New Assigment.userDetail()
         Me.NewLogin = New Assigment.NewLogin()
         Me.BooksIssued = New Assigment.BooksIssued()
         Me.remove_detail = New Assigment.remove_detail()
@@ -65,6 +66,7 @@ Partial Class Form1
         Me.Reco = New Assigment.reco()
         Me.Log1 = New Assigment.Log()
         Me.ChngPass = New Assigment.ChngPass()
+        Me.Myprofile = New Assigment.Myprofile()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,16 +93,6 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(139, 770)
         Me.Panel1.TabIndex = 0
-        '
-        'Myprofile
-        '
-        Me.Myprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Myprofile.Location = New System.Drawing.Point(11, 442)
-        Me.Myprofile.Margin = New System.Windows.Forms.Padding(4)
-        Me.Myprofile.Name = "Myprofile"
-        Me.Myprofile.Size = New System.Drawing.Size(128, 250)
-        Me.Myprofile.TabIndex = 29
-        Me.Myprofile.Visible = False
         '
         'MyAccount
         '
@@ -287,9 +279,10 @@ Partial Class Form1
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Panel7.Controls.Add(Me.PictureBox3)
-        Me.Panel7.Controls.Add(Me.Label4)
         Me.Panel7.Controls.Add(Me.Label5)
+        Me.Panel7.Controls.Add(Me.Label4)
+        Me.Panel7.Controls.Add(Me.PictureBox3)
+        Me.Panel7.Controls.Add(Me.Book_details)
         Me.Panel7.Location = New System.Drawing.Point(0, 3)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(139, 182)
@@ -311,7 +304,7 @@ Partial Class Form1
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Snow
-        Me.Label4.Location = New System.Drawing.Point(30, 18)
+        Me.Label4.Location = New System.Drawing.Point(36, 18)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(57, 20)
         Me.Label4.TabIndex = 2
@@ -323,7 +316,7 @@ Partial Class Form1
         Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Snow
-        Me.Label5.Location = New System.Drawing.Point(3, 0)
+        Me.Label5.Location = New System.Drawing.Point(11, -3)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(112, 21)
         Me.Label5.TabIndex = 2
@@ -404,6 +397,24 @@ Partial Class Form1
         Me.AddBook.Text = "Add Book"
         Me.AddBook.UseVisualStyleBackColor = True
         '
+        'Book_details
+        '
+        Me.Book_details.Location = New System.Drawing.Point(0, -5)
+        Me.Book_details.Name = "Book_details"
+        Me.Book_details.Size = New System.Drawing.Size(869, 740)
+        Me.Book_details.TabIndex = 38
+        '
+        'EBooks1
+        '
+        Me.EBooks1.BackgroundImage = CType(resources.GetObject("EBooks1.BackgroundImage"), System.Drawing.Image)
+        Me.EBooks1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.EBooks1.Location = New System.Drawing.Point(139, 30)
+        Me.EBooks1.Margin = New System.Windows.Forms.Padding(4)
+        Me.EBooks1.Name = "EBooks1"
+        Me.EBooks1.Size = New System.Drawing.Size(869, 740)
+        Me.EBooks1.TabIndex = 19
+        Me.EBooks1.Visible = False
+        '
         'CurProfile
         '
         Me.CurProfile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -413,21 +424,29 @@ Partial Class Form1
         Me.CurProfile.Location = New System.Drawing.Point(139, 30)
         Me.CurProfile.Margin = New System.Windows.Forms.Padding(2)
         Me.CurProfile.Name = "CurProfile"
-        Me.CurProfile.Size = New System.Drawing.Size(835, 740)
+        Me.CurProfile.Size = New System.Drawing.Size(767, 740)
         Me.CurProfile.TabIndex = 33
         Me.CurProfile.Visible = False
         '
-        'UserDetail1
+        'Search1
         '
-        Me.UserDetail1.AutoScroll = True
-        Me.UserDetail1.BackgroundImage = CType(resources.GetObject("UserDetail1.BackgroundImage"), System.Drawing.Image)
-        Me.UserDetail1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.UserDetail1.Location = New System.Drawing.Point(139, 30)
-        Me.UserDetail1.Margin = New System.Windows.Forms.Padding(4)
-        Me.UserDetail1.Name = "UserDetail1"
-        Me.UserDetail1.Size = New System.Drawing.Size(869, 740)
-        Me.UserDetail1.TabIndex = 36
-        Me.UserDetail1.Visible = False
+        Me.Search1.AutoScroll = True
+        Me.Search1.BackgroundImage = CType(resources.GetObject("Search1.BackgroundImage"), System.Drawing.Image)
+        Me.Search1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Search1.Location = New System.Drawing.Point(139, 30)
+        Me.Search1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Search1.Name = "Search1"
+        Me.Search1.Size = New System.Drawing.Size(869, 740)
+        Me.Search1.TabIndex = 21
+        '
+        'Remove_detail1
+        '
+        Me.Remove_detail1.BackgroundImage = CType(resources.GetObject("Remove_detail1.BackgroundImage"), System.Drawing.Image)
+        Me.Remove_detail1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Remove_detail1.Location = New System.Drawing.Point(139, 30)
+        Me.Remove_detail1.Name = "Remove_detail1"
+        Me.Remove_detail1.Size = New System.Drawing.Size(869, 700)
+        Me.Remove_detail1.TabIndex = 37
         '
         'DiscRoom
         '
@@ -441,25 +460,17 @@ Partial Class Form1
         Me.DiscRoom.TabIndex = 31
         Me.DiscRoom.Visible = False
         '
-        'Search1
+        'UserDetail1
         '
-        Me.Search1.AutoScroll = True
-        Me.Search1.BackgroundImage = CType(resources.GetObject("Search1.BackgroundImage"), System.Drawing.Image)
-        Me.Search1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Search1.Location = New System.Drawing.Point(139, 30)
-        Me.Search1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Search1.Name = "Search1"
-        Me.Search1.Size = New System.Drawing.Size(869, 740)
-        Me.Search1.TabIndex = 21
-        '
-        'EBooks1
-        '
-        Me.EBooks1.Location = New System.Drawing.Point(139, 30)
-        Me.EBooks1.Margin = New System.Windows.Forms.Padding(4)
-        Me.EBooks1.Name = "EBooks1"
-        Me.EBooks1.Size = New System.Drawing.Size(869, 740)
-        Me.EBooks1.TabIndex = 19
-        Me.EBooks1.Visible = False
+        Me.UserDetail1.AutoScroll = True
+        Me.UserDetail1.BackgroundImage = CType(resources.GetObject("UserDetail1.BackgroundImage"), System.Drawing.Image)
+        Me.UserDetail1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.UserDetail1.Location = New System.Drawing.Point(139, 30)
+        Me.UserDetail1.Margin = New System.Windows.Forms.Padding(4)
+        Me.UserDetail1.Name = "UserDetail1"
+        Me.UserDetail1.Size = New System.Drawing.Size(869, 740)
+        Me.UserDetail1.TabIndex = 36
+        Me.UserDetail1.Visible = False
         '
         'NewLogin
         '
@@ -554,6 +565,16 @@ Partial Class Form1
         Me.ChngPass.TabIndex = 32
         Me.ChngPass.Visible = False
         '
+        'Myprofile
+        '
+        Me.Myprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Myprofile.Location = New System.Drawing.Point(11, 442)
+        Me.Myprofile.Margin = New System.Windows.Forms.Padding(4)
+        Me.Myprofile.Name = "Myprofile"
+        Me.Myprofile.Size = New System.Drawing.Size(128, 250)
+        Me.Myprofile.TabIndex = 29
+        Me.Myprofile.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -561,12 +582,14 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1008, 729)
-        Me.Controls.Add(Me.CurProfile)
-        Me.Controls.Add(Me.UserDetail1)
-        Me.Controls.Add(Me.DiscRoom)
-        Me.Controls.Add(Me.Search1)
+        Me.Controls.Add(Me.ChngPass)
         Me.Controls.Add(Me.adminPanel)
         Me.Controls.Add(Me.EBooks1)
+        Me.Controls.Add(Me.CurProfile)
+        Me.Controls.Add(Me.Search1)
+        Me.Controls.Add(Me.Remove_detail1)
+        Me.Controls.Add(Me.DiscRoom)
+        Me.Controls.Add(Me.UserDetail1)
         Me.Controls.Add(Me.NewLogin)
         Me.Controls.Add(Me.BooksIssued)
         Me.Controls.Add(Me.remove_detail)
@@ -574,7 +597,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Rec_book1)
         Me.Controls.Add(Me.Reco)
         Me.Controls.Add(Me.Log1)
-        Me.Controls.Add(Me.ChngPass)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
@@ -637,5 +659,7 @@ Partial Class Form1
     Friend WithEvents Rec_book1 As Assigment.Rec_book
     Friend WithEvents UserDetail1 As Assigment.userDetail
     Friend WithEvents CurProfile As Assigment.CurProfile
+    Friend WithEvents Remove_detail1 As Assigment.remove_detail
+    Friend WithEvents Book_details As Assigment.book_details
 
 End Class

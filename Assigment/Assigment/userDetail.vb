@@ -14,6 +14,7 @@ Public Class userDetail
         If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
         If Access.DBDT.Rows.Count = 0 Then
             MessageBox.Show("Username not exist!")
+            Clear()
             Exit Sub
         End If
 
@@ -38,6 +39,7 @@ Public Class userDetail
         End If
 
         Refresh_Page()
+        Udetail.Text = ""
 
     End Sub
 
@@ -49,6 +51,13 @@ Public Class userDetail
         count = 0
         lblissue1.Hide()
         displayPic.Image = Nothing
+        uPanel.Visible = False
+        nameLabel.Text = ""
+        rollNo.Text = ""
+        discipline.Text = ""
+        webmail.Text = ""
+        Dept.Text = ""
+
     End Sub
 
 
@@ -129,5 +138,8 @@ Public Class userDetail
 
     End Sub
 
-    
+
+    Private Sub Udetail_TextChanged(sender As Object, e As EventArgs) Handles Udetail.Click
+        Udetail.Text = ""
+    End Sub
 End Class
