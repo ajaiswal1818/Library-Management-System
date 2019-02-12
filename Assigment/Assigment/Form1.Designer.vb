@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Myprofile = New Assigment.Myprofile()
         Me.MyAccount = New System.Windows.Forms.Button()
         Me.SearchBtn = New System.Windows.Forms.Button()
         Me.eBookBtn = New System.Windows.Forms.Button()
@@ -66,7 +67,6 @@ Partial Class Form1
         Me.Rec_book1 = New Assigment.Rec_book()
         Me.Reco = New Assigment.reco()
         Me.Log1 = New Assigment.Log()
-        Me.Myprofile = New Assigment.Myprofile()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,6 +93,16 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(139, 770)
         Me.Panel1.TabIndex = 0
+        '
+        'Myprofile
+        '
+        Me.Myprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Myprofile.Location = New System.Drawing.Point(11, 442)
+        Me.Myprofile.Margin = New System.Windows.Forms.Padding(4)
+        Me.Myprofile.Name = "Myprofile"
+        Me.Myprofile.Size = New System.Drawing.Size(128, 250)
+        Me.Myprofile.TabIndex = 29
+        Me.Myprofile.Visible = False
         '
         'MyAccount
         '
@@ -571,16 +581,6 @@ Partial Class Form1
         Me.Log1.Size = New System.Drawing.Size(869, 740)
         Me.Log1.TabIndex = 20
         Me.Log1.Visible = False
-        '
-        'Myprofile
-        '
-        Me.Myprofile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Myprofile.Location = New System.Drawing.Point(11, 442)
-        Me.Myprofile.Margin = New System.Windows.Forms.Padding(4)
-        Me.Myprofile.Name = "Myprofile"
-        Me.Myprofile.Size = New System.Drawing.Size(128, 250)
-        Me.Myprofile.TabIndex = 29
-        Me.Myprofile.Visible = False
         '
         'Form1
         '
