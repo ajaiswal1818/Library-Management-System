@@ -132,14 +132,14 @@ Public Class NewLogin
             Console.Write("Error: Roll number not numeric")
             Exit Sub
         End If
+        AddUser()
+        Form1.Panel4.Visible = True
+        Form1.BringToFront()
         txtName.Text = ""
         txtRoll.Text = ""
         txtPass.Text = ""
         txtConf.Text = ""
         txtMail.Text = ""
-        AddUser()
-        Form1.Panel4.Visible = True
-        Form1.BringToFront()
     End Sub
 
     Private Sub AddUser()
@@ -236,4 +236,42 @@ Public Class NewLogin
     End Sub
 
 
+    Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.Click
+        txtName.ForeColor = Color.Black
+    End Sub
+
+    Private Sub txtRoll_TextChanged(sender As Object, e As EventArgs) Handles txtRoll.Click
+        txtRoll.ForeColor = Color.Black
+    End Sub
+
+    Private Sub txtMail_TextChanged(sender As Object, e As EventArgs) Handles txtMail.Click
+        txtMail.ForeColor = Color.Black
+    End Sub
+
+    Private Sub txtPass_TextChanged(sender As Object, e As EventArgs) Handles txtPass.Click
+        txtPass.ForeColor = Color.Black
+
+    End Sub
+
+    Private Sub txtConf_TextChanged(sender As Object, e As EventArgs) Handles txtConf.Click
+        txtConf.ForeColor = Color.Black
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            txtPass.PasswordChar = Nothing
+            txtConf.PasswordChar = Nothing
+        Else
+            txtPass.PasswordChar = "*"
+            txtConf.PasswordChar = "*"
+        End If
+    End Sub
+
+    Private Sub txtPass_TextChanged_1(sender As Object, e As EventArgs) Handles txtPass.Click
+        txtPass.PasswordChar = "*"
+    End Sub
+
+    Private Sub txtConf_TextChanged_1(sender As Object, e As EventArgs) Handles txtConf.Click
+        txtConf.PasswordChar = "*"
+    End Sub
 End Class

@@ -68,4 +68,21 @@
     End Sub
 
     
+    Private Sub Rec_title_TextChanged_1(sender As Object, e As EventArgs) Handles Rec_title.Click
+        Rec_title.Text = ""
+        Rec_title.ForeColor = Color.Black
+
+    End Sub
+
+    Private Sub Rec_Auth_TextChanged(sender As Object, e As EventArgs) Handles Rec_Auth.Click
+        Rec_Auth.Text = ""
+        Rec_Auth.ForeColor = Color.Black
+
+    End Sub
+
+    Private Sub Rec_isbn_TextChanged_1(sender As Object, e As EventArgs) Handles Rec_isbn.Click
+        Rec_isbn.Text = ""
+        Rec_isbn.ForeColor = Color.Black
+
+    End Sub
 End Class

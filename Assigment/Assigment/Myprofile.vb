@@ -20,5 +20,8 @@
         Arrow.Top = btnPasschange.Top + 12
         Form1.ChngPass.BringToFront()
         Form1.ChngPass.Visible = True
+        Form1.ChngPass.oldpass.Text = ""
+        Form1.ChngPass.newpass.Text = ""
+        Form1.ChngPass.newpass2.Text = ""
     End Sub
 End Class

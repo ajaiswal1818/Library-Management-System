@@ -23,6 +23,11 @@ Public Class CurProfile
         Dept.Text = "Department :   " & Access.DBDT.Rows(0).Item(7)
 
 
+        Address.Text = "Address : Indian Institue of Technology , Guwahati"
+        pincode.Text = "Pincode : 781039"
+        Dim temp As String = Access.DBDT.Rows(0).Item(3)
+        year.Text = "Year of Admission : 20" & temp.Substring(0, 2)
+
         Dim fullPath As String = IO.Path.GetFullPath(My.Resources.ResourceManager.BaseName)
         fullPath = fullPath.Substring(0, fullPath.Length - 39) & "\Resource\"
         'MessageBox.Show(fullPath)
@@ -37,15 +42,5 @@ Public Class CurProfile
         End If
     End Sub
 
-    Private Sub CurProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub nameLabel_Click(sender As Object, e As EventArgs) Handles nameLabel.Click
-
-    End Sub
-
-    Private Sub PicProfile_Click(sender As Object, e As EventArgs) Handles PicProfile.Click
-
-    End Sub
+   
 End Class

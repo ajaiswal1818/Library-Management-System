@@ -213,11 +213,8 @@
         cnt = 0
     End Sub
 
-    Private Sub btnSrch1_Click(sender As Object, e As EventArgs) Handles btnSrch1.Click
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
+    Private Sub txtSrch_TextChanged(sender As Object, e As EventArgs) Handles txtSrch.Click
+        txtSrch.Text = ""
+        txtSrch.ForeColor = Color.Black
     End Sub
 End Class

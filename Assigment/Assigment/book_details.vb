@@ -15,7 +15,7 @@
                     Access.ExecQuery("Select Username from Users where [ID]=" & num)
                     If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
                     If Access.DBDT.Rows.Count = 1 Then
-                        Op1 &= Access.DBDT.Rows(0).Item(0) & Environment.NewLine
+                        Op1 &= Environment.NewLine & "      >  " & Access.DBDT.Rows(0).Item(0)
                     End If
                 End If
             Catch ex As Exception
@@ -28,4 +28,7 @@
         Access.ExecQuery("")
     End Sub
 
+    Private Sub lbl_bookContent_Click(sender As Object, e As EventArgs) Handles lbl_bookContent.Click
+
+    End Sub
 End Class

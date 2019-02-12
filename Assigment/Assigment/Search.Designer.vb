@@ -59,11 +59,12 @@ Partial Class Search
         '
         Me.txtSrch.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtSrch.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSrch.ForeColor = System.Drawing.Color.Silver
         Me.txtSrch.Location = New System.Drawing.Point(149, 189)
         Me.txtSrch.Name = "txtSrch"
         Me.txtSrch.Size = New System.Drawing.Size(517, 31)
         Me.txtSrch.TabIndex = 16
-        Me.txtSrch.Text = ""
+        Me.txtSrch.Text = "Search"
         '
         'SearchBtn
         '
@@ -146,7 +147,6 @@ Partial Class Search
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoScroll = True
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.Label1)

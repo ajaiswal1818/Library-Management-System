@@ -43,21 +43,27 @@
 
     Private Sub bookTitle_TextChanged(sender As Object, e As EventArgs) Handles bookTitle.Click
         bookTitle.Text = ""
+        bookTitle.ForeColor = Color.Black
     End Sub
 
     Private Sub author_TextChanged(sender As Object, e As EventArgs) Handles author.Click
         author.Text = ""
+        author.ForeColor = Color.Black
     End Sub
 
     Private Sub ISBN_TextChanged(sender As Object, e As EventArgs) Handles ISBN.Click
         ISBN.Text = ""
+        ISBN.ForeColor = Color.Black
     End Sub
 
     Private Sub genre_TextChanged(sender As Object, e As EventArgs) Handles genre.Click
         genre.Text = ""
+        genre.ForeColor = Color.Black
     End Sub
 
     Private Sub publisher_TextChanged(sender As Object, e As EventArgs) Handles publisher.Click
         publisher.Text = ""
+        publisher.ForeColor = Color.Black
     End Sub
+
 End Class

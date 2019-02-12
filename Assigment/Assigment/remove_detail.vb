@@ -334,29 +334,9 @@
     End Sub
 
 
-    'Private Sub details_Click(sender As Object, e As EventArgs) Handles btnDel1.Click
-    '    Form1.Book_details.Visible = True
-    '    Form1.Book_details.BringToFront()
-    'End Sub
-
-    
-    Private Sub remove_detail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub btnDel1_Click(sender As Object, e As EventArgs) Handles btnDel1.Click
-
-    End Sub
-
-    Private Sub lbltemp1_Click(sender As Object, e As EventArgs) Handles lbltemp1.Click
-
-    End Sub
-
-    Private Sub lblSrch1_Click(sender As Object, e As EventArgs) Handles lblSrch1.Click
-
-    End Sub
-
-    Private Sub btnSrch1_Click(sender As Object, e As EventArgs) Handles btnSrch1.Click
-
+   
+    Private Sub srchTxt_TextChanged(sender As Object, e As EventArgs) Handles srchTxt.Click
+        srchTxt.Text = ""
+        srchTxt.ForeColor = Color.Black
     End Sub
 End Class

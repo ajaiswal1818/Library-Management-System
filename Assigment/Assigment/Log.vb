@@ -83,14 +83,23 @@
     Private Sub Sign_Click(sender As Object, e As EventArgs) Handles Sign_up.Click
         Form1.NewLogin.Visible = True
         Form1.NewLogin.BringToFront()
-       
+        Form1.NewLogin.txtName.ForeColor = Color.Silver
+        Form1.NewLogin.txtRoll.ForeColor = Color.Silver
+        Form1.NewLogin.txtPass.ForeColor = Color.Silver
+        Form1.NewLogin.txtConf.ForeColor = Color.Silver
+        Form1.NewLogin.txtMail.ForeColor = Color.Silver
+        Form1.NewLogin.txtName.Text = "Name"
+        Form1.NewLogin.txtRoll.Text = "Roll Number"
+        Form1.NewLogin.txtMail.Text = "Webmail"
+        Form1.NewLogin.txtPass.Text = "Password"
+        Form1.NewLogin.txtConf.Text = "Confirm Password"
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If txtPass.PasswordChar = Nothing Then
-            txtPass.PasswordChar = "*"
-        Else
+        If CheckBox1.Checked = True Then
             txtPass.PasswordChar = Nothing
+        Else
+            txtPass.PasswordChar = "*"
         End If
 
     End Sub

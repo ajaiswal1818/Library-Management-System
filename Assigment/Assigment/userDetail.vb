@@ -141,5 +141,7 @@ Public Class userDetail
 
     Private Sub Udetail_TextChanged(sender As Object, e As EventArgs) Handles Udetail.Click
         Udetail.Text = ""
+        Udetail.ForeColor = Color.Black
     End Sub
+
 End Class

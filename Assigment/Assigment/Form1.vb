@@ -15,6 +15,9 @@
         Rec_book1.Rec_title.Text = "Title"
         Rec_book1.Rec_Auth.Text = "Authors"
         Rec_book1.Rec_isbn.Text = "ISBN"
+        Rec_book1.Rec_title.ForeColor = Color.Silver
+        Rec_book1.Rec_Auth.ForeColor = Color.Silver
+        Rec_book1.Rec_isbn.ForeColor = Color.Silver
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles eBookBtn.Click
@@ -32,6 +35,8 @@
 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
+        Search1.txtSrch.Text = "Search"
+        Search1.txtSrch.ForeColor = Color.Silver
         SidePanel.Height = SearchBtn.Height
         SidePanel.Top = SearchBtn.Top
         Search1.BringToFront()
@@ -46,8 +51,12 @@
 
 
     Private Sub MyAccount_Click(sender As Object, e As EventArgs) Handles MyAccount.Click
-        Log1.txtUser.Clear()
-        Log1.txtPass.Clear()
+        Log1.txtUser.ForeColor = Color.Silver
+        Log1.txtPass.ForeColor = Color.Silver
+        Log1.txtPass.Text = "Password"
+        Log1.txtPass.PasswordChar = Nothing
+        Log1.txtUser.Text = "Username"
+        'Log1.txtPass.Clear()
         SidePanel.Height = MyAccount.Height()
         SidePanel.Top = MyAccount.Top()
         Log1.BringToFront()
@@ -104,9 +113,24 @@
         Panel6.BringToFront()
         Panel6.Height = AddBook.Height
         Panel6.Top = AddBook.Top
+
+        AddBookP.bookTitle.Text = "Title"
+        AddBookP.bookTitle.ForeColor = Color.Silver
+        AddBookP.author.Text = "Author"
+        AddBookP.author.ForeColor = Color.Silver
+        AddBookP.ISBN.Text = "ISBN"
+        AddBookP.ISBN.ForeColor = Color.Silver
+        AddBookP.genre.Text = "Genre"
+        AddBookP.genre.ForeColor = Color.Silver
+        AddBookP.publisher.Text = "Publisher"
+        AddBookP.publisher.ForeColor = Color.Silver
+
+
     End Sub
 
     Private Sub RemoveBook_Click(sender As Object, e As EventArgs) Handles RemoveBook.Click
+        remove_detail.srchTxt.Text = "Search"
+        remove_detail.srchTxt.ForeColor = Color.Silver
         remove_detail.BringToFront()
         remove_detail.Visible = True
         Panel6.Visible = True
@@ -124,6 +148,8 @@
     End Sub
 
     Private Sub BookDetail_Click(sender As Object, e As EventArgs) Handles BookDetail.Click
+        remove_detail.srchTxt.Text = "Search"
+        remove_detail.srchTxt.ForeColor = Color.Silver
         remove_detail.BringToFront()
         remove_detail.Visible = True
         Panel6.Visible = True
@@ -149,7 +175,8 @@
         Panel6.Height = UserDetail.Height
         Panel6.Top = UserDetail.Top
         UserDetail1.Clear()
-
+        UserDetail1.Udetail.Text = "User Name"
+        UserDetail1.Udetail.ForeColor = Color.Silver
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
