@@ -1,4 +1,4 @@
-# CS243_Lab2_Library_Management_System
+# CS243 Lab2 Library Management System
 
 ## Project Description
 The library management system represents our vision towards the IITG Library. It aims to provide a user and admin friendly interface, complete with a MsAccess database backend for storing user, book and room details. The Library has 2 extra feautres from the IITG library, E-books access and Discussion Room Booking.
