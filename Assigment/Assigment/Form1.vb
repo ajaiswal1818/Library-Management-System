@@ -160,8 +160,4 @@
 
         DiscRoom.DiscRoom_Load_1()
     End Sub
-
-    Private Sub Myprofile_Load(sender As Object, e As EventArgs)
-
-    End Sub
 End Class

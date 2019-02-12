@@ -288,7 +288,7 @@ Partial Class NewLogin
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "NewLogin"
-        Me.Size = New System.Drawing.Size(852, 7470)
+        Me.Size = New System.Drawing.Size(869, 740)
         CType(Me.profilePic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

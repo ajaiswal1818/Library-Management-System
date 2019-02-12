@@ -25,7 +25,7 @@ Public Class CurProfile
 
         Dim fullPath As String = IO.Path.GetFullPath(My.Resources.ResourceManager.BaseName)
         fullPath = fullPath.Substring(0, fullPath.Length - 39) & "\Resource\"
-
+        'MessageBox.Show(fullPath)
         Dim Path As String = fullPath & Access.DBDT.Rows(0).Item(1) & ".jpg"
         If File.Exists(Path) Then
             PicProfile.ImageLocation = (Path)
@@ -42,6 +42,10 @@ Public Class CurProfile
     End Sub
 
     Private Sub nameLabel_Click(sender As Object, e As EventArgs) Handles nameLabel.Click
+
+    End Sub
+
+    Private Sub PicProfile_Click(sender As Object, e As EventArgs) Handles PicProfile.Click
 
     End Sub
 End Class

@@ -83,6 +83,7 @@
     Private Sub Sign_Click(sender As Object, e As EventArgs) Handles Sign_up.Click
         Form1.NewLogin.Visible = True
         Form1.NewLogin.BringToFront()
+       
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -109,7 +110,4 @@
         End If
     End Sub
 
-    Private Sub txtUser_TextChanged_1(sender As Object, e As EventArgs) Handles txtUser.TextChanged
-
-    End Sub
 End Class

@@ -132,8 +132,14 @@ Public Class NewLogin
             Console.Write("Error: Roll number not numeric")
             Exit Sub
         End If
-
+        txtName.Text = ""
+        txtRoll.Text = ""
+        txtPass.Text = ""
+        txtConf.Text = ""
+        txtMail.Text = ""
         AddUser()
+        Form1.Panel4.Visible = True
+        Form1.BringToFront()
     End Sub
 
     Private Sub AddUser()
@@ -148,6 +154,22 @@ Public Class NewLogin
         If Access.DBDT.Rows.Count = 1 Then
             MessageBox.Show("User " & txtMail.Text & " successfully created")
             Console.WriteLine("User " & txtMail.Text & " successfully created")
+
+            Access.ExecQuery("Select * From Users Where Username = '" & txtMail.Text & "'")
+            If Not String.IsNullOrEmpty(Access.Exception) Then MsgBox(Access.Exception) : Exit Sub
+            If Access.DBDT.Rows.Count = 1 Then
+                Log.CurID = Access.DBDT.Rows(0).Item(0)
+                Log.CurUser = Access.DBDT.Rows(0).Item(1)
+                Log.CurPass = Access.DBDT.Rows(0).Item(2)
+                Log.CurRoll = Access.DBDT.Rows(0).Item(3)
+                Log.CurName = Access.DBDT.Rows(0).Item(4)
+                Log.CurAccess = Access.DBDT.Rows(0).Item(5)
+                Log.CurProg = Access.DBDT.Rows(0).Item(6)
+                Log.CurDept = Access.DBDT.Rows(0).Item(7)
+                Log.CurBkLimit = Access.DBDT.Rows(0).Item(8)
+                Log.CurBooks = Access.DBDT.Rows(0).Item(9)
+            End If
+            Form1.Label3.Text = "Welcome!  " & Log.CurUser
             Form1.Myprofile.Visible = True
             Form1.Myprofile.BringToFront()
             Form1.SidePanel.Height = Form1.MyAccount.Height
@@ -156,6 +178,7 @@ Public Class NewLogin
             Form1.CurProfile.BringToFront()
             Form1.Myprofile.Arrow.Height = Form1.Myprofile.btnmyprofile.Height
             Form1.Myprofile.Arrow.Top = Form1.Myprofile.btnmyprofile.Top + 12
+            Form1.CurProfile.CurProfile_Load()
         Else
             Console.WriteLine("User " & txtMail.Text & " creation failed")
         End If
@@ -172,7 +195,7 @@ Public Class NewLogin
         '    profilePic.Image = Image.FromFile(OFGSelectImage.FileName)
         'End If
 
-        If (Not System.IO.Directory.Exists("Reso urce")) Then
+        If (Not System.IO.Directory.Exists("Resource")) Then
             System.IO.Directory.CreateDirectory("Resource")
         End If
 
@@ -186,12 +209,16 @@ Public Class NewLogin
 
             '
             If .ShowDialog = DialogResult.OK Then
+                Dim fullPath As String = IO.Path.GetFullPath(My.Resources.ResourceManager.BaseName)
+                fullPath = fullPath.Substring(0, fullPath.Length - 39) & "\Resource\"
+
                 Dim FName() As String = OpenFileDialog1.FileName.Split("\\")
+                'MessageBox.Show(FName())
                 Dim ext() As String = FName(FName.Length - 1).Split(".")
                 Dim extension As String = ext(ext.Length - 1)
                 If extension <> "jpg" Or extension <> "jpeg" Or extension <> "png" Or extension <> "bmp" Or extension <> "gif" Then
                     Try
-                        System.IO.File.Copy(OpenFileDialog1.FileName, "Resource\\" + Form1.NewLogin.txtMail.Text + ".jpg")
+                        System.IO.File.Copy(OpenFileDialog1.FileName, fullPath + Form1.NewLogin.txtMail.Text + ".jpg")
                     Catch ex As Exception
                         MessageBox.Show("image can not be added")
                     End Try
