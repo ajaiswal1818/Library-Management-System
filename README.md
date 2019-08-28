@@ -15,7 +15,7 @@ Adobe PDF Reader is required to run the program
 This program was developed by the following students at IIT Guwahati:
 - Mayank Baranwal (https://github.com/Mayank-Baranwal)
 - Sourabh Jangir (https://github.com/SourabhJangid)
-- Abhishek Jaiswal (https://github.com/karlitowalker)
+- Abhishek Jaiswal (https://github.com/ajaiswal1818)
 - Deepak Gami (https://github.com/dngami)
 - Aditya Vardhan Gara (https://github.com/AdityaVardhanGara)
 - Shri Raam Reddy
